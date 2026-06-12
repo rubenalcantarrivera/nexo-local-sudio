@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --brand-background: #f8f5ef;
+  --brand-text: #1f2933;
+  --brand-muted: #667085;
+  --brand-primary: #183b56;
+  --brand-accent: #b88a44;
+  --brand-soft-accent: #efe3d0;
+  --brand-border: #e5e0d8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--brand-background); color: var(--brand-text); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: var(--brand-soft-accent); color: var(--brand-primary); }
+
+@layer base {
+  h1, h2, h3, h4 { @apply font-display tracking-tight text-brand-text; }
+  p { @apply leading-7; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.24em] text-brand-accent; }
+  .focus-ring { @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent; }
+  .premium-gradient {
+    background:
+      radial-gradient(circle at 18% 12%, rgba(239, 227, 208, 0.95), transparent 32%),
+      radial-gradient(circle at 84% 14%, rgba(184, 138, 68, 0.14), transparent 28%),
+      linear-gradient(180deg, #f8f5ef 0%, #ffffff 100%);
+  }
+}
