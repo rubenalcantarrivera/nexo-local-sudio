@@ -16,6 +16,16 @@ export type LandingConfig = {
   faqs: { question: string; answer: string }[];
   locationSection: { title: string; description: string; address: string; mapEmbedUrl?: string };
   colors?: { primary: string; accent: string };
+  images?: {
+    hero?: { src: string; alt: string };
+    feature?: { src: string; alt: string };
+    gallery?: { src: string; alt: string }[];
+  };
+  visual?: {
+    mood?: string;
+    heroLayout?: "split" | "immersive" | "editorial";
+  };
+  disclaimer?: string;
 };
 
 export type Package = { name: string; price: string; description: string; includes: string[]; highlighted?: boolean };

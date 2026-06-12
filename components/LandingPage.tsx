@@ -1,6 +1,7 @@
 import type { LandingConfig } from "@/data/types";
 import { createWhatsAppLink } from "@/lib/whatsapp";
 import { BenefitsGrid } from "./BenefitsGrid";
+import { ClientFinalCTA } from "./ClientFinalCTA";
 import { ContactForm } from "./ContactForm";
 import { FAQ } from "./FAQ";
 import { Footer } from "./Footer";
@@ -22,12 +23,13 @@ export function LandingPage({ config }: { config: LandingConfig }) {
       <Hero config={config} whatsappHref={clientWhatsapp} />
       <TrustBar items={config.trust} />
       <ServicesGrid items={config.services} />
-      <BenefitsGrid items={config.benefits} />
+      <BenefitsGrid items={config.benefits} image={config.images?.feature} mood={config.visual?.mood} />
       <ProcessSteps items={config.process} />
       <Testimonials items={config.testimonials} />
       <LocationSection title={config.locationSection.title} description={config.locationSection.description} address={config.locationSection.address} mapEmbedUrl={config.locationSection.mapEmbedUrl} whatsappHref={clientWhatsapp} />
       <FAQ items={config.faqs} />
-      <ContactForm whatsappHref={clientWhatsapp} />
+      <ContactForm title={`Contacta a ${config.businessName}`} whatsappHref={clientWhatsapp} />
+      <ClientFinalCTA config={config} whatsappHref={clientWhatsapp} />
       <Footer businessName={config.businessName} tagline={config.tagline} location={config.location} />
       <WhatsAppStickyButton href={clientWhatsapp} label="Agendar por WhatsApp" />
     </main>

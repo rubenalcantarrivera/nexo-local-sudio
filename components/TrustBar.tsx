@@ -1,4 +1,4 @@
 type Props = { items: string[] };
 export function TrustBar({ items }: Props) {
-  return <section className="border-b border-brand-border bg-white"><div className="container-page flex flex-wrap items-center justify-center gap-3 py-5">{items.map((item) => <span key={item} className="rounded-full border border-brand-border bg-brand-background px-4 py-2 text-sm font-medium text-brand-primary">{item}</span>)}</div></section>;
+  return <section className="border-b border-brand-border bg-white/90"><div className="container-page grid gap-px bg-brand-border py-px sm:grid-cols-2 lg:grid-cols-4">{items.map((item) => <div key={item} className="bg-white px-5 py-4 text-sm font-semibold text-brand-primary">{item}</div>)}</div></section>;
 }

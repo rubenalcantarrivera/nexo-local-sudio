@@ -204,9 +204,67 @@ Change the default agency WhatsApp in `data/agency.ts`.
 - Demos index metadata: `app/demos/page.tsx`
 - Individual demo metadata: `data/landingConfigs.ts`
 
+## Logo system
+
+The Nexo Local Studio logo lives in `components/Logo.tsx`.
+
+- `LogoMark` renders the abstract geometric N route mark.
+- `LogoWordmark` renders the typographic wordmark.
+- `Logo` combines mark and wordmark for header/footer usage.
+- `app/icon.svg` is the favicon/icon version.
+
+Edit the SVG paths and colors in `components/Logo.tsx` if the brand mark evolves. Keep client demo pages white-label: do not render the Nexo logo inside `/demos/[slug]` by default.
+
+## Image system
+
+Images are committed locally under:
+
+```text
+public/images/agency/
+public/images/demos/
+```
+
+Demo image references live in `data/landingConfigs.ts` under the `demoVisuals` map. This avoids Vercel image loss caused by missing generated files, remote image failures or unconfigured `next/image` domains.
+
+Before publishing a real client page:
+
+- Replace local placeholder SVGs with real client photography.
+- Keep image files inside `public/images/...`.
+- Update `src` and `alt` in `data/landingConfigs.ts`.
+- Check desktop and mobile crops.
+- Run `npm run build` before deployment.
+
+Use normal `<img>` tags for this project unless there is a clear reason to switch to `next/image`. If switching to `next/image`, configure `next.config.mjs` remote patterns and verify production rendering.
+
+## Visual system
+
+The visual system uses:
+
+- Custom SVG logo.
+- Local image-driven hero and demo cards.
+- CSS-only paper, grid and dark-grain textures in `app/globals.css`.
+- Editorial typography with system serif headings.
+- Premium card treatments and image frames.
+- CSS hover transitions only; no heavy animation library.
+- White-label client demo pages by default.
+
+Agency pages (`/` and `/demos`) may mention Nexo, packages, demos and diagnostics. Client pages (`/demos/[slug]`) should feel like the fictional business website and should not include Nexo pitch language.
+
 ## Contact form
 
 The contact form is UI-only by default. In `components/ContactForm.tsx`, replace the form action with Formspree, HubSpot, Make, Zapier, a custom API route or a CRM endpoint. Change the button from `type="button"` to `type="submit"` after connecting an endpoint.
+
+## Pre-deployment visual checklist
+
+- Images load from `public/images`.
+- No empty image frames.
+- No decorative circles or pills that look clickable.
+- WhatsApp buttons use `525545609027` for agency/demo previews.
+- Agency email is `nexo.local.studio@gmail.com`.
+- Client demo pages do not show Nexo pitch language by default.
+- Mobile hero, CTA and sticky WhatsApp are usable.
+- `npm run typecheck` passes.
+- `npm run build` passes.
 
 ## Deploy to Vercel
 
@@ -222,9 +280,9 @@ The contact form is UI-only by default. In `components/ContactForm.tsx`, replace
 
 ## Suggested next improvements
 
-- Add real image support with `next/image` and per-demo photo config.
+- Replace placeholder editorial SVGs with real approved client photography.
 - Add Open Graph images per niche.
 - Add analytics events for WhatsApp clicks, phone clicks and form interactions.
 - Add a real Formspree or CRM integration.
 - Add a `ClientConfig` template file for fast prospect demos.
-- Add a “client mode” toggle to hide the `AuditBanner` when sending demos to real prospects.
+- Add real case studies after getting client permission.

@@ -17,20 +17,20 @@ export const packages: Package[] = [
     name: "Landing Express",
     price: "$6,900 MXN",
     description: "Una landing rápida, clara y lista para contacto sin un proceso largo.",
-    includes: ["1 landing page", "Mobile-first design", "WhatsApp CTA", "Basic SEO", "Contact form", "Delivery in 72 hours"]
+    includes: ["1 página de aterrizaje", "Diseño mobile-first", "CTA a WhatsApp", "SEO básico", "Formulario de contacto", "Entrega en 72 horas"]
   },
   {
     name: "Growth Local",
     price: "$9,900 MXN",
     description: "La opción recomendada para negocios con reseñas, tráfico local y necesidad de mejor conversión.",
-    includes: ["Everything in Express", "Better conversion copy", "Google Maps section", "FAQ", "Review/testimonial section", "Basic analytics placeholder", "1 week support"],
+    includes: ["Todo lo de Express", "Copy de conversión mejorado", "Sección Google Maps", "FAQ", "Reseñas o testimonios", "Placeholder de analítica básica", "1 semana de soporte"],
     highlighted: true
   },
   {
     name: "Pro Local",
     price: "$14,900 MXN",
     description: "Una landing premium multi-sección para negocios locales de ticket medio alto.",
-    includes: ["Multi-section premium landing", "Advanced copy", "Lead form", "WhatsApp CTA", "SEO local setup guidance", "2 rounds revisions", "2 weeks support"]
+    includes: ["Landing premium multi-sección", "Copy avanzado", "Lead form", "CTA WhatsApp", "Guía de SEO local", "2 rondas de revisión", "2 semanas de soporte"]
   }
 ];
 

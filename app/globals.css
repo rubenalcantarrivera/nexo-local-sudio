@@ -16,6 +16,14 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--brand-background); color: var(--brand-text); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(184, 138, 68, 0.10), transparent 28rem),
+    radial-gradient(circle at 86% 4%, rgba(24, 59, 86, 0.08), transparent 24rem),
+    linear-gradient(rgba(31, 41, 51, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 41, 51, 0.018) 1px, transparent 1px);
+  background-size: auto, auto, 56px 56px, 56px 56px;
+}
 ::selection { background: var(--brand-soft-accent); color: var(--brand-primary); }
 
 @layer base {
@@ -25,12 +33,68 @@ body { margin: 0; background: var(--brand-background); color: var(--brand-text);
 
 @layer components {
   .container-page { @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8; }
-  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.24em] text-brand-accent; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.26em] text-brand-accent; }
   .focus-ring { @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent; }
+  .section-pad { @apply py-16 sm:py-20 lg:py-28; }
+  .premium-surface { @apply border border-white/70 bg-white/80 shadow-soft backdrop-blur; }
+  .editorial-frame { @apply relative overflow-hidden rounded-[2rem] border border-brand-border bg-white shadow-card; }
+  .badge-soft { @apply inline-flex items-center border-l-2 border-brand-accent bg-white/60 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-primary; }
   .premium-gradient {
     background:
-      radial-gradient(circle at 18% 12%, rgba(239, 227, 208, 0.95), transparent 32%),
-      radial-gradient(circle at 84% 14%, rgba(184, 138, 68, 0.14), transparent 28%),
-      linear-gradient(180deg, #f8f5ef 0%, #ffffff 100%);
+      radial-gradient(circle at 12% 16%, rgba(239, 227, 208, 0.98), transparent 28rem),
+      radial-gradient(circle at 84% 10%, rgba(24, 59, 86, 0.12), transparent 24rem),
+      linear-gradient(180deg, #fbf7ef 0%, #f8f5ef 48%, #ffffff 100%);
+  }
+  .bg-paper {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.48), rgba(255,255,255,0)),
+      radial-gradient(circle at 20% 20%, rgba(184, 138, 68, .10), transparent 24rem),
+      #f8f5ef;
+  }
+  .bg-line-grid {
+    background-image:
+      linear-gradient(rgba(24, 59, 86, .08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24, 59, 86, .06) 1px, transparent 1px),
+      radial-gradient(circle at 24% 24%, rgba(184,138,68,.18), transparent 18rem);
+    background-size: 40px 40px, 40px 40px, auto;
+  }
+  .dark-grain {
+    background:
+      radial-gradient(circle at 18% 0%, rgba(184,138,68,.22), transparent 26rem),
+      radial-gradient(circle at 85% 15%, rgba(142,184,200,.12), transparent 20rem),
+      linear-gradient(135deg, #0b1220, #183b56 62%, #0b1220);
+  }
+  .texture-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .22;
+    background-image: radial-gradient(rgba(255,255,255,.42) 1px, transparent 1px);
+    background-size: 18px 18px;
+    mask-image: linear-gradient(180deg, transparent, black 18%, black 82%, transparent);
+  }
+  .image-vignette::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(11,18,32,0) 30%, rgba(11,18,32,.46) 100%);
+  }
+  .reveal-in { animation: reveal-in .72s cubic-bezier(.2,.8,.2,1) both; }
+  .lift-card { @apply transition duration-300 hover:-translate-y-1 hover:shadow-soft; }
+}
+
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
   }
 }
