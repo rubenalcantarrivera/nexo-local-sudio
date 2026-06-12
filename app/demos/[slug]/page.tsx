@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: DemoPageProps): Promise<Metad
   const config = getLandingConfig(slug);
   if (!config) return { title: "Demo no encontrado" };
   return {
-    title: config.seo.title,
+    title: { absolute: config.seo.title },
     description: config.seo.description,
     keywords: config.seo.keywords,
     openGraph: { title: config.seo.title, description: config.seo.description, type: "website", locale: "es_MX" }

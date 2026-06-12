@@ -4,7 +4,7 @@ const mapEmbed = (query: string) => `https://www.google.com/maps?q=${encodeURICo
 
 const process = (first: string): LandingConfig["process"] => [
   { step: "01", title: first, description: "El visitante entiende la oferta principal, la ubicación y la forma de contacto desde la primera pantalla." },
-  { step: "02", title: "Revisa servicios", description: "La página ordena servicios, beneficios y diferenciales con descripciones breves y accionables." },
+  { step: "02", title: "Revisa servicios", description: "La información está ordenada por servicios, beneficios y diferenciales con descripciones breves y accionables." },
   { step: "03", title: "Resuelve dudas", description: "Preguntas frecuentes, testimonios y detalles prácticos reducen fricción antes de escribir." },
   { step: "04", title: "Contacta por WhatsApp", description: "Los CTAs llevan a una conversación concreta con mensaje prellenado y contexto suficiente." }
 ];
@@ -19,7 +19,7 @@ const safeFaqs = (noun: string, booking = "cita"): LandingConfig["faqs"] => [
   { question: `¿Puedo agendar por WhatsApp?`, answer: `Sí. Puedes solicitar disponibilidad, compartir datos básicos y confirmar tu ${booking} por WhatsApp.` },
   { question: `¿La primera atención define todo el proceso?`, answer: `No necesariamente. La primera interacción ayuda a entender necesidades, resolver dudas y orientar siguientes pasos.` },
   { question: `¿Los precios se dan antes de la visita?`, answer: `Se pueden compartir rangos o servicios base. Algunos casos requieren valoración o revisión para cotizar con precisión.` },
-  { question: `¿Prometen resultados garantizados?`, answer: `No se prometen resultados específicos. La landing comunica servicios y facilita el contacto sin exagerar alcances.` }
+  { question: `¿Prometen resultados garantizados?`, answer: `No se prometen resultados específicos. La información comunica servicios y facilita el contacto sin exagerar alcances.` }
 ];
 
 const configs: LandingConfig[] = [
@@ -103,7 +103,7 @@ const configs: LandingConfig[] = [
     hero: { eyebrow: "Derecho migratorio en México", headline: "Asesoría migratoria clara para tomar decisiones legales con mejor información.", subheadline: "Agenda una consulta para revisar tu situación, requisitos y rutas posibles sin promesas de resultado ni atajos riesgosos.", primaryCta: "Agendar consulta legal", secondaryCta: "Ver servicios" },
     trust: ["Consulta por cita", "Revisión documental", "Comunicación clara", "Sin garantías falsas"],
     services: ["Visas", "Regularización migratoria", "Residencia", "Nacionalidad", "Consultoría legal"].map((title) => ({ title, description: `${title} con revisión de requisitos, documentos y pasos posibles conforme al caso.` })),
-    benefits: ["Sin promesas legales falsas", "Revisión ordenada", "Lenguaje claro", "Contacto directo", "Confianza profesional", "Enfoque preventivo"].map((title) => ({ title, description: "La landing evita garantizar aprobaciones y presenta alcances de forma sobria y responsable." })),
+    benefits: ["Sin promesas legales falsas", "Revisión ordenada", "Lenguaje claro", "Contacto directo", "Confianza profesional", "Enfoque preventivo"].map((title) => ({ title, description: "La información evita garantizar aprobaciones y presenta alcances de forma sobria y responsable." })),
     process: process("Solicita una consulta legal"), testimonials: testimonial("Consulta migratoria"), faqs: safeFaqs("abogado migratorio", "consulta"),
     locationSection: { title: "Consulta migratoria en CDMX", description: "Agenda una consulta para revisar tu caso con claridad y conocer los siguientes pasos posibles.", address: "Ciudad de México", mapEmbedUrl: mapEmbed("Ciudad de México") }, colors: { primary: "#1F2933", accent: "#9C7A3A" }
   },
@@ -113,7 +113,7 @@ const configs: LandingConfig[] = [
     hero: { eyebrow: "Arquitectura e interiorismo en Lomas", headline: "Espacios diseñados con criterio, proporción y una ejecución más ordenada.", subheadline: "Desde diseño interior hasta supervisión de obra, estructuramos proyectos residenciales y comerciales con una ruta clara.", primaryCta: "Cotizar proyecto", secondaryCta: "Ver servicios" },
     trust: ["Proyecto por etapas", "Visualización 3D", "Diseño interior", "Supervisión de obra"],
     services: ["Diseño interior", "Remodelación", "Proyecto ejecutivo", "Visualización 3D", "Supervisión de obra"].map((title) => ({ title, description: `${title} para ordenar concepto, alcance, materiales y decisiones de ejecución.` })),
-    benefits: ["Proceso visible", "Portafolio editorial", "Cotización orientada", "Lenguaje premium", "Claridad de alcance", "Confianza técnica"].map((title) => ({ title, description: "La landing presenta metodología y servicios con estética editorial para proyectos de alto valor." })),
+    benefits: ["Proceso visible", "Portafolio editorial", "Cotización orientada", "Lenguaje premium", "Claridad de alcance", "Confianza técnica"].map((title) => ({ title, description: "El sitio presenta metodología y servicios con estética editorial para proyectos de alto valor." })),
     process: process("Comparte tu idea de proyecto"), testimonials: testimonial("Proyecto residencial"), faqs: safeFaqs("arquitectura", "reunión"),
     locationSection: { title: "Proyectos en Lomas y CDMX", description: "Comparte la idea de tu proyecto para revisar alcance, estilo y siguientes pasos.", address: "Lomas, CDMX", mapEmbedUrl: mapEmbed("Lomas de Chapultepec CDMX") }, colors: { primary: "#1F2933", accent: "#B88A44" }
   },
@@ -133,7 +133,7 @@ const configs: LandingConfig[] = [
     hero: { eyebrow: "Academia de idiomas Online/CDMX", headline: "Clases de idiomas diseñadas alrededor de objetivos reales, no temarios genéricos.", subheadline: "Aprende inglés o francés, prepara certificaciones y capacita equipos con rutas claras, horarios flexibles y seguimiento.", primaryCta: "Solicitar diagnóstico", secondaryCta: "Ver cursos" },
     trust: ["Clases online", "Preparación IELTS", "Empresas", "Cursos personalizados"],
     services: ["Inglés", "Francés", "Preparación IELTS", "Clases empresariales", "Cursos personalizados"].map((title) => ({ title, description: `${title} con ruta por nivel, objetivo y disponibilidad del estudiante o equipo.` })),
-    benefits: ["Diagnóstico inicial", "Enfoque profesional", "Contacto rápido", "Cursos claros", "Modalidad flexible", "Seguimiento por objetivo"].map((title) => ({ title, description: "La landing comunica formación seria y práctica sin estética escolar infantil." })),
+    benefits: ["Diagnóstico inicial", "Enfoque profesional", "Contacto rápido", "Cursos claros", "Modalidad flexible", "Seguimiento por objetivo"].map((title) => ({ title, description: "La información comunica formación seria y práctica sin estética escolar infantil." })),
     process: process("Solicita un diagnóstico de nivel"), testimonials: testimonial("Preparación IELTS"), faqs: safeFaqs("academia de idiomas", "diagnóstico"),
     locationSection: { title: "Clases online y atención en CDMX", description: "Solicita un diagnóstico para elegir la ruta de idioma más adecuada a tu objetivo.", address: "Online / Ciudad de México", mapEmbedUrl: mapEmbed("Ciudad de México") }, colors: { primary: "#183B56", accent: "#7D6AB5" }
   },
