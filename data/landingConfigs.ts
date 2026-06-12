@@ -29,7 +29,7 @@ const configs: LandingConfig[] = [
     businessName: "Óptica Lumen",
     tagline: "Examen de la vista, armazones seleccionados y atención clara en Roma Norte.",
     location: "Roma Norte, CDMX",
-    phone: "525500000001",
+    phone: "525545609027",
     whatsappMessage: "Hola, me interesa agendar una cita en Óptica Lumen. ¿Me pueden compartir horarios disponibles?",
     seo: { title: "Óptica Lumen | Óptica premium en Roma Norte", description: "Demo de landing para óptica premium con examen de la vista, lentes graduados, armazones seleccionados y contacto por WhatsApp.", keywords: ["óptica Roma Norte", "examen de la vista", "lentes graduados", "armazones premium"] },
     hero: { eyebrow: "Óptica premium en Roma Norte", headline: "Lentes graduados y armazones seleccionados con atención personalizada.", subheadline: "Agenda tu examen de la vista, elige armazones con asesoría profesional y recibe ajustes postventa en una ubicación céntrica.", primaryCta: "Agendar por WhatsApp", secondaryCta: "Ver servicios" },
@@ -48,7 +48,7 @@ const configs: LandingConfig[] = [
     colors: { primary: "#183B56", accent: "#B88A44" }
   },
   {
-    slug: "dental", niche: "Clínica dental", businessName: "Clínica Dental Nara", tagline: "Odontología clara, estética y preventiva en Polanco.", location: "Polanco, CDMX", phone: "525500000002", whatsappMessage: "Hola, me interesa agendar una valoración en Clínica Dental Nara.",
+    slug: "dental", niche: "Clínica dental", businessName: "Clínica Dental Nara", tagline: "Odontología clara, estética y preventiva en Polanco.", location: "Polanco, CDMX", phone: "525545609027", whatsappMessage: "Hola, me interesa agendar una valoración en Clínica Dental Nara.",
     seo: { title: "Clínica Dental Nara | Dentista en Polanco", description: "Demo de landing para clínica dental con limpieza, diseño de sonrisa, ortodoncia, implantes, blanqueamiento y urgencias.", keywords: ["dentista Polanco", "clínica dental CDMX", "diseño de sonrisa", "implantes"] },
     hero: { eyebrow: "Clínica dental en Polanco", headline: "Atención dental profesional para cuidar tu sonrisa con claridad y confianza.", subheadline: "Agenda limpieza, valoración estética, ortodoncia o urgencias dentales con un enfoque que explica cada paso antes de iniciar.", primaryCta: "Agendar valoración", secondaryCta: "Conocer tratamientos" },
     trust: ["Valoración inicial", "Atención por cita", "Ubicación en Polanco", "Planes claros"],
@@ -58,7 +58,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Atención dental en Polanco", description: "Agenda tu visita y confirma disponibilidad para valoración, limpieza o tratamiento dental.", address: "Polanco, Miguel Hidalgo, CDMX", mapEmbedUrl: mapEmbed("Polanco CDMX") }, colors: { primary: "#183B56", accent: "#9A7B4F" }
   },
   {
-    slug: "estetica", niche: "Clínica estética", businessName: "Aura Estética", tagline: "Tratamientos faciales y corporales con valoración profesional en Santa Fe.", location: "Santa Fe, CDMX", phone: "525500000003", whatsappMessage: "Hola, quiero agendar una valoración en Aura Estética.",
+    slug: "estetica", niche: "Clínica estética", businessName: "Aura Estética", tagline: "Tratamientos faciales y corporales con valoración profesional en Santa Fe.", location: "Santa Fe, CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero agendar una valoración en Aura Estética.",
     seo: { title: "Aura Estética | Clínica estética en Santa Fe", description: "Demo de landing para clínica estética con faciales, depilación láser, tratamientos corporales, rejuvenecimiento facial y valoración.", keywords: ["clínica estética Santa Fe", "faciales", "depilación láser", "tratamientos corporales"] },
     hero: { eyebrow: "Estética premium en Santa Fe", headline: "Tratamientos estéticos con valoración previa, criterio profesional y atención discreta.", subheadline: "Conoce opciones faciales y corporales diseñadas para acompañar objetivos realistas, con información clara antes de reservar.", primaryCta: "Agendar valoración", secondaryCta: "Ver tratamientos" },
     trust: ["Valoración previa", "Atención discreta", "Agenda por WhatsApp", "Enfoque realista"],
@@ -68,7 +68,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Agenda en Santa Fe", description: "Reserva una valoración para revisar opciones faciales y corporales con atención discreta.", address: "Santa Fe, Álvaro Obregón, CDMX", mapEmbedUrl: mapEmbed("Santa Fe CDMX") }, colors: { primary: "#3B2F2F", accent: "#B88A76" }
   },
   {
-    slug: "fisioterapia", niche: "Fisioterapia y rehabilitación", businessName: "Centro Kinesis", tagline: "Rehabilitación y terapia manual con valoración funcional en Del Valle.", location: "Del Valle, CDMX", phone: "525500000004", whatsappMessage: "Hola, quiero agendar una valoración en Centro Kinesis.",
+    slug: "fisioterapia", niche: "Fisioterapia y rehabilitación", businessName: "Centro Kinesis", tagline: "Rehabilitación y terapia manual con valoración funcional en Del Valle.", location: "Del Valle, CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero agendar una valoración en Centro Kinesis.",
     seo: { title: "Centro Kinesis | Fisioterapia en Del Valle", description: "Demo de landing para fisioterapia con rehabilitación, terapia manual, lesiones deportivas, dolor lumbar y valoración funcional.", keywords: ["fisioterapia Del Valle", "rehabilitación", "terapia manual", "lesiones deportivas"] },
     hero: { eyebrow: "Fisioterapia en Del Valle", headline: "Recupera movilidad con un plan de rehabilitación claro y seguimiento profesional.", subheadline: "Agenda una valoración funcional para identificar necesidades, ordenar prioridades y definir sesiones según tu caso.", primaryCta: "Agendar valoración", secondaryCta: "Ver áreas de atención" },
     trust: ["Valoración funcional", "Atención por cita", "Seguimiento claro", "Del Valle CDMX"],
@@ -78,7 +78,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Centro de fisioterapia en Del Valle", description: "Agenda una valoración para revisar tu caso y definir una ruta de rehabilitación responsable.", address: "Del Valle, Benito Juárez, CDMX", mapEmbedUrl: mapEmbed("Colonia Del Valle CDMX") }, colors: { primary: "#183B56", accent: "#2F8F83" }
   },
   {
-    slug: "psicologia", niche: "Psicología premium", businessName: "Espacio Clara", tagline: "Terapia individual y de pareja en un entorno profesional y discreto.", location: "Condesa, CDMX", phone: "525500000005", whatsappMessage: "Hola, me interesa agendar una primera sesión en Espacio Clara.",
+    slug: "psicologia", niche: "Psicología premium", businessName: "Espacio Clara", tagline: "Terapia individual y de pareja en un entorno profesional y discreto.", location: "Condesa, CDMX", phone: "525545609027", whatsappMessage: "Hola, me interesa agendar una primera sesión en Espacio Clara.",
     seo: { title: "Espacio Clara | Psicología en Condesa", description: "Demo de landing para psicología premium con terapia individual, terapia de pareja, ansiedad, estrés y acompañamiento emocional.", keywords: ["psicóloga Condesa", "terapia individual", "terapia de pareja", "acompañamiento emocional"] },
     hero: { eyebrow: "Psicología en Condesa", headline: "Un espacio profesional para hablar, ordenar y acompañar procesos personales.", subheadline: "Agenda una primera sesión para explorar lo que estás viviendo y conocer una ruta de trabajo terapéutico sin promesas simplistas.", primaryCta: "Agendar primera sesión", secondaryCta: "Ver enfoque" },
     trust: ["Atención discreta", "Sesiones por cita", "Enfoque profesional", "Condesa CDMX"],
@@ -88,7 +88,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Terapia en Condesa", description: "Agenda una primera sesión en un entorno discreto, claro y profesional.", address: "Condesa, Cuauhtémoc, CDMX", mapEmbedUrl: mapEmbed("Condesa CDMX") }, colors: { primary: "#2E3A35", accent: "#A98663" }
   },
   {
-    slug: "nutricion", niche: "Nutrición y bienestar", businessName: "Método Raíz", tagline: "Nutrición práctica para hábitos sostenibles, rendimiento y seguimiento realista.", location: "Coyoacán, CDMX", phone: "525500000006", whatsappMessage: "Hola, quiero agendar una consulta nutricional en Método Raíz.",
+    slug: "nutricion", niche: "Nutrición y bienestar", businessName: "Método Raíz", tagline: "Nutrición práctica para hábitos sostenibles, rendimiento y seguimiento realista.", location: "Coyoacán, CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero agendar una consulta nutricional en Método Raíz.",
     seo: { title: "Método Raíz | Nutrición en Coyoacán", description: "Demo de landing para nutrición con consulta, plan personalizado, nutrición deportiva, cambio de hábitos y seguimiento mensual.", keywords: ["nutriólogo Coyoacán", "consulta nutricional", "plan personalizado", "nutrición deportiva"] },
     hero: { eyebrow: "Nutrición en Coyoacán", headline: "Planes nutricionales prácticos para construir hábitos que sí puedas sostener.", subheadline: "Agenda una consulta para revisar tu rutina, objetivos y preferencias antes de diseñar un plan claro y adaptable.", primaryCta: "Agendar consulta", secondaryCta: "Ver servicios" },
     trust: ["Plan personalizado", "Seguimiento mensual", "Hábitos sostenibles", "Coyoacán CDMX"],
@@ -98,7 +98,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Consulta nutricional en Coyoacán", description: "Agenda una consulta para construir un plan práctico, claro y compatible con tu rutina.", address: "Coyoacán, CDMX", mapEmbedUrl: mapEmbed("Coyoacán CDMX") }, colors: { primary: "#234236", accent: "#A77C44" }
   },
   {
-    slug: "abogado-migratorio", niche: "Abogado migratorio", businessName: "Rivera Legal", tagline: "Asesoría migratoria clara para personas, familias y profesionales en México.", location: "CDMX", phone: "525500000007", whatsappMessage: "Hola, quiero agendar una consulta migratoria con Rivera Legal.",
+    slug: "abogado-migratorio", niche: "Abogado migratorio", businessName: "Rivera Legal", tagline: "Asesoría migratoria clara para personas, familias y profesionales en México.", location: "CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero agendar una consulta migratoria con Rivera Legal.",
     seo: { title: "Rivera Legal | Abogado migratorio en CDMX", description: "Demo de landing para abogado migratorio con visas, regularización, residencia, nacionalidad y consultoría legal.", keywords: ["abogado migratorio CDMX", "regularización migratoria", "residencia México", "consultoría legal"] },
     hero: { eyebrow: "Derecho migratorio en México", headline: "Asesoría migratoria clara para tomar decisiones legales con mejor información.", subheadline: "Agenda una consulta para revisar tu situación, requisitos y rutas posibles sin promesas de resultado ni atajos riesgosos.", primaryCta: "Agendar consulta legal", secondaryCta: "Ver servicios" },
     trust: ["Consulta por cita", "Revisión documental", "Comunicación clara", "Sin garantías falsas"],
@@ -108,7 +108,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Consulta migratoria en CDMX", description: "Agenda una consulta para revisar tu caso con claridad y conocer los siguientes pasos posibles.", address: "Ciudad de México", mapEmbedUrl: mapEmbed("Ciudad de México") }, colors: { primary: "#1F2933", accent: "#9C7A3A" }
   },
   {
-    slug: "arquitectura", niche: "Arquitectura e interiorismo", businessName: "Estudio Umbral", tagline: "Diseño interior, remodelación y proyectos ejecutivos para espacios con intención.", location: "Lomas, CDMX", phone: "525500000008", whatsappMessage: "Hola, quiero conversar sobre un proyecto de diseño o remodelación con Estudio Umbral.",
+    slug: "arquitectura", niche: "Arquitectura e interiorismo", businessName: "Estudio Umbral", tagline: "Diseño interior, remodelación y proyectos ejecutivos para espacios con intención.", location: "Lomas, CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero conversar sobre un proyecto de diseño o remodelación con Estudio Umbral.",
     seo: { title: "Estudio Umbral | Arquitectura e interiorismo en Lomas", description: "Demo de landing para arquitectura con diseño interior, remodelación, proyecto ejecutivo, visualización 3D y supervisión de obra.", keywords: ["arquitectura Lomas", "interiorismo CDMX", "remodelación", "proyecto ejecutivo"] },
     hero: { eyebrow: "Arquitectura e interiorismo en Lomas", headline: "Espacios diseñados con criterio, proporción y una ejecución más ordenada.", subheadline: "Desde diseño interior hasta supervisión de obra, estructuramos proyectos residenciales y comerciales con una ruta clara.", primaryCta: "Cotizar proyecto", secondaryCta: "Ver servicios" },
     trust: ["Proyecto por etapas", "Visualización 3D", "Diseño interior", "Supervisión de obra"],
@@ -118,7 +118,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Proyectos en Lomas y CDMX", description: "Comparte la idea de tu proyecto para revisar alcance, estilo y siguientes pasos.", address: "Lomas, CDMX", mapEmbedUrl: mapEmbed("Lomas de Chapultepec CDMX") }, colors: { primary: "#1F2933", accent: "#B88A44" }
   },
   {
-    slug: "restaurante", niche: "Restaurante boutique", businessName: "Mesa Brava", tagline: "Cocina de temporada, reservas y cenas especiales en Roma Norte.", location: "Roma Norte, CDMX", phone: "525500000009", whatsappMessage: "Hola, quiero hacer una reserva en Mesa Brava.",
+    slug: "restaurante", niche: "Restaurante boutique", businessName: "Mesa Brava", tagline: "Cocina de temporada, reservas y cenas especiales en Roma Norte.", location: "Roma Norte, CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero hacer una reserva en Mesa Brava.",
     seo: { title: "Mesa Brava | Restaurante boutique en Roma Norte", description: "Demo de landing para restaurante boutique con reservas, menú de temporada, eventos privados, cenas especiales y catering.", keywords: ["restaurante Roma Norte", "reservas restaurante", "menú de temporada", "eventos privados"] },
     hero: { eyebrow: "Restaurante boutique en Roma Norte", headline: "Cocina de temporada para reservas, cenas especiales y eventos privados.", subheadline: "Explora el concepto, revisa opciones de servicio y reserva por WhatsApp una mesa o una experiencia privada.", primaryCta: "Reservar por WhatsApp", secondaryCta: "Ver experiencia" },
     trust: ["Reservas por WhatsApp", "Menú de temporada", "Eventos privados", "Roma Norte"],
@@ -128,7 +128,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Mesa Brava en Roma Norte", description: "Reserva una mesa o solicita información para cenas especiales y eventos privados.", address: "Roma Norte, Cuauhtémoc, CDMX", mapEmbedUrl: mapEmbed("Roma Norte CDMX restaurante") }, colors: { primary: "#2A241D", accent: "#B66B3A" }
   },
   {
-    slug: "academia-idiomas", niche: "Academia de idiomas", businessName: "Aula Norte", tagline: "Clases de idiomas para profesionales, empresas y estudiantes con objetivos claros.", location: "Online/CDMX", phone: "525500000010", whatsappMessage: "Hola, quiero información sobre cursos de idiomas en Aula Norte.",
+    slug: "academia-idiomas", niche: "Academia de idiomas", businessName: "Aula Norte", tagline: "Clases de idiomas para profesionales, empresas y estudiantes con objetivos claros.", location: "Online/CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero información sobre cursos de idiomas en Aula Norte.",
     seo: { title: "Aula Norte | Academia de idiomas Online/CDMX", description: "Demo de landing para academia de idiomas con inglés, francés, IELTS, clases empresariales y cursos personalizados.", keywords: ["academia de idiomas", "clases de inglés", "preparación IELTS", "clases empresariales"] },
     hero: { eyebrow: "Academia de idiomas Online/CDMX", headline: "Clases de idiomas diseñadas alrededor de objetivos reales, no temarios genéricos.", subheadline: "Aprende inglés o francés, prepara certificaciones y capacita equipos con rutas claras, horarios flexibles y seguimiento.", primaryCta: "Solicitar diagnóstico", secondaryCta: "Ver cursos" },
     trust: ["Clases online", "Preparación IELTS", "Empresas", "Cursos personalizados"],
@@ -138,7 +138,7 @@ const configs: LandingConfig[] = [
     locationSection: { title: "Clases online y atención en CDMX", description: "Solicita un diagnóstico para elegir la ruta de idioma más adecuada a tu objetivo.", address: "Online / Ciudad de México", mapEmbedUrl: mapEmbed("Ciudad de México") }, colors: { primary: "#183B56", accent: "#7D6AB5" }
   },
   {
-    slug: "veterinaria", niche: "Veterinaria premium", businessName: "Vet Álamo", tagline: "Atención veterinaria, vacunación y cuidado preventivo para mascotas en Narvarte.", location: "Narvarte, CDMX", phone: "525500000011", whatsappMessage: "Hola, quiero agendar una cita para mi mascota en Vet Álamo.",
+    slug: "veterinaria", niche: "Veterinaria premium", businessName: "Vet Álamo", tagline: "Atención veterinaria, vacunación y cuidado preventivo para mascotas en Narvarte.", location: "Narvarte, CDMX", phone: "525545609027", whatsappMessage: "Hola, quiero agendar una cita para mi mascota en Vet Álamo.",
     seo: { title: "Vet Álamo | Veterinaria en Narvarte", description: "Demo de landing para veterinaria con consulta, vacunación, estética canina, urgencias y nutrición animal.", keywords: ["veterinaria Narvarte", "consulta veterinaria", "vacunación mascotas", "estética canina"] },
     hero: { eyebrow: "Veterinaria en Narvarte", headline: "Cuidado veterinario claro, preventivo y cercano para perros y gatos.", subheadline: "Agenda consulta, vacunación o estética canina por WhatsApp y recibe orientación inicial para preparar la visita.", primaryCta: "Agendar cita", secondaryCta: "Ver servicios" },
     trust: ["Citas por WhatsApp", "Cuidado preventivo", "Narvarte CDMX", "Perros y gatos"],

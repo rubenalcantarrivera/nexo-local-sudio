@@ -175,7 +175,7 @@ Avoid overclaims. Do not guarantee medical outcomes, legal outcomes, SEO ranking
 Each demo has its own `phone` field:
 
 ```ts
-phone: "525500000001"
+phone: "525545609027"
 ```
 
 Use international format without symbols:
@@ -187,7 +187,7 @@ Use international format without symbols:
 Example for Mexico:
 
 ```text
-525512345678
+525545609027
 ```
 
 The link is generated in `lib/whatsapp.ts`:

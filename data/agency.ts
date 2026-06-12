@@ -5,9 +5,10 @@ export const agency = {
   shortName: "Nexo Local",
   tagline: "Convertimos búsquedas locales en mensajes, citas y cotizaciones.",
   descriptor: "Landing pages y sistemas de captación por WhatsApp para negocios locales.",
-  phone: "525512345678",
-  whatsappMessage: "Hola, quiero solicitar un diagnóstico para una landing page de mi negocio local.",
-  email: "hola@nexolocal.studio",
+  phone: "525545609027",
+  phoneDisplay: "55 4560 9027",
+  whatsappMessage: "Hola, quiero solicitar un diagnóstico para una landing page de mi negocio.",
+  email: "nexo.local.studio@gmail.com",
   location: "México / LATAM"
 };
 
