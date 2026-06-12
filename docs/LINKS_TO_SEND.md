@@ -1,59 +1,61 @@
 # Links para enviar
 
-URL pública actual:
+URL pública:
 
 ```txt
-PUBLIC_URL=https://nexo-local-studio.vercel.app
+PUBLIC_URL=https://YOUR-VERCEL-URL.vercel.app
 ```
+
+Reemplaza `PUBLIC_URL` con la URL real de Vercel cuando el despliegue del commit actual esté listo.
 
 ## Links principales
 
 Homepage:
 
 ```txt
-https://nexo-local-studio.vercel.app/
+PUBLIC_URL/
 ```
 
 Demo gallery:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos
+PUBLIC_URL/demos
 ```
 
 Dental demo:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos/dental
+PUBLIC_URL/demos/dental
 ```
 
 Aesthetic demo:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos/estetica
+PUBLIC_URL/demos/estetica
 ```
 
 Optical demo:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos/optica
+PUBLIC_URL/demos/optica
 ```
 
 Restaurant demo:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos/restaurante
+PUBLIC_URL/demos/restaurante
 ```
 
 Architecture demo:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos/arquitectura
+PUBLIC_URL/demos/arquitectura
 ```
 
 Veterinary demo:
 
 ```txt
-https://nexo-local-studio.vercel.app/demos/veterinaria
+PUBLIC_URL/demos/veterinaria
 ```
 
 ## Primer mensaje sugerido

@@ -8,7 +8,9 @@
   - WhatsApp para links: 525545609027
 - Build validado con `npm run typecheck` y `npm run build`.
 - Listo para Vercel.
-- URL actual de Vercel: https://nexo-local-studio.vercel.app
+- URL pública pendiente: reemplazar `PUBLIC_URL` cuando Vercel publique el commit actual.
+
+Nota operativa: el deploy por CLI puede quedar en `UNKNOWN` si el proyecto de Vercel no tiene acceso correcto al repositorio de GitHub o si la configuración del proyecto queda inconsistente. En ese caso, importa manualmente el repo desde Vercel y autoriza la GitHub App para `rubenalcantarrivera/nexo-local-sudio`.
 
 ## Archivos clave antes de producción
 

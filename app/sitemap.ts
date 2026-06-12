@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { landingConfigs } from "@/data/landingConfigs";
 
-// Temporary Vercel production URL. Replace with https://nexolocalstudio.com when the custom domain is connected.
-const baseUrl = "https://nexo-local-studio.vercel.app";
+// Production domain placeholder. Replace after connecting the final domain in Vercel.
+const baseUrl = "https://nexolocalstudio.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

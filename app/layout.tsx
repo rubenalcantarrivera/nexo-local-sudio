@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-// Temporary Vercel production URL. Replace with https://nexolocalstudio.com when the custom domain is connected.
-const siteUrl = "https://nexo-local-studio.vercel.app";
+// Production domain placeholder. Replace after connecting the final domain in Vercel.
+const siteUrl = "https://nexolocalstudio.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
