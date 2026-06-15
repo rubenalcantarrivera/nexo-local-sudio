@@ -109,7 +109,7 @@ nexo-local-studio/
 └── tsconfig.json
 ```
 
-## How the landing engine works
+## How the page system works
 
 Every demo is defined in `data/landingConfigs.ts` using the `LandingConfig` type in `data/types.ts`. The route `/demos/[slug]` uses `generateStaticParams()` to create one page per config and `generateMetadata()` to set SEO metadata per landing page.
 
@@ -228,7 +228,7 @@ Demo image references live in `data/landingConfigs.ts` under the `demoVisuals` m
 
 Before publishing a real client page:
 
-- Replace local placeholder SVGs with real client photography.
+- Replace local stock `.jpg` images with real client photography.
 - Keep image files inside `public/images/...`.
 - Update `src` and `alt` in `data/landingConfigs.ts`.
 - Check desktop and mobile crops.
@@ -280,7 +280,7 @@ The contact form is UI-only by default. In `components/ContactForm.tsx`, replace
 
 ## Suggested next improvements
 
-- Replace placeholder editorial SVGs with real approved client photography.
+- Replace stock images with real approved client photography.
 - Add Open Graph images per niche.
 - Add analytics events for WhatsApp clicks, phone clicks and form interactions.
 - Add a real Formspree or CRM integration.

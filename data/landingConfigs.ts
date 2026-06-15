@@ -2,134 +2,136 @@ import type { LandingConfig } from "./types";
 
 const mapEmbed = (query: string) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 
-// Replace these stock/editorial local placeholders with real client photography before production.
+// Replace these stock images with real client photography before production.
+// Demo configs may use the Nexo Local Studio WhatsApp number for sales previews.
+// Replace phone and whatsappMessage with the real client's number and message before publishing a real client page.
 const demoVisuals: Record<string, Pick<LandingConfig, "images" | "visual" | "disclaimer">> = {
   optica: {
     images: {
-      hero: { src: "/images/demos/optica-hero.svg", alt: "Interior editorial de óptica boutique con armazones premium" },
-      feature: { src: "/images/demos/optica-feature.svg", alt: "Detalle editorial de armazones y atención óptica" },
+      hero: { src: "/images/demos/optica-hero.jpg", alt: "Armazones premium en una óptica boutique luminosa" },
+      feature: { src: "/images/demos/optica-feature.jpg", alt: "Detalle de lentes y armazones seleccionados" },
       gallery: [
-        { src: "/images/demos/optica-gallery.svg", alt: "Ambiente luminoso de óptica premium" },
-        { src: "/images/demos/optica-feature.svg", alt: "Selección de lentes y ajustes personalizados" }
+        { src: "/images/demos/optica-hero.jpg", alt: "Mostrador de óptica con lentes premium" },
+        { src: "/images/demos/optica-feature.jpg", alt: "Selección de lentes y ajustes personalizados" }
       ]
     },
-    visual: { mood: "Bright retail premium", heroLayout: "split" }
+    visual: { mood: "Retail premium luminoso", heroLayout: "split" }
   },
   dental: {
     images: {
-      hero: { src: "/images/demos/dental-hero.svg", alt: "Clínica dental premium con ambiente claro y profesional" },
-      feature: { src: "/images/demos/dental-feature.svg", alt: "Detalle editorial de atención dental profesional" },
+      hero: { src: "/images/demos/dental-hero.jpg", alt: "Consultorio dental premium con ambiente claro y profesional" },
+      feature: { src: "/images/demos/dental-feature.jpg", alt: "Atención dental profesional en entorno clínico limpio" },
       gallery: [
-        { src: "/images/demos/dental-gallery.svg", alt: "Ambiente clínico dental sobrio y confiable" },
-        { src: "/images/demos/dental-feature.svg", alt: "Consulta dental en entorno premium" }
+        { src: "/images/demos/dental-hero.jpg", alt: "Ambiente clínico dental sobrio y confiable" },
+        { src: "/images/demos/dental-feature.jpg", alt: "Consulta dental en entorno premium" }
       ]
     },
-    visual: { mood: "Calm clinical premium", heroLayout: "split" },
+    visual: { mood: "Ambiente clínico premium", heroLayout: "split" },
     disclaimer: "Cada tratamiento se recomienda después de una valoración profesional."
   },
   estetica: {
     images: {
-      hero: { src: "/images/demos/estetica-hero.svg", alt: "Clínica estética con atmósfera champagne y tratamiento facial" },
-      feature: { src: "/images/demos/estetica-feature.svg", alt: "Sala de valoración estética con estilo cálido y refinado" },
+      hero: { src: "/images/demos/estetica-hero.jpg", alt: "Sala de tratamiento estética con ambiente cálido y premium" },
+      feature: { src: "/images/demos/estetica-feature.jpg", alt: "Detalle de skincare y cuidado facial en clínica estética" },
       gallery: [
-        { src: "/images/demos/estetica-gallery.svg", alt: "Ambiente spa premium para tratamientos estéticos" },
-        { src: "/images/demos/estetica-feature.svg", alt: "Detalle de skincare y cuidado facial" }
+        { src: "/images/demos/estetica-hero.jpg", alt: "Ambiente spa premium para tratamientos estéticos" },
+        { src: "/images/demos/estetica-feature.jpg", alt: "Detalle de skincare y cuidado facial" }
       ]
     },
-    visual: { mood: "Spa-like luxury", heroLayout: "immersive" },
+    visual: { mood: "Estética cálida premium", heroLayout: "immersive" },
     disclaimer: "Los tratamientos se recomiendan después de una valoración. Los resultados pueden variar."
   },
   fisioterapia: {
     images: {
-      hero: { src: "/images/demos/fisioterapia-hero.svg", alt: "Espacio de fisioterapia con enfoque en movimiento y rehabilitación" },
-      feature: { src: "/images/demos/fisioterapia-feature.svg", alt: "Entorno de terapia funcional y valoración de movimiento" },
+      hero: { src: "/images/demos/fisioterapia-hero.jpg", alt: "Sesión de fisioterapia con movimiento guiado" },
+      feature: { src: "/images/demos/fisioterapia-feature.jpg", alt: "Entorno de rehabilitación y terapia funcional" },
       gallery: [
-        { src: "/images/demos/fisioterapia-gallery.svg", alt: "Ambiente de rehabilitación limpio y profesional" },
-        { src: "/images/demos/fisioterapia-feature.svg", alt: "Detalle de terapia manual y seguimiento" }
+        { src: "/images/demos/fisioterapia-hero.jpg", alt: "Ambiente de rehabilitación limpio y profesional" },
+        { src: "/images/demos/fisioterapia-feature.jpg", alt: "Detalle de terapia manual y seguimiento" }
       ]
     },
-    visual: { mood: "Active calm rehab", heroLayout: "split" },
+    visual: { mood: "Rehabilitación funcional", heroLayout: "split" },
     disclaimer: "El plan de atención depende de la valoración funcional de cada paciente."
   },
   psicologia: {
     images: {
-      hero: { src: "/images/demos/psicologia-hero.svg", alt: "Consultorio de psicología cálido, discreto y profesional" },
-      feature: { src: "/images/demos/psicologia-feature.svg", alt: "Interior tranquilo para terapia individual" },
+      hero: { src: "/images/demos/psicologia-hero.jpg", alt: "Consultorio profesional cálido y discreto" },
+      feature: { src: "/images/demos/psicologia-feature.jpg", alt: "Interior tranquilo para una sesión terapéutica" },
       gallery: [
-        { src: "/images/demos/psicologia-gallery.svg", alt: "Ambiente sereno de consulta psicológica" },
-        { src: "/images/demos/psicologia-feature.svg", alt: "Sala profesional para conversación terapéutica" }
+        { src: "/images/demos/psicologia-hero.jpg", alt: "Ambiente sereno de consulta psicológica" },
+        { src: "/images/demos/psicologia-feature.jpg", alt: "Sala profesional para conversación terapéutica" }
       ]
     },
-    visual: { mood: "Warm discreet therapy", heroLayout: "editorial" },
+    visual: { mood: "Espacio cálido y discreto", heroLayout: "editorial" },
     disclaimer: "La atención psicológica no sustituye servicios de emergencia. En crisis, contacta servicios locales de emergencia."
   },
   nutricion: {
     images: {
-      hero: { src: "/images/demos/nutricion-hero.svg", alt: "Mesa de nutrición con ingredientes naturales y consulta profesional" },
-      feature: { src: "/images/demos/nutricion-feature.svg", alt: "Detalle de alimentos frescos y plan nutricional" },
+      hero: { src: "/images/demos/nutricion-hero.jpg", alt: "Mesa con alimentos naturales para consulta nutricional" },
+      feature: { src: "/images/demos/nutricion-feature.jpg", alt: "Ingredientes frescos y plan nutricional personalizado" },
       gallery: [
-        { src: "/images/demos/nutricion-gallery.svg", alt: "Ambiente wellness orgánico y profesional" },
-        { src: "/images/demos/nutricion-feature.svg", alt: "Consulta nutricional con enfoque práctico" }
+        { src: "/images/demos/nutricion-hero.jpg", alt: "Ambiente wellness orgánico y profesional" },
+        { src: "/images/demos/nutricion-feature.jpg", alt: "Consulta nutricional con enfoque práctico" }
       ]
     },
-    visual: { mood: "Organic grounded wellness", heroLayout: "split" },
+    visual: { mood: "Bienestar natural", heroLayout: "split" },
     disclaimer: "Los planes se adaptan a cada persona después de una valoración."
   },
   "abogado-migratorio": {
     images: {
-      hero: { src: "/images/demos/abogado-migratorio-hero.svg", alt: "Despacho legal sobrio con documentos y mesa de consulta" },
-      feature: { src: "/images/demos/abogado-migratorio-feature.svg", alt: "Detalle editorial de documentos legales y asesoría" },
+      hero: { src: "/images/demos/abogado-migratorio-hero.jpg", alt: "Despacho legal sobrio con mesa de consulta y documentos" },
+      feature: { src: "/images/demos/abogado-migratorio-feature.jpg", alt: "Detalle de documentos legales y asesoría profesional" },
       gallery: [
-        { src: "/images/demos/abogado-migratorio-gallery.svg", alt: "Ambiente profesional de consultoría migratoria" },
-        { src: "/images/demos/abogado-migratorio-feature.svg", alt: "Mesa de trabajo legal con documentos ordenados" }
+        { src: "/images/demos/abogado-migratorio-hero.jpg", alt: "Ambiente profesional de consultoría migratoria" },
+        { src: "/images/demos/abogado-migratorio-feature.jpg", alt: "Mesa de trabajo legal con documentos ordenados" }
       ]
     },
-    visual: { mood: "Serious legal trust", heroLayout: "editorial" },
+    visual: { mood: "Confianza legal sobria", heroLayout: "editorial" },
     disclaimer: "La información inicial no constituye asesoría legal definitiva. Cada caso requiere revisión documental."
   },
   arquitectura: {
     images: {
-      hero: { src: "/images/demos/arquitectura-hero.svg", alt: "Interior arquitectónico moderno con composición editorial" },
-      feature: { src: "/images/demos/arquitectura-feature.svg", alt: "Materiales, planos y detalles de diseño interior" },
+      hero: { src: "/images/demos/arquitectura-hero.jpg", alt: "Interior residencial moderno con composición arquitectónica" },
+      feature: { src: "/images/demos/arquitectura-feature.jpg", alt: "Materiales y detalles de diseño interior premium" },
       gallery: [
-        { src: "/images/demos/arquitectura-gallery.svg", alt: "Ambiente residencial contemporáneo de alto diseño" },
-        { src: "/images/demos/arquitectura-feature.svg", alt: "Moodboard arquitectónico con acabados premium" }
+        { src: "/images/demos/arquitectura-hero.jpg", alt: "Ambiente residencial contemporáneo de alto diseño" },
+        { src: "/images/demos/arquitectura-feature.jpg", alt: "Moodboard arquitectónico con acabados premium" }
       ]
     },
-    visual: { mood: "Editorial architecture", heroLayout: "editorial" }
+    visual: { mood: "Arquitectura editorial", heroLayout: "editorial" }
   },
   restaurante: {
     images: {
-      hero: { src: "/images/demos/restaurante-hero.svg", alt: "Restaurante boutique cálido con mesa servida y atmósfera íntima" },
-      feature: { src: "/images/demos/restaurante-feature.svg", alt: "Detalle de plato de temporada y mesa elegante" },
+      hero: { src: "/images/demos/restaurante-hero.jpg", alt: "Restaurante boutique con comedor cálido y mesa servida" },
+      feature: { src: "/images/demos/restaurante-feature.jpg", alt: "Plato de temporada servido con presentación elegante" },
       gallery: [
-        { src: "/images/demos/restaurante-gallery.svg", alt: "Comedor de restaurante boutique con luz cálida" },
-        { src: "/images/demos/restaurante-feature.svg", alt: "Mesa para cena especial y eventos privados" }
+        { src: "/images/demos/restaurante-hero.jpg", alt: "Comedor de restaurante boutique con luz cálida" },
+        { src: "/images/demos/restaurante-feature.jpg", alt: "Mesa para cena especial y eventos privados" }
       ]
     },
-    visual: { mood: "Warm atmospheric dining", heroLayout: "immersive" }
+    visual: { mood: "Comedor boutique cálido", heroLayout: "immersive" }
   },
   "academia-idiomas": {
     images: {
-      hero: { src: "/images/demos/academia-idiomas-hero.svg", alt: "Academia de idiomas con materiales de estudio y clase profesional" },
-      feature: { src: "/images/demos/academia-idiomas-feature.svg", alt: "Detalle de aprendizaje online y preparación de idioma" },
+      hero: { src: "/images/demos/academia-idiomas-hero.jpg", alt: "Clase profesional de idiomas con estudiantes y materiales de estudio" },
+      feature: { src: "/images/demos/academia-idiomas-feature.jpg", alt: "Materiales de estudio para aprendizaje de idiomas" },
       gallery: [
-        { src: "/images/demos/academia-idiomas-gallery.svg", alt: "Ambiente educativo moderno para clases de idiomas" },
-        { src: "/images/demos/academia-idiomas-feature.svg", alt: "Mesa de estudio con cuadernos y sesión virtual" }
+        { src: "/images/demos/academia-idiomas-hero.jpg", alt: "Ambiente educativo moderno para clases de idiomas" },
+        { src: "/images/demos/academia-idiomas-feature.jpg", alt: "Mesa de estudio con cuadernos y sesión virtual" }
       ]
     },
-    visual: { mood: "Clean modern education", heroLayout: "split" }
+    visual: { mood: "Educación moderna", heroLayout: "split" }
   },
   veterinaria: {
     images: {
-      hero: { src: "/images/demos/veterinaria-hero.svg", alt: "Clínica veterinaria cálida con atención profesional para mascotas" },
-      feature: { src: "/images/demos/veterinaria-feature.svg", alt: "Detalle de consulta veterinaria limpia y cercana" },
+      hero: { src: "/images/demos/veterinaria-hero.jpg", alt: "Perro en consulta veterinaria con atención cálida" },
+      feature: { src: "/images/demos/veterinaria-feature.jpg", alt: "Cuidado veterinario cercano en entorno limpio" },
       gallery: [
-        { src: "/images/demos/veterinaria-gallery.svg", alt: "Ambiente de cuidado veterinario calmado y profesional" },
-        { src: "/images/demos/veterinaria-feature.svg", alt: "Atención preventiva para perros y gatos" }
+        { src: "/images/demos/veterinaria-hero.jpg", alt: "Ambiente de cuidado veterinario calmado y profesional" },
+        { src: "/images/demos/veterinaria-feature.jpg", alt: "Atención preventiva para perros y gatos" }
       ]
     },
-    visual: { mood: "Warm pet care", heroLayout: "split" },
+    visual: { mood: "Cuidado veterinario cálido", heroLayout: "split" },
     disclaimer: "El diagnóstico y tratamiento dependen de la valoración veterinaria."
   }
 };

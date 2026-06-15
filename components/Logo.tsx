@@ -46,7 +46,7 @@ export function Logo({ variant = "full", tone = "dark", className }: LogoProps) 
 
   return (
     <span className={cn("inline-flex items-center gap-3", className)}>
-      <span className={cn("grid h-11 w-11 place-items-center rounded-2xl border", tone === "light" ? "border-white/15 bg-white/10" : "border-brand-border bg-white/70 shadow-card")}>
+      <span className={cn("grid h-11 w-11 place-items-center border-l-2", tone === "light" ? "border-brand-accent/80" : "border-brand-accent")}>
         <LogoMark tone={tone} className="h-8 w-8" />
       </span>
       <LogoWordmark compact={variant === "compact"} tone={tone} />

@@ -36,7 +36,11 @@ const process = [
   { step: "04", title: "Entrega funcional", description: "Publicamos o dejamos lista la página con WhatsApp, formulario, mapa y SEO básico." }
 ];
 
-const flow = ["Búsqueda local", "Página clara", "WhatsApp"];
+const flow = [
+  { step: "01", title: "Búsqueda local" },
+  { step: "02", title: "Página clara" },
+  { step: "03", title: "WhatsApp" }
+];
 
 export default function HomePage() {
   const whatsappHref = createWhatsAppLink(agency.phone, agency.whatsappMessage);
@@ -46,52 +50,67 @@ export default function HomePage() {
     <main className="min-h-screen bg-brand-background">
       <Header ctaHref={whatsappHref} />
 
-      <section className="relative overflow-hidden border-b border-brand-border bg-paper">
-        <div className="absolute inset-0 bg-line-grid opacity-35" aria-hidden="true" />
-        <div className="container-page relative grid gap-12 py-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:py-16 xl:py-20">
+      <section className="relative border-b border-brand-border bg-paper">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute inset-0 bg-line-grid opacity-25" />
+        </div>
+        <div className="container-page relative grid gap-10 py-12 sm:py-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:py-16">
           <div className="reveal-in">
             <p className="eyebrow">Estudio boutique para negocios locales</p>
-            <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.45rem,4.7vw,4.45rem)] font-semibold leading-[1.02] text-brand-primary">
+            <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.35rem,4.05vw,3.8rem)] font-semibold leading-[1.02] text-brand-primary">
               Landing pages que convierten búsquedas locales en mensajes, citas y cotizaciones.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-brand-muted sm:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">
               Diseñamos páginas rápidas, claras y visualmente premium para negocios locales que necesitan verse mejor, generar confianza y facilitar el contacto desde móvil.
             </p>
             <p className="mt-5 max-w-xl border-l-2 border-brand-accent pl-4 text-sm font-semibold text-brand-primary">
               Para clínicas, ópticas, restaurantes, despachos y servicios premium.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={whatsappHref}>Solicitar diagnóstico</ButtonLink>
               <ButtonLink href="/demos" variant="secondary">Ver demos</ButtonLink>
             </div>
-            <div className="mt-9 grid max-w-2xl grid-cols-3 border-y border-brand-border bg-white/45 text-center text-xs font-semibold uppercase tracking-[0.16em] text-brand-muted">
-              {flow.map((item) => <div key={item} className="border-r border-brand-border px-3 py-4 last:border-r-0">{item}</div>)}
+            <div className="mt-7 grid max-w-2xl gap-0 border-y border-brand-border bg-white/35 sm:grid-cols-3">
+              {flow.map((item) => (
+                <div key={item.step} className="flex items-center gap-3 border-b border-brand-border px-4 py-4 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
+                  <span className="font-display text-2xl font-semibold text-brand-accent/80">{item.step}</span>
+                  <span className="text-sm font-semibold text-brand-primary">{item.title}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative min-h-[500px] lg:min-h-[560px]">
-            <ImagePanel image={{ src: "/images/agency/agency-collage.svg", alt: "Collage editorial de negocios locales premium" }} priority className="absolute right-0 top-0 h-[390px] w-full rounded-[2.6rem] lg:h-[500px]" />
-            <div className="absolute left-0 top-8 hidden w-64 overflow-hidden border border-white/70 bg-white/90 p-4 shadow-soft backdrop-blur md:block">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-accent">Google Maps</p>
-              <p className="mt-3 font-display text-2xl font-semibold text-brand-primary">Reputación local lista para convertir</p>
-              <div className="mt-5 space-y-3">
-                {["Servicios claros", "Ubicación visible", "Botón directo"].map((item) => <div key={item} className="border-t border-brand-border pt-3 text-sm text-brand-muted">{item}</div>)}
+          <div className="relative">
+            <div className="grid gap-4 sm:grid-cols-[1.05fr_0.75fr]">
+              <ImagePanel
+                image={{ src: "/images/agency/local-business-consultation.jpg", alt: "Consultoría para negocio local premium" }}
+                priority
+                className="aspect-[4/3] rounded-[2rem] sm:aspect-[4/4] lg:aspect-[5/4]"
+                imageClassName="min-h-0"
+              />
+              <div className="grid gap-4">
+                <ImagePanel
+                  image={{ src: "/images/agency/premium-interior.jpg", alt: "Interior premium representativo de servicios locales" }}
+                  className="aspect-[4/3] rounded-[1.5rem]"
+                  imageClassName="min-h-0"
+                />
+                <ImagePanel
+                  image={{ src: "/images/agency/boutique-restaurant.jpg", alt: "Restaurante boutique con presencia local" }}
+                  className="aspect-[4/3] rounded-[1.5rem]"
+                  imageClassName="min-h-0"
+                />
               </div>
             </div>
-            <div className="absolute bottom-0 left-5 right-5 rounded-[2rem] border border-white/70 bg-white/92 p-5 shadow-soft backdrop-blur sm:left-auto sm:w-[440px]">
-              <div className="flex items-start justify-between gap-5">
+            <div className="relative z-10 mx-4 -mt-8 rounded-[1.5rem] border border-white/80 bg-white/95 p-5 shadow-soft backdrop-blur sm:mx-8 lg:mx-10">
+              <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center">
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-accent">Mini landing preview</p>
-                  <h2 className="mt-2 font-display text-3xl font-semibold text-brand-primary">Servicios, reseñas, mapa y WhatsApp.</h2>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-accent">Ruta de contacto</p>
+                  <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-brand-primary">Google Maps, servicios claros y WhatsApp en una sola experiencia.</h2>
                 </div>
-                <span className="hidden border-l border-brand-border pl-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-brand-muted sm:block">72h<br />first draft</span>
-              </div>
-              <div className="mt-5 grid grid-cols-3 gap-2">
-                {["Clínica", "Restaurante", "Despacho"].map((item) => <div key={item} className="bg-brand-background px-3 py-3 text-center text-xs font-semibold text-brand-primary">{item}</div>)}
-              </div>
-              <div className="mt-5 rounded-2xl bg-[#102233] p-4 text-white">
-                <p className="text-sm font-semibold">Hola, quiero cotizar una cita.</p>
-                <p className="mt-1 text-xs text-white/58">Mensaje prellenado listo para WhatsApp.</p>
+                <div className="rounded-2xl bg-[#102233] px-5 py-4 text-white">
+                  <p className="text-sm font-semibold">Mensaje listo para enviar</p>
+                  <p className="mt-1 text-xs text-white/60">Sin fricción desde móvil.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -110,10 +129,10 @@ export default function HomePage() {
         <SectionHeader eyebrow="Servicios" title="Un sistema visual y comercial para que el negocio se entienda rápido." description="No se trata de decorar una página. Se trata de ordenar reputación, servicios, ubicación y acción en una experiencia móvil clara." />
         <div className="mt-10 grid gap-5 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <article className="editorial-frame lg:row-span-2">
-            <ImagePanel image={{ src: "/images/agency/studio-system.svg", alt: "Sistema visual de landing pages para negocios locales" }} className="h-full min-h-[520px] rounded-none border-0 shadow-none" />
+            <ImagePanel image={{ src: "/images/agency/premium-interior.jpg", alt: "Interior premium que representa una presencia digital cuidada" }} className="h-full min-h-[520px] rounded-none border-0 shadow-none" imageClassName="min-h-0" />
             <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/58">Estructura reutilizable</p>
-              <h3 className="mt-3 font-display text-4xl font-semibold">Un motor para adaptar nichos sin empezar de cero.</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">Presencia premium</p>
+              <h3 className="mt-3 font-display text-4xl font-semibold">Diseño, mensaje y contacto en una sola página clara.</h3>
             </div>
           </article>
           {services.map((service) => (
@@ -146,7 +165,7 @@ export default function HomePage() {
       <section className="bg-white section-pad">
         <div className="container-page">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeader eyebrow="Demos" title="Galería de sitios por nicho." description="Explora ejemplos client-facing para negocios locales. Cada demo usa el mismo motor config-driven y assets locales estables." />
+            <SectionHeader eyebrow="Demos" title="Galería de sitios por nicho." description="Explora ejemplos de páginas para distintos negocios locales. Cada demo muestra una experiencia visual clara, premium y conectada a WhatsApp." />
             <ButtonLink href="/demos" variant="secondary" className="shrink-0">Ver todos</ButtonLink>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{featuredDemos.map((demo) => <DemoCard key={demo.slug} demo={demo} />)}</div>
@@ -160,7 +179,7 @@ export default function HomePage() {
 
       <section className="bg-white section-pad">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <ImagePanel image={{ src: "/images/agency/contact-visual.svg", alt: "Sistema de conversión local desde búsqueda a WhatsApp" }} className="h-[460px]" />
+          <ImagePanel image={{ src: "/images/agency/local-business-consultation.jpg", alt: "Reunión de estrategia para presencia digital de negocio local" }} className="h-[460px]" imageClassName="min-h-0" />
           <div>
             <SectionHeader eyebrow="Nichos" title="Hecho para negocios locales con reputación y capacidad de pago." description="Funciona especialmente bien cuando ya existen reseñas, ubicación o demanda, pero la presencia web no refleja ese nivel." />
             <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-brand-border bg-brand-border sm:grid-cols-3">
