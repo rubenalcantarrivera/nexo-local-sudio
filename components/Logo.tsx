@@ -29,7 +29,7 @@ export function LogoMark({ className, tone = "dark" }: Pick<LogoProps, "classNam
 
 export function LogoWordmark({ compact = false, tone = "dark" }: { compact?: boolean; tone?: LogoProps["tone"] }) {
   const text = tone === "light" ? "text-white" : "text-brand-primary";
-  const muted = tone === "light" ? "text-white/58" : "text-brand-muted";
+  const muted = tone === "light" ? "text-white/78" : "text-brand-muted";
 
   return (
     <span className="leading-none">

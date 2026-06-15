@@ -11,21 +11,21 @@ type ImagePanelProps = {
 
 export function ImagePanel({ image, className, imageClassName, priority = false, label }: ImagePanelProps) {
   return (
-    <figure className={cn("group relative overflow-hidden rounded-[2rem] border border-white/50 bg-brand-softAccent shadow-soft", className)}>
+    <figure className={cn("relative overflow-hidden rounded-[2rem] border border-white/50 bg-brand-softAccent shadow-soft", className)}>
       {image ? (
         <img
           src={image.src}
           alt={image.alt}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
-          className={cn("h-full min-h-[260px] w-full object-cover transition duration-700 group-hover:scale-[1.04]", imageClassName)}
+          className={cn("h-full min-h-[260px] w-full object-cover", imageClassName)}
         />
       ) : (
         <div className="h-full min-h-[260px] bg-line-grid" aria-hidden="true" />
       )}
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0)_42%,rgba(11,18,32,.36)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,.08)_12%,rgba(11,18,32,.18)_48%,rgba(11,18,32,.78)_100%)]" />
       {label ? (
-        <figcaption className="absolute bottom-4 left-4 right-4 text-xs font-semibold uppercase tracking-[0.22em] text-white/75">
+        <figcaption className="absolute bottom-4 left-4 right-4 border-l-2 border-white/80 pl-3 text-xs font-bold uppercase tracking-[0.2em] text-white">
           {label}
         </figcaption>
       ) : null}

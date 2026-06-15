@@ -10,8 +10,8 @@ export function DemoCard({ demo }: Props) {
     <Link href={`/demos/${demo.slug}`} className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-brand-border bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-soft">
       <div className="relative aspect-[16/11] overflow-hidden bg-brand-softAccent">
         {image ? <img src={image.src} alt={image.alt} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.05]" /> : null}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,0)_45%,rgba(11,18,32,.34)_100%)]" />
-        <div className="absolute left-4 top-4 border-l-2 border-white/80 bg-black/35 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,18,32,.04)_25%,rgba(11,18,32,.5)_100%)]" />
+        <div className="absolute left-4 top-4 border-l-2 border-white/90 bg-black/60 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur">
           {demo.niche}
         </div>
       </div>

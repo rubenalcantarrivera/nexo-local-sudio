@@ -6,8 +6,8 @@ export function AgencyCTA({ title = "¿Tu negocio ya tiene reputación local, pe
     <section className="container-page py-16 lg:py-24">
       <div className="dark-grain texture-overlay relative overflow-hidden rounded-[2.5rem] p-8 text-white shadow-soft sm:p-10 lg:p-14">
         <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-softAccent">Diagnóstico sin compromiso</p><h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">{title}</h2><p className="mt-5 max-w-2xl text-base text-white/72 sm:text-lg">{description}</p></div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end"><ButtonLink href={primaryHref} className="!bg-white !text-brand-primary hover:!bg-brand-softAccent">Solicitar diagnóstico</ButtonLink><ButtonLink href={secondaryHref} variant="secondary" className="border-white/25 bg-white/10 text-white hover:bg-white/20">Ver demos</ButtonLink></div>
+          <div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-softAccent">Diagnóstico sin compromiso</p><h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">{title}</h2><p className="mt-5 max-w-2xl text-base text-white/86 sm:text-lg">{description}</p></div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end"><ButtonLink href={primaryHref} variant="light">Solicitar diagnóstico</ButtonLink><ButtonLink href={secondaryHref} variant="secondaryOnDark">Ver demos</ButtonLink></div>
         </div>
       </div>
     </section>

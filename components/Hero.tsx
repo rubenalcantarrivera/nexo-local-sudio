@@ -40,16 +40,16 @@ export function Hero({ config, whatsappHref }: Props) {
           {heroImage ? (
             <img src={heroImage.src} alt={heroImage.alt} loading="eager" decoding="async" className="h-full w-full object-cover" />
           ) : null}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,18,32,.38),rgba(11,18,32,.06)_45%,rgba(11,18,32,.42))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,18,32,.54),rgba(11,18,32,.12)_48%,rgba(11,18,32,.56))]" />
           {gallery[1] ? (
             <img src={gallery[1].src} alt={gallery[1].alt} loading="lazy" decoding="async" className="absolute right-5 top-5 hidden aspect-[4/3] w-40 rounded-[1.2rem] border border-white/60 object-cover shadow-card sm:block xl:w-48" />
           ) : null}
           {config.visual?.mood ? (
-            <p className="absolute left-5 top-5 max-w-[15rem] border-l-2 border-white/80 bg-black/25 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/90 backdrop-blur">
+            <p className="absolute left-5 top-5 max-w-[15rem] border-l-2 border-white/90 bg-black/65 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-card backdrop-blur">
               {config.visual.mood}
             </p>
           ) : null}
-          <div className="absolute bottom-4 left-4 right-4 grid gap-4 rounded-[1.35rem] border border-white/70 bg-white/94 p-5 shadow-soft backdrop-blur sm:bottom-5 sm:left-5 sm:right-auto sm:w-[420px]">
+          <div className="absolute bottom-4 left-4 right-4 grid gap-4 rounded-[1.35rem] border border-white/80 bg-white/[0.97] p-5 shadow-soft backdrop-blur sm:bottom-5 sm:left-5 sm:right-auto sm:w-[420px]">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--landing-accent)]">Agenda y contacto</p>

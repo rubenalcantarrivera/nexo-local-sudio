@@ -107,9 +107,9 @@ export default function HomePage() {
                   <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-brand-accent">Ruta de contacto</p>
                   <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-brand-primary">Google Maps, servicios claros y WhatsApp en una sola experiencia.</h2>
                 </div>
-                <div className="rounded-2xl bg-[#102233] px-5 py-4 text-white">
+                <div className="rounded-2xl bg-[#0B1220] px-5 py-4 text-white shadow-card">
                   <p className="text-sm font-semibold">Mensaje listo para enviar</p>
-                  <p className="mt-1 text-xs text-white/60">Sin fricción desde móvil.</p>
+                  <p className="mt-1 text-xs text-white/84">Sin fricción desde móvil.</p>
                 </div>
               </div>
             </div>
@@ -130,9 +130,9 @@ export default function HomePage() {
         <div className="mt-10 grid gap-5 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <article className="editorial-frame lg:row-span-2">
             <ImagePanel image={{ src: "/images/agency/premium-interior.jpg", alt: "Interior premium que representa una presencia digital cuidada" }} className="h-full min-h-[520px] rounded-none border-0 shadow-none" imageClassName="min-h-0" />
-            <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/70">Presencia premium</p>
-              <h3 className="mt-3 font-display text-4xl font-semibold">Diseño, mensaje y contacto en una sola página clara.</h3>
+            <div className="absolute bottom-0 left-0 right-0 bg-[linear-gradient(180deg,rgba(11,18,32,0),rgba(11,18,32,.88)_34%,rgba(11,18,32,.96))] p-7 pt-24 text-white">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-white/88">Presencia premium</p>
+              <h3 className="mt-3 max-w-md font-display text-4xl font-semibold leading-tight text-white drop-shadow-sm">Diseño, mensaje y contacto en una sola página clara.</h3>
             </div>
           </article>
           {services.map((service) => (
@@ -153,7 +153,7 @@ export default function HomePage() {
               ["Fricción", "El visitante duda, compara, se sale o no encuentra un botón claro."],
               ["Después", "Servicios, prueba social, ubicación y WhatsApp en una sola ruta."],
             ].map(([title, text]) => (
-              <article key={title} className="border border-white/15 bg-white/10 p-7 backdrop-blur">
+              <article key={title} className="border border-white/20 bg-white/[0.14] p-7 backdrop-blur">
                 <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-softAccent">{title}</p>
                 <p className="mt-5 font-display text-3xl font-semibold leading-tight text-white">{text}</p>
               </article>
