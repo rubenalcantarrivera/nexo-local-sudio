@@ -58,7 +58,7 @@ export default function HomePage() {
           <div className="reveal-in">
             <p className="eyebrow">Estudio boutique para negocios locales</p>
             <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.35rem,4.05vw,3.8rem)] font-semibold leading-[1.02] text-brand-primary">
-              Páginas web para negocios locales que quieren recibir más mensajes por WhatsApp.
+              Creamos la web que tu negocio necesita. Conectamos los clientes que buscas.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">
               Creamos páginas rápidas, claras y profesionales para que tus clientes vean tus servicios, ubicación, reseñas y te contacten desde el celular.
