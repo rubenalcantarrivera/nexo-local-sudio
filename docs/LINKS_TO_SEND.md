@@ -16,43 +16,43 @@ Homepage:
 PUBLIC_URL/
 ```
 
-Demo gallery:
+Galería de ejemplos:
 
 ```txt
 PUBLIC_URL/demos
 ```
 
-Dental demo:
+Ejemplo dental:
 
 ```txt
 PUBLIC_URL/demos/dental
 ```
 
-Aesthetic demo:
+Ejemplo estética:
 
 ```txt
 PUBLIC_URL/demos/estetica
 ```
 
-Optical demo:
+Ejemplo óptica:
 
 ```txt
 PUBLIC_URL/demos/optica
 ```
 
-Restaurant demo:
+Ejemplo restaurante:
 
 ```txt
 PUBLIC_URL/demos/restaurante
 ```
 
-Architecture demo:
+Ejemplo arquitectura:
 
 ```txt
 PUBLIC_URL/demos/arquitectura
 ```
 
-Veterinary demo:
+Ejemplo veterinaria:
 
 ```txt
 PUBLIC_URL/demos/veterinaria
@@ -62,13 +62,13 @@ PUBLIC_URL/demos/veterinaria
 
 Hola, [Nombre]. Vi que [Negocio] ya tiene presencia en Google Maps y señales claras de reputación local.
 
-Trabajo bajo la marca Nexo Local Studio. Creamos páginas rápidas, visualmente premium y conectadas a WhatsApp para negocios locales que quieren presentar mejor sus servicios y facilitar el contacto desde móvil.
+Trabajo bajo la marca Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Te comparto una demo conceptual para negocios de tu sector:
+Te comparto un ejemplo para negocios de tu sector:
 [LINK]
 
-La idea no es hacer una web complicada, sino una página clara con servicios, ubicación, reseñas, preguntas frecuentes y botón directo a WhatsApp.
+La idea es que tus clientes puedan ver servicios, ubicación, reseñas y escribirte fácilmente desde el celular.
 
-Los proyectos empiezan desde $6,900 MXN y la entrega puede hacerse en 72 horas desde materiales completos.
+Tenemos precios de lanzamiento desde $2,500 MXN, con opciones de $4,500 y $6,500 según el nivel de detalle que necesites.
 
 Nota: cuando se conecte el dominio final, reemplaza la URL de Vercel por `https://nexolocalstudio.com`.

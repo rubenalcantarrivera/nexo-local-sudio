@@ -15,7 +15,13 @@ export function PricingCards({ packages, ctaHref }: Props) {
           <ul className="mt-6 flex flex-1 flex-col gap-3 text-sm text-brand-text">
             {item.includes.map((feature) => <li key={feature} className="flex gap-3"><span className="shrink-0 font-semibold text-brand-accent">✓</span><span>{feature}</span></li>)}
           </ul>
-          <ButtonLink href={ctaHref} variant={item.highlighted ? "primary" : "secondary"} className="mt-8 w-full">Solicitar {item.name}</ButtonLink>
+          {item.notIncluded?.length ? (
+            <div className="mt-6 border-t border-brand-border pt-5">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-muted">No incluido</p>
+              <p className="mt-2 text-sm leading-7 text-brand-muted">{item.notIncluded.join(", ")}.</p>
+            </div>
+          ) : null}
+          <ButtonLink href={ctaHref} variant={item.highlighted ? "primary" : "secondary"} className="mt-8 w-full">{item.cta ?? `Cotizar ${item.name}`}</ButtonLink>
         </article>
       ))}
     </div>

@@ -2,7 +2,7 @@
   "name": "nexo-local-studio",
   "version": "1.0.0",
   "private": true,
-  "description": "Reusable Next.js landing-page system for Nexo Local Studio demo pages.",
+  "description": "Next.js system for professional local-business websites by Nexo Local Studio.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

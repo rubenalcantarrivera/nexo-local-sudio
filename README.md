@@ -1,12 +1,12 @@
-# Nexo Local Studio — Landing Page Demo System
+# Nexo Local Studio - Sistema de páginas web de ejemplo
 
-Reusable Next.js application for creating premium mobile-first landing pages for local businesses from TypeScript configuration files.
+Aplicación Next.js para crear páginas web profesionales, adaptables a celular y conectadas a WhatsApp para negocios locales.
 
 ## Brand identity
 
 - **Name:** Nexo Local Studio
 - **Tagline:** Convertimos búsquedas locales en mensajes, citas y cotizaciones.
-- **Positioning:** Landing pages y sistemas de captación por WhatsApp para negocios locales.
+- **Positioning:** Páginas web profesionales para negocios locales, conectadas a WhatsApp.
 - **Tone:** premium, sober, direct, local-business focused.
 - **Palette:** `#F8F5EF`, `#1F2933`, `#667085`, `#183B56`, `#B88A44`, `#EFE3D0`, `#FFFFFF`, `#E5E0D8`
 - **Typography:** system sans stack for body and Georgia/Cambria stack for editorial headings. This avoids external font fetches during build.
@@ -35,6 +35,14 @@ Reusable Next.js application for creating premium mobile-first landing pages for
 - React
 - No paid dependencies
 - No backend required
+
+## Precios de lanzamiento
+
+- **Página Local Inicial:** $2,500 MXN
+- **Página Local Plus:** $4,500 MXN
+- **Página Local Premium:** $6,500 MXN
+
+Estos precios son de lanzamiento para los primeros proyectos de Nexo Local Studio. El precio final puede variar según alcance, materiales e integraciones requeridas.
 
 ## Install
 
@@ -111,9 +119,9 @@ nexo-local-studio/
 
 ## How the page system works
 
-Every demo is defined in `data/landingConfigs.ts` using the `LandingConfig` type in `data/types.ts`. The route `/demos/[slug]` uses `generateStaticParams()` to create one page per config and `generateMetadata()` to set SEO metadata per landing page.
+Cada ejemplo se define en `data/landingConfigs.ts` usando el tipo `LandingConfig` de `data/types.ts`. La ruta `/demos/[slug]` usa `generateStaticParams()` para crear una página por configuración y `generateMetadata()` para definir metadata SEO por página web.
 
-## Add a new niche demo
+## Agregar un nuevo ejemplo por nicho
 
 1. Open `data/landingConfigs.ts`.
 2. Duplicate one existing config object.
@@ -122,11 +130,11 @@ Every demo is defined in `data/landingConfigs.ts` using the `LandingConfig` type
 5. Optionally change `colors.primary` and `colors.accent`.
 6. Visit `/demos/your-new-slug`.
 
-No route file is needed for each demo.
+No necesitas crear un archivo de ruta por cada ejemplo.
 
-## Add a new client demo in 10 minutes
+## Agregar un ejemplo para cliente en 10 minutos
 
-1. Pick the closest niche demo from `/demos`.
+1. Elige el ejemplo de nicho más cercano desde `/demos`.
 2. Duplicate its object in `data/landingConfigs.ts`.
 3. Set `slug`, for example `clinica-aurora`.
 4. Replace:
@@ -157,7 +165,7 @@ mapEmbed("Clínica Aurora Guadalajara")
 
 ## Customize for a real client
 
-Replace all demo content with verified data:
+Reemplaza todo el contenido de ejemplo con datos verificados:
 
 - Legal business name
 - Real services
@@ -172,7 +180,7 @@ Avoid overclaims. Do not guarantee medical outcomes, legal outcomes, SEO ranking
 
 ## Change WhatsApp number
 
-Each demo has its own `phone` field:
+Cada ejemplo tiene su propio campo `phone`:
 
 ```ts
 phone: "525545609027"
@@ -201,8 +209,8 @@ Change the default agency WhatsApp in `data/agency.ts`.
 ## Update SEO metadata
 
 - Agency homepage metadata: `app/page.tsx`
-- Demos index metadata: `app/demos/page.tsx`
-- Individual demo metadata: `data/landingConfigs.ts`
+- Metadata de la galería de ejemplos: `app/demos/page.tsx`
+- Metadata de cada ejemplo individual: `data/landingConfigs.ts`
 
 ## Logo system
 
@@ -224,7 +232,7 @@ public/images/agency/
 public/images/demos/
 ```
 
-Demo image references live in `data/landingConfigs.ts` under the `demoVisuals` map. This avoids Vercel image loss caused by missing generated files, remote image failures or unconfigured `next/image` domains.
+Las referencias de imagen viven en `data/landingConfigs.ts` dentro del mapa `demoVisuals`. Esto evita pérdida de imágenes en Vercel por archivos no incluidos, URLs remotas fallidas o dominios no configurados en `next/image`.
 
 Before publishing a real client page:
 
@@ -241,14 +249,14 @@ Use normal `<img>` tags for this project unless there is a clear reason to switc
 The visual system uses:
 
 - Custom SVG logo.
-- Local image-driven hero and demo cards.
+- Hero y tarjetas de ejemplo con imágenes locales.
 - CSS-only paper, grid and dark-grain textures in `app/globals.css`.
 - Editorial typography with system serif headings.
 - Premium card treatments and image frames.
 - CSS hover transitions only; no heavy animation library.
-- White-label client demo pages by default.
+- Páginas de cliente white-label por defecto.
 
-Agency pages (`/` and `/demos`) may mention Nexo, packages, demos and diagnostics. Client pages (`/demos/[slug]`) should feel like the fictional business website and should not include Nexo pitch language.
+Las páginas de agencia (`/` y `/demos`) pueden mencionar Nexo, precios y ejemplos. Las páginas de cliente (`/demos/[slug]`) deben sentirse como el sitio del negocio ficticio y no incluir lenguaje comercial de Nexo.
 
 ## Contact form
 
@@ -259,9 +267,9 @@ The contact form is UI-only by default. In `components/ContactForm.tsx`, replace
 - Images load from `public/images`.
 - No empty image frames.
 - No decorative circles or pills that look clickable.
-- WhatsApp buttons use `525545609027` for agency/demo previews.
+- WhatsApp buttons use `525545609027` for agency/example previews.
 - Agency email is `nexo.local.studio@gmail.com`.
-- Client demo pages do not show Nexo pitch language by default.
+- Client example pages do not show Nexo pitch language by default.
 - Mobile hero, CTA and sticky WhatsApp are usable.
 - `npm run typecheck` passes.
 - `npm run build` passes.
@@ -284,5 +292,5 @@ The contact form is UI-only by default. In `components/ContactForm.tsx`, replace
 - Add Open Graph images per niche.
 - Add analytics events for WhatsApp clicks, phone clicks and form interactions.
 - Add a real Formspree or CRM integration.
-- Add a `ClientConfig` template file for fast prospect demos.
+- Add a `ClientConfig` template file for fast prospect examples.
 - Add real case studies after getting client permission.

@@ -7,14 +7,14 @@ const siteUrl = "https://nexolocalstudio.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Nexo Local Studio | Landing pages para negocios locales",
+    default: "Nexo Local Studio | Páginas web para negocios locales",
     template: "%s | Nexo Local Studio"
   },
-  description: "Landing pages premium, mobile-first y conectadas a WhatsApp para negocios locales en México y LATAM.",
-  keywords: ["landing pages", "negocios locales", "WhatsApp", "SEO local", "páginas web para negocios"],
+  description: "Páginas web profesionales, rápidas y conectadas a WhatsApp para negocios locales en México.",
+  keywords: ["páginas web", "negocios locales", "WhatsApp", "SEO local", "páginas web para negocios"],
   openGraph: {
     title: "Nexo Local Studio",
-    description: "Landing pages rápidas, claras y orientadas a contacto para negocios locales.",
+    description: "Páginas web rápidas, claras y orientadas a contacto para negocios locales.",
     type: "website",
     locale: "es_MX",
     siteName: "Nexo Local Studio"

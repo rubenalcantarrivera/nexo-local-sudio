@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 type NavItem = { label: string; href: string };
 type Props = { brand?: string; descriptor?: string; navItems?: NavItem[]; ctaHref?: string; ctaLabel?: string; homeHref?: string };
 
-export function Header({ brand = "Nexo Local Studio", descriptor = "Landing pages premium", navItems = [{ label: "Servicios", href: "#servicios" }, { label: "Paquetes", href: "#paquetes" }, { label: "Demos", href: "/demos" }, { label: "FAQ", href: "#faq" }], ctaHref = "#contacto", ctaLabel = "Solicitar diagnóstico", homeHref = "/" }: Props) {
+export function Header({ brand = "Nexo Local Studio", descriptor = "Páginas web profesionales", navItems = [{ label: "Servicios", href: "#servicios" }, { label: "Precios", href: "#paquetes" }, { label: "Ejemplos", href: "/demos" }, { label: "FAQ", href: "#faq" }], ctaHref = "#contacto", ctaLabel = "Cotizar mi página", homeHref = "/" }: Props) {
   const isAgency = brand === "Nexo Local Studio";
   const mark = brand
     .split(" ")

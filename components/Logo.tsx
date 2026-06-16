@@ -36,7 +36,7 @@ export function LogoWordmark({ compact = false, tone = "dark" }: { compact?: boo
       <span className={cn("block font-display text-lg font-semibold tracking-tight", text)}>
         {compact ? "Nexo Local" : "Nexo Local Studio"}
       </span>
-      {!compact ? <span className={cn("mt-1 hidden text-[11px] font-medium tracking-[0.18em] sm:block", muted)}>LOCAL LANDING SYSTEMS</span> : null}
+      {!compact ? <span className={cn("mt-1 hidden text-[11px] font-medium tracking-[0.18em] sm:block", muted)}>PÁGINAS WEB LOCALES</span> : null}
     </span>
   );
 }

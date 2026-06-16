@@ -28,4 +28,12 @@ export type LandingConfig = {
   disclaimer?: string;
 };
 
-export type Package = { name: string; price: string; description: string; includes: string[]; highlighted?: boolean };
+export type Package = {
+  name: string;
+  price: string;
+  description: string;
+  includes: string[];
+  notIncluded?: string[];
+  cta?: string;
+  highlighted?: boolean;
+};

@@ -21,7 +21,7 @@ export function DemoCard({ demo }: Props) {
         <p className="mt-3 text-sm leading-7 text-brand-muted">{demo.tagline}</p>
         <div className="mt-auto flex items-center justify-between gap-4 border-t border-brand-border pt-5">
           <span className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-muted">{demo.services.length} servicios</span>
-          <span className="text-sm font-semibold text-brand-primary transition group-hover:translate-x-0.5">Ver demo →</span>
+          <span className="text-sm font-semibold text-brand-primary transition group-hover:translate-x-0.5">Ver ejemplo →</span>
         </div>
       </div>
     </Link>

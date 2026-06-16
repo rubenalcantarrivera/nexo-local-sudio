@@ -63,10 +63,10 @@ vercel --prod
 
 - Abrir homepage.
 - Abrir `/demos`.
-- Abrir demo dental.
+- Abrir ejemplo dental.
 - Probar WhatsApp.
 - Probar email.
 - Revisar móvil.
 - Revisar `/sitemap.xml`.
 - Revisar `/robots.txt`.
-- Revisar que client demos no muestren pitch de Nexo.
+- Revisar que los ejemplos de cliente no muestren pitch de Nexo.
