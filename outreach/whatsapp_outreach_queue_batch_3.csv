@@ -1,0 +1,301 @@
+priority,score,business_name,niche,city,zone,normalized_phone,phone_status,whatsapp_verification_status,whatsapp_verified_at,whatsapp_verification_notes,whatsapp_url,message,demo_url,homepage_url,message_char_count,encoded_url_length,url_validation_status,status,last_contacted,follow_up_date,response_status,opened_at,follow_up_url,follow_up_message,notes
+A,10,Clínica La Central Dental,Dental,Mérida,México Norte,529993886240,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/529993886240?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,680,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp e incluye https://wa.me/529993886240. Fuente: https://www.findglocal.com/MX/M%C3%A9xico-Norte/252447561450428/Clinica-La-Central-Dental
+A,10,Dental Corona Las Torres,Dental,Ciudad Juárez,Las Torres,5216567547325,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216567547325?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica agenda por WhatsApp: https://wa.me/5216567547325. Fuente: https://www.findglocal.com/MX/Ciudad-Ju%C3%A1rez/111021417104447/Dental-Corona-Las-Torres
+A,10,Rayos X Dentales,Dental,Saltillo,Irapuato 2349,528442711587,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/528442711587?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,680,url_valid,ready_to_review,,,,,,,Fuente publica indica apartar cita por WhatsApp: http://wa.me/528442711587. Fuente: https://www.findglocal.com/MX/Saltillo/106688730745386/Rayos-X-Dentales
+A,10,Dental Sonora TJ,Dental,Tijuana,Mariano Matamoros Sur,5216643106030,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216643106030?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica 664 310 6030 como WhatsApp. Fuente: https://www.findglocal.com/MX/Tijuana/659511190781281/Dental-Sonora-TJ
+A,10,DentaLis,Dental,Querétaro,San Rafael,5214424064588,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5214424064588?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda tu cita WhatsApp 4424064588. Fuente: https://www.findglocal.com/MX/Quer%C3%A9taro/106090588214098/DentaLis
+A,10,Del Sol Grupo Dental,Dental,Ciudad Juárez,Progresista,5216562436992,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216562436992?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp 656-2436992. Fuente: https://www.findglocal.com/MX/Ciudad-Ju%C3%A1rez/107407564197327/Del-Sol-Grupo-Dental
+A,10,My Clinic Dental,Dental,Hermosillo,Blvd. Navarrete,5216621389097,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216621389097?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp 6621 38 9097. Fuente: https://www.findglocal.com/MX/Hermosillo/1379822785586660/My-Clinic-Dental
+A,10,AR Clínica Dental,Dental,Pachuca,Pachuca de Soto,5215566945460,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5215566945460?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica citas e informes vía WhatsApp 5566945460. Fuente: https://www.findglocal.com/MX/Pachuca-de-Soto/534401660050265/AR-Cl%C3%ADnica-Dental
+A,10,Clínica Dental Celaya,Dental,Celaya,Los Naranjos,5214611824051,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5214611824051?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda al WhatsApp 4611824051. Fuente: https://www.findglocal.com/MX/Celaya/148871601906551/Clinica-Dental
+A,10,Dental Harmonia,Dental,CDMX,Ciudad de México,5215525638888,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5215525638888?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda vía WhatsApp: 55 2563 8888. Fuente: https://www.findglocal.com/MX/Mexico-City/135803623218997/Dental-Harmonia
+A,10,BioConcept,Dental,Monterrey,Pueblo Serena,5218120120369,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5218120120369?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica valoración vía WhatsApp +52 81 2012 0369. Fuente: https://www.findglocal.com/MX/Monterrey/117840135609453/BioConcept
+A,10,Dental group Dr.Wong,Dental,Mexicali,Zona Centro,5216865556210,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216865556210?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda por WhatsApp 686 555 6210. Fuente: https://www.findglocal.com/MX/Mexicali/105130446269831/Dental-group-Dr.Wong
+A,10,Clínica Vazquez,Clínica estética,Agua Prieta,Calle 3 Avenue 8,5216624297105,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216624297105?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: 662 429 7105. Fuente: https://www.findglocal.com/MX/Agua-Prieta/131545120238480/Clinica-Vazquez
+A,10,Clínica Médica El Rosario,Clínica médica,CDMX,El Rosario,5215573504496,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5215573504496?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda por WhatsApp al +52 55 7350 4496. Fuente: https://www.findglocal.com/MX/Mexico-City/253790161305821/Clinica-Medica-El-Rosario
+A,10,Life Grupo Médico,Clínica médica,Mexicali,San Pedro,5216862761708,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216862761708?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica número de atención vía WhatsApp 686-276-1708. Fuente: https://www.findglocal.com/MX/Mexicali/2313782622020218/Life-Grupo-M%C3%A9dico
+A,10,UREUS Clinic Oficial,Clínica médica,CDMX,Bosques de Tetlameya,5215580030570,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5215580030570?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp al +52 55 8003 0570. Fuente: https://www.findglocal.com/MX/Mexico-City/101165896140006/UREUS-Clinic-Oficial
+A,10,Human,Clínica médica,Minatitlán,Centro,5219221867607,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5219221867607?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: 922 186 7607. Fuente: https://www.findglocal.com/MX/Minatitl%C3%A1n/104559165809533/Human
+A,10,CIMO Hospital,Clínica médica,Ciudad Valles,Zona centro,5214811127885,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5214811127885?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: 481 112 7885. Fuente: https://www.findglocal.com/MX/Ciudad-Valles/104784385537373/CIMO-Hospital
+A,10,Clinica Lancet,Clínica médica,Reynosa,Av. José Zertuche,5218997543466,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5218997543466?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda por WhatsApp al 8997543466. Fuente: https://www.findglocal.com/MX/Reynosa/178469205666917/Clinica-Lancet
+A,10,Smart Fisio Mor,Fisioterapia,Cuernavaca,Vista Hermosa,5217774224548,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5217774224548?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: 777 422 45 48. Fuente: https://www.findglocal.com/MX/Cuernavaca/705586599861493/Smart-Fisio-Mor
+A,10,MiPhysio,Fisioterapia,CDMX,Anáhuac,5215532817346,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5215532817346?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Whatsapp: 55 3281 7346. Fuente: https://www.findglocal.com/MX/Mexico-City/305000186639177/MiPhysio
+A,10,FyK Sport,Fisioterapia,Guadalajara,Oblatos,5213323016638,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5213323016638?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Escríbenos por WhatsApp 3323016638. Fuente: https://www.findglocal.com/MX/Guadalajara/375419226140534/FyK-Sport
+A,10,Nutrióloga Selma Chávez,Nutrición,Huauchinango,Paraíso,5217761535841,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5217761535841?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: 776 153 5841. Fuente: https://www.findglocal.com/MX/Huauchinango/910548366002494/Nutri%C3%B3loga-Selma-Ch%C3%A1vez
+A,10,Animal Care,Veterinaria,Nogales,Plutarco Elías Calles,5216313028314,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5216313028314?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp 631 302 8314. Fuente: https://www.findglocal.com/MX/Nogales/801282979889754/Animal-Care
+A,10,Diwali Clínica Veterinaria,Veterinaria,Santa Catarina,Santa Catarina,5218131763917,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5218131763917?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Agenda por WhatsApp: 81 3176 3917. Fuente: https://www.findglocal.com/MX/Santa-Catarina/1983204758607763/Diwali-Cl%C3%ADnica-Veterinaria
+A,10,Reino Animal Puebla,Veterinaria,Puebla,Plaza Magestic,5212222517057,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5212222517057?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: 222 251 7057. Fuente: https://www.findglocal.com/MX/Puebla/485255001486493/Reino-Animal-Puebla
+A,10,La Casa Vieja Zihuatanejo,Restaurante boutique,Zihuatanejo,Playa Eréndira,527551131533,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/527551131533?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,680,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: https://wa.me/527551131533. Fuente: https://www.findglocal.com/MX/Zihuatanejo/342244579161540/La-Casa-Vieja-Zihuatanejo
+A,10,Restaurante El Muelle,Restaurante boutique,Tepotzotlán,Abekany Camp,5215612768717,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5215612768717?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Reserva aquí: https://wa.me/5215612768717. Fuente: https://www.findglocal.com/MX/Ca%C3%B1ada-de-Cisneros/111165857724631/Restaurante--El-Muelle
+A,10,Restaurante La Playita,Restaurante boutique,Monterrey,Mitras Centro,528125671544,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/528125671544?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,680,url_valid,ready_to_review,,,,,,,Fuente publica indica WhatsApp: wa.me/528125671544. Fuente: https://www.findglocal.com/MX/Monterrey/260479280803019/Restaurante-La-Playita
+A,10,Octo Restaurante,Restaurante boutique,Guadalajara,Lafayette,5213323393908,valid,exists_on_whatsapp,2026-06-17,Marcado como WhatsApp existente porque la fuente pública del negocio lo publica explícitamente como WhatsApp; no se usó API ni envío automático.,https://wa.me/5213323393908?text=Hola%2C%20vi%20que%20su%20negocio%20tiene%20presencia%20en%20Google%20Maps%20y%20reputaci%C3%B3n%20local.%0A%0ASomos%20Nexo%20Local%20Studio.%20Hacemos%20p%C3%A1ginas%20web%20r%C3%A1pidas%20y%20profesionales%20para%20negocios%20locales%2C%20conectadas%20a%20WhatsApp%2C%20ubicaci%C3%B3n%20y%20formularios.%0A%0APueden%20ver%20los%20ejemplos%20de%20Nexo%20Local%20Studio%20aqu%C3%AD%3A%0Ahttps%3A%2F%2Fnexo-local-studio-public.vercel.app%2Fdemos%0A%0APrecios%20desde%20%242%2C500%20MXN.%0A%0ASi%20les%20interesa%2C%20podemos%20enviarles%20una%20propuesta%20breve.%20Si%20no%20les%20interesa%20recibir%20m%C3%A1s%20mensajes%2C%20d%C3%ADgannos%20baja.,"Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver los ejemplos de Nexo Local Studio aquí:
+https://nexo-local-studio-public.vercel.app/demos
+
+Precios desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja.",https://nexo-local-studio-public.vercel.app/demos,https://nexo-local-studio-public.vercel.app/demos,457,681,url_valid,ready_to_review,,,,,,,Fuente publica indica Reserva al WhatsApp 33 2339 3908. Fuente: https://www.findglocal.com/MX/Guadalajara/101809918565327/Octo-Restaurante
