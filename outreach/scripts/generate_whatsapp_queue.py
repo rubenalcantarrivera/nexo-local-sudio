@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
 DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
 AGENCY_WHATSAPP = "525545609027"
-MAX_MESSAGE_CHARS = 360
+MAX_MESSAGE_CHARS = 650
 MAX_URL_CHARS = 650
 QUEUE_COLUMNS = [
     "priority", "score", "business_name", "niche", "city", "zone", "normalized_phone",
@@ -77,13 +77,13 @@ def homepage_url_for(row: dict[str, str]) -> str:
 
 
 def first_message(row: dict[str, str], homepage_url: str) -> str:
-    business = display_business_name(row.get("business_name", ""), max_chars=42)
+    business = display_business_name(row.get("business_name", ""), max_chars=36)
     message = (
-        f"Hola, {business}. Soy Ruben, de Nexo Local Studio. "
-        "Hacemos paginas web profesionales para negocios locales, conectadas a WhatsApp, ubicacion y formularios. "
-        f"Puedes ver nuestro trabajo aqui: {homepage_url}. "
+        f"Hola, {business}. Vi que su negocio tiene presencia en Google Maps y reputación local. "
+        "Soy Ruben, de Nexo Local Studio. Hacemos páginas web profesionales conectadas a WhatsApp. "
+        f"Puedes ver la página de Nexo Local Studio aquí: {homepage_url}. "
         "Precios desde $2,500 MXN. "
-        "Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir mas mensajes, dime baja."
+        "Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."
     )
     message = normalize_message(message)
     if len(message) <= MAX_MESSAGE_CHARS:
@@ -92,9 +92,9 @@ def first_message(row: dict[str, str], homepage_url: str) -> str:
     short_business = display_business_name(row.get("business_name", ""), max_chars=28)
     shorter = (
         f"Hola, {short_business}. Soy Ruben, de Nexo Local Studio. "
-        f"Hacemos paginas web profesionales conectadas a WhatsApp. Mira nuestro trabajo: {homepage_url}. "
+        f"Hacemos páginas web profesionales conectadas a WhatsApp. Puedes ver la página de Nexo Local Studio aquí: {homepage_url}. "
         "Precios desde $2,500 MXN. Si te interesa, puedo enviarte una propuesta breve. "
-        "Si prefieres no recibir mas mensajes, dime baja."
+        "Si prefieres no recibir más mensajes, dime baja."
     )
     return normalize_message(shorter)
 

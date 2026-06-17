@@ -14,7 +14,7 @@ Este sistema ayuda a preparar mensajes de WhatsApp para prospectos verificados. 
 
 ## Seguridad contra mensajes truncados
 
-Los mensajes son intencionalmente cortos: máximo 360 caracteres antes de codificarse. Además se generan en una sola línea, sin saltos de línea, para reducir el riesgo de truncamiento al abrir WhatsApp desde navegador, Numbers, Excel o Google Sheets. El generador codifica el texto con `urllib.parse.quote(message, safe="")` y después valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.
+Los mensajes son intencionalmente cortos: máximo 650 caracteres antes de codificarse. Además se generan en una sola línea, sin saltos de línea, para reducir el riesgo de truncamiento al abrir WhatsApp desde navegador, Numbers, Excel o Google Sheets. El generador codifica el texto con `urllib.parse.quote(message, safe="")` y después valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.
 
 La cola incluye:
 
@@ -22,7 +22,7 @@ La cola incluye:
 - `encoded_url_length`
 - `url_validation_status`
 
-Solo las filas con `url_validation_status = url_valid`, mensaje menor a 360 caracteres y URL menor a 650 caracteres pueden quedar como `ready_to_review`.
+Solo las filas con `url_validation_status = url_valid`, mensaje menor a 650 caracteres y URL menor a 650 caracteres pueden quedar como `ready_to_review`.
 
 ## Verificación de teléfonos
 

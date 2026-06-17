@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
 AGENCY_WHATSAPP = "525545609027"
-MAX_MESSAGE_CHARS = 360
+MAX_MESSAGE_CHARS = 650
 MAX_URL_CHARS = 650
 VALID_STATUSES = {
     "ready_to_review", "opened_for_manual_send", "sent_manual", "replied", "interested",

@@ -33,7 +33,7 @@ La validación revisa:
 - que el texto decodificado desde `wa.me` coincida exactamente con el mensaje original;
 - que no haya mensajes con `/demos/`;
 - que no haya placeholders como `YOUR-VERCEL-URL`;
-- que el mensaje no exceda 360 caracteres;
+- que el mensaje no exceda 650 caracteres;
 - que la URL no exceda 650 caracteres;
 - que el mensaje sea de una sola línea para evitar truncamientos en WhatsApp o apps de hojas de cálculo.
 
