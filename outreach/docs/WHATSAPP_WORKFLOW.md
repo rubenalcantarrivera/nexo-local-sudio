@@ -18,7 +18,7 @@ Este paso también crea `outreach/phone_verification_report.csv`.
 python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_manual_channels.csv outreach/whatsapp_outreach_queue.csv
 ```
 
-El primer mensaje usa solo la página principal de Nexo Local Studio. No incluye links de demos por nicho. Los demos pueden enviarse después de forma manual si el prospecto pide ejemplos.
+El primer mensaje usa la galería general de ejemplos de Nexo Local Studio: `https://nexo-local-studio-public.vercel.app/demos`. No incluye links de demos individuales por nicho en el primer contacto.
 
 5. Validar cola:
 
@@ -31,11 +31,11 @@ La validación revisa:
 - teléfono normalizado y numérico;
 - que el número del prospecto no sea `525545609027`, que es el WhatsApp de Nexo;
 - que el texto decodificado desde `wa.me` coincida exactamente con el mensaje original;
-- que no haya mensajes con `/demos/`;
+- que no haya mensajes con demos individuales como `/demos/dental`, `/demos/estetica` o similares;
 - que no haya placeholders como `YOUR-VERCEL-URL`;
 - que el mensaje no exceda 650 caracteres;
-- que la URL no exceda 650 caracteres;
-- que el mensaje sea de una sola línea para evitar truncamientos en WhatsApp o apps de hojas de cálculo.
+- que la URL no exceda 1200 caracteres;
+- que el mensaje conserve saltos de párrafo normales y que el texto decodificado desde el URL sea idéntico al mensaje guardado.
 
 ## Día 1
 
@@ -72,7 +72,7 @@ python3 outreach/scripts/update_followups.py outreach/whatsapp_outreach_queue.cs
 3. Abrir manualmente los `follow_up_due`.
 4. No enviar más de dos seguimientos.
 
-Los seguimientos también usan la página principal de Nexo Local Studio, no links de demos.
+Los seguimientos también usan la galería general `/demos`, no links de demos individuales.
 
 ## Estados sugeridos
 

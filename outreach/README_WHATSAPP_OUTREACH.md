@@ -5,8 +5,8 @@ Este sistema ayuda a preparar mensajes de WhatsApp para prospectos verificados. 
 ## Principios
 
 - Solo genera links `wa.me` con texto prellenado.
-- El primer mensaje usa la página principal de Nexo Local Studio, no demos por nicho.
-- Los demos se pueden compartir después, manualmente, cuando un prospecto pida ejemplos.
+- El primer mensaje usa la galería general `https://nexo-local-studio-public.vercel.app/demos`.
+- No usa demos individuales por nicho en el primer contacto.
 - Tú debes revisar cada mensaje.
 - Tú debes presionar Send manualmente.
 - Usa lotes pequeños.
@@ -14,7 +14,7 @@ Este sistema ayuda a preparar mensajes de WhatsApp para prospectos verificados. 
 
 ## Seguridad contra mensajes truncados
 
-Los mensajes son intencionalmente cortos: máximo 650 caracteres antes de codificarse. Además se generan en una sola línea, sin saltos de línea, para reducir el riesgo de truncamiento al abrir WhatsApp desde navegador, Numbers, Excel o Google Sheets. El generador codifica el texto con `urllib.parse.quote(message, safe="")` y después valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.
+Los mensajes son intencionalmente cortos: máximo 650 caracteres antes de codificarse. Se generan con saltos de párrafo normales y el CSV los guarda como campos entrecomillados usando el módulo `csv` de Python. El generador codifica el texto completo con `urllib.parse.quote(message, safe="")` y después valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.
 
 La cola incluye:
 
@@ -22,7 +22,7 @@ La cola incluye:
 - `encoded_url_length`
 - `url_validation_status`
 
-Solo las filas con `url_validation_status = url_valid`, mensaje menor a 650 caracteres y URL menor a 650 caracteres pueden quedar como `ready_to_review`.
+Solo las filas con `url_validation_status = url_valid`, mensaje menor a 650 caracteres y URL menor a 1200 caracteres pueden quedar como `ready_to_review`.
 
 ## Verificación de teléfonos
 

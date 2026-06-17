@@ -1,1 +1,10 @@
-Hola, [business_name]. Solo retomo el mensaje anterior. Te comparti la pagina de Nexo Local Studio: [homepage_url]. Hacemos paginas web profesionales para negocios locales, conectadas a WhatsApp, ubicacion y formularios. Si tiene sentido, puedo enviarte una propuesta breve con alcance, tiempo y precio. Si prefieres no recibir mas mensajes, dime baja.
+Hola, [business_name]. Solo retomo el mensaje anterior.
+
+Te compartí los ejemplos de Nexo Local Studio:
+[homepage_url]/demos
+
+Hacemos páginas web profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Si tiene sentido, puedo enviarte una propuesta breve con alcance, tiempo y precio.
+
+Si prefieres no recibir más mensajes, dime baja.

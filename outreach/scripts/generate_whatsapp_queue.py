@@ -18,7 +18,7 @@ SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
 DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
 AGENCY_WHATSAPP = "525545609027"
 MAX_MESSAGE_CHARS = 650
-MAX_URL_CHARS = 650
+MAX_URL_CHARS = 1200
 QUEUE_COLUMNS = [
     "priority", "score", "business_name", "niche", "city", "zone", "normalized_phone",
     "phone_status", "whatsapp_url", "message", "demo_url", "homepage_url",
@@ -58,7 +58,6 @@ def normalize_message(message: str) -> str:
     message = message.replace("\r\n", "\n").replace("\r", "\n").strip()
     message = re.sub(r"[ \t]+\n", "\n", message)
     message = re.sub(r"\n{3,}", "\n\n", message)
-    message = re.sub(r"\s+", " ", message)
     return message
 
 
@@ -76,26 +75,37 @@ def homepage_url_for(row: dict[str, str]) -> str:
     return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
 
 
-def first_message(row: dict[str, str], homepage_url: str) -> str:
-    business = display_business_name(row.get("business_name", ""), max_chars=36)
-    message = (
-        f"Hola, {business}. Vi que su negocio tiene presencia en Google Maps y reputación local. "
-        "Soy Ruben, de Nexo Local Studio. Hacemos páginas web profesionales conectadas a WhatsApp. "
-        f"Puedes ver la página de Nexo Local Studio aquí: {homepage_url}. "
-        "Precios desde $2,500 MXN. "
-        "Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."
-    )
+def examples_url_for(homepage_url: str) -> str:
+    return homepage_url.rstrip("/") + "/demos"
+
+
+def first_message(row: dict[str, str], examples_url: str) -> str:
+    business = display_business_name(row.get("business_name", ""), max_chars=42)
+    message = f"""Hola, {business}. Vi que su negocio tiene presencia en Google Maps y reputación local.
+
+Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Puedes ver ejemplos aquí:
+{examples_url}
+
+Precios desde $2,500 MXN.
+
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
     message = normalize_message(message)
     if len(message) <= MAX_MESSAGE_CHARS:
         return message
 
     short_business = display_business_name(row.get("business_name", ""), max_chars=28)
-    shorter = (
-        f"Hola, {short_business}. Soy Ruben, de Nexo Local Studio. "
-        f"Hacemos páginas web profesionales conectadas a WhatsApp. Puedes ver la página de Nexo Local Studio aquí: {homepage_url}. "
-        "Precios desde $2,500 MXN. Si te interesa, puedo enviarte una propuesta breve. "
-        "Si prefieres no recibir más mensajes, dime baja."
-    )
+    shorter = f"""Hola, {short_business}. Soy Ruben, de Nexo Local Studio.
+
+Hacemos páginas web profesionales conectadas a WhatsApp.
+
+Puedes ver ejemplos aquí:
+{examples_url}
+
+Precios desde $2,500 MXN.
+
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
     return normalize_message(shorter)
 
 
@@ -139,8 +149,9 @@ def main() -> int:
         row_status = row.get("status", "").strip()
         homepage = row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE
         homepage = homepage.rstrip("/")
+        examples_url = examples_url_for(homepage)
         demo_url = row.get("demo_url", "").strip()
-        message = first_message(row, homepage)
+        message = first_message(row, examples_url)
         message_char_count = len(message)
         url = wa_url(phone, message) if phone else ""
         url_validation_status = validate_whatsapp_url(url, message) if url else "invalid_phone"
