@@ -3,12 +3,14 @@
 ## Preparación
 
 1. Revisar prospectos.
-2. Confirmar que tienen teléfono público.
-3. Normalizar teléfonos:
+2. Confirmar que tienen teléfono público de negocio.
+3. Normalizar teléfonos y generar reporte:
 
 ```bash
 python3 outreach/scripts/normalize_phone_numbers.py outreach/verified_no_website_prospects.csv outreach/whatsapp_manual_channels.csv
 ```
+
+Este paso también crea `outreach/phone_verification_report.csv`.
 
 4. Generar mensajes y links:
 
@@ -16,11 +18,22 @@ python3 outreach/scripts/normalize_phone_numbers.py outreach/verified_no_website
 python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_manual_channels.csv outreach/whatsapp_outreach_queue.csv
 ```
 
+El primer mensaje usa solo la página principal de Nexo Local Studio. No incluye links de demos por nicho. Los demos pueden enviarse después de forma manual si el prospecto pide ejemplos.
+
 5. Validar cola:
 
 ```bash
 python3 outreach/scripts/validate_whatsapp_queue.py outreach/whatsapp_outreach_queue.csv
 ```
+
+La validación revisa:
+
+- teléfono normalizado y numérico;
+- que el número del prospecto no sea `525545609027`, que es el WhatsApp de Nexo;
+- que el texto decodificado desde `wa.me` coincida exactamente con el mensaje original;
+- que no haya mensajes con `/demos/`;
+- que no haya placeholders como `YOUR-VERCEL-URL`;
+- que el mensaje no exceda 650 caracteres.
 
 ## Día 1
 
@@ -30,10 +43,14 @@ python3 outreach/scripts/validate_whatsapp_queue.py outreach/whatsapp_outreach_q
 python3 outreach/scripts/open_whatsapp_batch.py outreach/whatsapp_outreach_queue.csv --limit 5
 ```
 
-2. Revisar mensaje.
-3. Enviar manualmente si está correcto.
-4. Marcar `status = sent_manual`.
-5. Registrar `last_contacted = YYYY-MM-DD`.
+2. Revisar la vista previa en terminal.
+3. Confirmar solo si todo se ve correcto.
+4. Revisar cada chat en WhatsApp.
+5. Enviar manualmente si está correcto.
+6. Marcar `status = sent_manual`.
+7. Registrar `last_contacted = YYYY-MM-DD`.
+
+El script solo abre links `wa.me`; no envía mensajes, no usa bots y no presiona Send.
 
 ## Día 2
 
@@ -53,6 +70,8 @@ python3 outreach/scripts/update_followups.py outreach/whatsapp_outreach_queue.cs
 3. Abrir manualmente los `follow_up_due`.
 4. No enviar más de dos seguimientos.
 
+Los seguimientos también usan la página principal de Nexo Local Studio, no links de demos.
+
 ## Estados sugeridos
 
 - ready_to_review
@@ -69,6 +88,8 @@ python3 outreach/scripts/update_followups.py outreach/whatsapp_outreach_queue.cs
 - not_interested
 - do_not_contact
 - baja
+- blocked
+- suppressed
 
 ## Límites diarios
 

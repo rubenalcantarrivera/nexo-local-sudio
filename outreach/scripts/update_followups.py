@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import csv
 import datetime as dt
+import re
 import sys
 import urllib.parse
 from pathlib import Path
@@ -15,6 +16,7 @@ from pathlib import Path
 
 SKIP_STATUSES = {"replied", "interested", "proposal_sent", "closed", "not_interested", "do_not_contact", "baja"}
 DATE_FMT = "%Y-%m-%d"
+DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
 
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -24,7 +26,7 @@ def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
 
 
 def write_csv(path: Path, headers: list[str], rows: list[dict[str, str]]) -> None:
-    for extra in ["follow_up_url", "follow_up_message", "follow_up_date"]:
+    for extra in ["follow_up_url", "follow_up_message", "follow_up_date", "follow_up_url_validation_status"]:
         if extra not in headers:
             headers.append(extra)
     with path.open("w", newline="", encoding="utf-8") as f:
@@ -46,34 +48,56 @@ def parse_date(value: str) -> dt.date | None:
 
 
 def wa_url(phone: str, message: str) -> str:
-    return f"https://wa.me/{phone}?text={urllib.parse.quote(message)}"
+    return f"https://wa.me/{phone}?text={urllib.parse.quote(message, safe='')}"
+
+
+def normalize_message(message: str) -> str:
+    message = message.replace("\r\n", "\n").replace("\r", "\n").strip()
+    message = re.sub(r"[ \t]+\n", "\n", message)
+    message = re.sub(r"\n{3,}", "\n\n", message)
+    return message
+
+
+def homepage_url_for(row: dict[str, str]) -> str:
+    return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
+
+
+def decoded_text_from_url(url: str) -> str:
+    parsed = urllib.parse.urlparse(url)
+    values = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+    return values.get("text", [""])[0]
+
+
+def validated_follow_up_url(phone: str, message: str) -> tuple[str, str]:
+    url = wa_url(phone, message)
+    return url, "url_valid" if decoded_text_from_url(url) == message else "url_encoding_error"
 
 
 def follow_up_1(row: dict[str, str]) -> str:
-    return f"""Hola, {row.get('business_name')}. Solo retomo el mensaje anterior.
+    return normalize_message(f"""Hola, {row.get('business_name')}. Solo retomo el mensaje anterior.
 
-Te compartí un ejemplo de página web para negocios de tu sector:
-{row.get('demo_url')}
+Te compartí la página de Nexo Local Studio:
+{homepage_url_for(row)}
 
-La idea es que tus clientes puedan ver servicios, ubicación, reseñas y escribirte fácilmente por WhatsApp desde el celular.
+Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
 Si tiene sentido, puedo enviarte una propuesta breve con alcance, tiempo y precio.
 
-Si prefieres no recibir más mensajes, dime “baja”."""
+Si prefieres no recibir más mensajes, dime “baja”.""")
 
 
 def follow_up_2(row: dict[str, str]) -> str:
-    return f"""Hola, {row.get('business_name')}. Cierro por aquí para no insistir de más.
+    return normalize_message(f"""Hola, {row.get('business_name')}. Cierro por aquí para no insistir de más.
 
-Si más adelante quieren una página web clara, profesional y conectada a WhatsApp, te dejo el ejemplo:
-{row.get('demo_url')}
+Si más adelante quieren una página web clara, profesional y conectada a WhatsApp, aquí está Nexo Local Studio:
+{homepage_url_for(row)}
 
 Saludos,
 Ruben
 Nexo Local Studio
 55 4560 9027
 
-Si prefieres no recibir más mensajes, dime “baja”."""
+Si prefieres no recibir más mensajes, dime “baja”.""")
 
 
 def main() -> int:
@@ -104,16 +128,20 @@ def main() -> int:
             due = parse_date(row.get("follow_up_date", ""))
             if due and due <= today:
                 message = follow_up_1(row)
+                follow_url, validation_status = validated_follow_up_url(phone, message)
                 row["status"] = "follow_up_due"
                 row["follow_up_message"] = message
-                row["follow_up_url"] = wa_url(phone, message)
+                row["follow_up_url"] = follow_url
+                row["follow_up_url_validation_status"] = validation_status
                 updated += 1
         elif status == "follow_up_1_sent" and last_contacted:
             if last_contacted + dt.timedelta(days=5) <= today:
                 message = follow_up_2(row)
+                follow_url, validation_status = validated_follow_up_url(phone, message)
                 row["status"] = "follow_up_due"
                 row["follow_up_message"] = message
-                row["follow_up_url"] = wa_url(phone, message)
+                row["follow_up_url"] = follow_url
+                row["follow_up_url_validation_status"] = validation_status
                 row["follow_up_date"] = today.isoformat()
                 updated += 1
 

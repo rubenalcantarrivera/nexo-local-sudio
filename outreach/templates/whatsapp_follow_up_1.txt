@@ -1,9 +1,9 @@
 Hola, [business_name]. Solo retomo el mensaje anterior.
 
-Te compartí un ejemplo de página web para negocios de tu sector:
-[demo_url]
+Te compartí la página de Nexo Local Studio:
+[homepage_url]
 
-La idea es que tus clientes puedan ver servicios, ubicación, reseñas y escribirte fácilmente por WhatsApp desde el celular.
+Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
 Si tiene sentido, puedo enviarte una propuesta breve con alcance, tiempo y precio.
 

@@ -7,6 +7,7 @@ No messages are sent. The output is a review queue with prefilled WhatsApp URLs.
 from __future__ import annotations
 
 import csv
+import re
 import sys
 import urllib.parse
 from pathlib import Path
@@ -15,27 +16,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
 DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
-DEMO_MAP = {
-    "dental": "/demos/dental",
-    "clínica estética": "/demos/estetica",
-    "clinica estetica": "/demos/estetica",
-    "óptica": "/demos/optica",
-    "optica": "/demos/optica",
-    "fisioterapia": "/demos/fisioterapia",
-    "abogado": "/demos/abogado-migratorio",
-    "restaurante": "/demos/restaurante",
-    "veterinaria": "/demos/veterinaria",
-    "arquitectura": "/demos/arquitectura",
-    "interiorismo": "/demos/arquitectura",
-    "psicología": "/demos/psicologia",
-    "psicologia": "/demos/psicologia",
-    "nutrición": "/demos/nutricion",
-    "nutricion": "/demos/nutricion",
-}
+AGENCY_WHATSAPP = "525545609027"
+MAX_MESSAGE_CHARS = 650
 QUEUE_COLUMNS = [
     "priority", "score", "business_name", "niche", "city", "zone", "normalized_phone",
-    "whatsapp_url", "message", "demo_url", "homepage_url", "status", "last_contacted",
-    "follow_up_date", "response_status", "opened_at", "follow_up_url", "follow_up_message", "notes",
+    "phone_status", "whatsapp_url", "message", "demo_url", "homepage_url",
+    "message_char_count", "encoded_url_length", "url_validation_status", "status",
+    "last_contacted", "follow_up_date", "response_status", "opened_at",
+    "follow_up_url", "follow_up_message", "notes",
 ]
 
 
@@ -65,45 +53,75 @@ def suppressed_numbers() -> set[str]:
     return {row.get("normalized_phone", "").strip() for row in read_csv(SUPPRESSION_PATH) if row.get("normalized_phone", "").strip()}
 
 
-def demo_url_for(row: dict[str, str]) -> str:
-    current = row.get("demo_url", "").strip()
-    if current:
-        return current
-    homepage = row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE
-    niche = row.get("niche", "").lower()
-    for key, path in DEMO_MAP.items():
-        if key in niche:
-            return homepage.rstrip("/") + path
-    return ""
+def normalize_message(message: str) -> str:
+    message = message.replace("\r\n", "\n").replace("\r", "\n").strip()
+    message = re.sub(r"[ \t]+\n", "\n", message)
+    message = re.sub(r"\n{3,}", "\n\n", message)
+    return message
 
 
-def greeting(row: dict[str, str]) -> str:
-    person = row.get("contact_person", "").strip()
-    if person and person.lower() != "no público":
-        return person
-    return row.get("business_name", "").strip()
+def display_business_name(value: str, max_chars: int = 72) -> str:
+    name = re.sub(r"\s+", " ", (value or "").strip())
+    if not name:
+        return "su negocio"
+    if len(name) <= max_chars:
+        return name
+    return name[: max_chars - 3].rstrip(" ,.-") + "..."
 
 
-def first_message(row: dict[str, str], demo_url: str) -> str:
-    business = row.get("business_name", "").strip()
-    return f"""Hola, {greeting(row)}. Vi que {business} ya tiene presencia en Google Maps y señales de reputación local.
+def homepage_url_for(row: dict[str, str]) -> str:
+    return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
 
-Trabajo bajo la marca Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Te comparto un ejemplo para negocios de tu sector:
-{demo_url}
+def first_message(row: dict[str, str], homepage_url: str) -> str:
+    business = display_business_name(row.get("business_name", ""))
+    message = f"""Hola, {business}. Vi que su negocio tiene presencia en Google Maps y señales de reputación local.
 
-La idea es que tus clientes puedan ver servicios, ubicación, reseñas y escribirte fácilmente desde el celular.
+Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Puedes ver nuestro trabajo aquí:
+{homepage_url}
 
 Tenemos precios de lanzamiento desde $2,500 MXN.
 
-Si te interesa, puedo enviarte una propuesta breve.
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime “baja”."""
+    message = normalize_message(message)
+    if len(message) <= MAX_MESSAGE_CHARS:
+        return message
 
-Si no eres la persona indicada o prefieres no recibir más mensajes, dime “baja” y no vuelvo a contactarte."""
+    short_business = display_business_name(row.get("business_name", ""), max_chars=46)
+    shorter = f"""Hola, {short_business}. Soy Ruben, de Nexo Local Studio.
+
+Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Puedes ver nuestro trabajo aquí:
+{homepage_url}
+
+Precios de lanzamiento desde $2,500 MXN.
+
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime “baja”."""
+    return normalize_message(shorter)
 
 
 def wa_url(phone: str, message: str) -> str:
-    return f"https://wa.me/{phone}?text={urllib.parse.quote(message)}"
+    encoded_message = urllib.parse.quote(message, safe="")
+    return f"https://wa.me/{phone}?text={encoded_message}"
+
+
+def decoded_text_from_url(url: str) -> str:
+    parsed = urllib.parse.urlparse(url)
+    values = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+    return values.get("text", [""])[0]
+
+
+def validate_whatsapp_url(url: str, message: str) -> str:
+    if not url.startswith("https://wa.me/"):
+        return "url_encoding_error"
+    return "url_valid" if decoded_text_from_url(url) == message else "url_encoding_error"
+
+
+def row_is_suppressed(phone: str, suppressed: set[str]) -> bool:
+    return bool(phone and phone in suppressed)
 
 
 def main() -> int:
@@ -121,19 +139,48 @@ def main() -> int:
     skipped = 0
     for row in read_csv(input_path):
         phone = row.get("normalized_phone", "").strip()
+        phone_status = row.get("phone_status", "").strip()
         row_status = row.get("status", "").strip()
-        if row.get("phone_status") == "invalid_phone" or not phone or row_status in {"do_not_contact", "baja"}:
-            skipped += 1
-            continue
-        if phone in suppressed:
-            skipped += 1
-            continue
-        demo_url = demo_url_for(row)
-        if not demo_url:
-            skipped += 1
-            continue
         homepage = row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE
-        message = first_message(row, demo_url)
+        homepage = homepage.rstrip("/")
+        demo_url = row.get("demo_url", "").strip()
+        message = first_message(row, homepage)
+        message_char_count = len(message)
+        url = wa_url(phone, message) if phone else ""
+        url_validation_status = validate_whatsapp_url(url, message) if url else "invalid_phone"
+        notes = row.get("notes", "")
+        status = "ready_to_review"
+
+        if not homepage:
+            url_validation_status = "missing_homepage_url"
+            status = "blocked"
+        elif phone_status != "valid" or not phone:
+            url_validation_status = "invalid_phone"
+            status = "blocked"
+            skipped += 1
+        elif phone == AGENCY_WHATSAPP:
+            phone_status = "agency_number_error"
+            url_validation_status = "invalid_phone"
+            status = "blocked"
+            notes = (notes + " | " if notes else "") + "Bloqueado: el destinatario coincide con el WhatsApp de Nexo Local Studio."
+            skipped += 1
+        elif row_status in {"do_not_contact", "baja"}:
+            status = row_status
+            skipped += 1
+        elif row_is_suppressed(phone, suppressed):
+            url_validation_status = "suppressed"
+            status = "suppressed"
+            notes = (notes + " | " if notes else "") + "Bloqueado por whatsapp_suppression_list.csv."
+            skipped += 1
+        elif message_char_count > MAX_MESSAGE_CHARS:
+            url_validation_status = "message_too_long"
+            status = "blocked"
+            notes = (notes + " | " if notes else "") + f"Mensaje excede {MAX_MESSAGE_CHARS} caracteres."
+            skipped += 1
+        elif url_validation_status != "url_valid":
+            status = "blocked"
+            skipped += 1
+
         output_rows.append({
             "priority": row.get("priority", ""),
             "score": row.get("score", ""),
@@ -142,18 +189,22 @@ def main() -> int:
             "city": row.get("city", ""),
             "zone": row.get("zone", ""),
             "normalized_phone": phone,
-            "whatsapp_url": wa_url(phone, message),
+            "phone_status": phone_status,
+            "whatsapp_url": url,
             "message": message,
             "demo_url": demo_url,
             "homepage_url": homepage,
-            "status": "ready_to_review",
+            "message_char_count": str(message_char_count),
+            "encoded_url_length": str(len(url)),
+            "url_validation_status": url_validation_status,
+            "status": status,
             "last_contacted": "",
             "follow_up_date": "",
             "response_status": "",
             "opened_at": "",
             "follow_up_url": "",
             "follow_up_message": "",
-            "notes": row.get("notes", ""),
+            "notes": notes,
         })
 
     write_csv(output_path, output_rows)

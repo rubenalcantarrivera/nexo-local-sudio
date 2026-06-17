@@ -1,14 +1,10 @@
-Hola, [Nombre o negocio]. Vi que [business_name] ya tiene presencia en Google Maps y señales de reputación local.
+Hola, [business_name]. Vi que su negocio tiene presencia en Google Maps y señales de reputación local.
 
-Trabajo bajo la marca Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Te comparto un ejemplo para negocios de tu sector:
-[demo_url]
-
-La idea es que tus clientes puedan ver servicios, ubicación, reseñas y escribirte fácilmente desde el celular.
+Puedes ver nuestro trabajo aquí:
+[homepage_url]
 
 Tenemos precios de lanzamiento desde $2,500 MXN.
 
-Si te interesa, puedo enviarte una propuesta breve.
-
-Si no eres la persona indicada o prefieres no recibir más mensajes, dime “baja” y no vuelvo a contactarte.
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime “baja”.

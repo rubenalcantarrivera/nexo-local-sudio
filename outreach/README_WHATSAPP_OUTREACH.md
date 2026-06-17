@@ -5,10 +5,30 @@ Este sistema ayuda a preparar mensajes de WhatsApp para prospectos verificados. 
 ## Principios
 
 - Solo genera links `wa.me` con texto prellenado.
+- El primer mensaje usa la página principal de Nexo Local Studio, no demos por nicho.
+- Los demos se pueden compartir después, manualmente, cuando un prospecto pida ejemplos.
 - Tú debes revisar cada mensaje.
 - Tú debes presionar Send manualmente.
 - Usa lotes pequeños.
 - Respeta bajas inmediatamente.
+
+## Seguridad contra mensajes truncados
+
+Los mensajes son intencionalmente cortos: máximo 650 caracteres antes de codificarse. El generador codifica el texto con `urllib.parse.quote(message, safe="")` y después valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.
+
+La cola incluye:
+
+- `message_char_count`
+- `encoded_url_length`
+- `url_validation_status`
+
+Solo las filas con `url_validation_status = url_valid` pueden quedar como `ready_to_review`.
+
+## Verificación de teléfonos
+
+`normalize_phone_numbers.py` genera `outreach/phone_verification_report.csv` y bloquea teléfonos inválidos, faltantes, duplicados que requieren revisión y cualquier fila que use por error el número de Nexo como destinatario.
+
+El número de Nexo Local Studio es `525545609027`. Ese número nunca debe usarse como teléfono del prospecto.
 
 ## Flujo recomendado
 
@@ -19,7 +39,13 @@ python3 outreach/scripts/validate_whatsapp_queue.py outreach/whatsapp_outreach_q
 python3 outreach/scripts/open_whatsapp_batch.py outreach/whatsapp_outreach_queue.csv --limit 5
 ```
 
-El último comando abre hasta 5 chats con mensaje prellenado. No envía. Revisa manualmente y manda solo si el mensaje es correcto.
+El último comando muestra una vista previa y pide confirmación antes de abrir chats. No envía mensajes. Revisa manualmente y manda solo si el mensaje es correcto.
+
+Si ya revisaste la vista previa y quieres omitir la confirmación interactiva:
+
+```bash
+python3 outreach/scripts/open_whatsapp_batch.py outreach/whatsapp_outreach_queue.csv --limit 5 --yes
+```
 
 ## Lotes recomendados
 
@@ -45,6 +71,8 @@ El último comando abre hasta 5 chats con mensaje prellenado. No envía. Revisa 
 - `not_interested`: no interesado.
 - `do_not_contact`: no contactar.
 - `baja`: pidió baja.
+- `blocked`: bloqueado por validación.
+- `suppressed`: bloqueado por lista de supresión.
 
 ## Cómo actualizar después de enviar
 

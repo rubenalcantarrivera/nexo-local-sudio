@@ -40,6 +40,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("queue_csv")
     parser.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
+    parser.add_argument("--yes", action="store_true", help="Open the reviewed batch without interactive confirmation.")
     args = parser.parse_args()
 
     path = Path(args.queue_csv)
@@ -55,16 +56,49 @@ def main() -> int:
         return 1
 
     headers, rows = read_csv(path)
-    opened = 0
-    now = dt.datetime.now().isoformat(timespec="seconds")
+    selected: list[dict[str, str]] = []
     for row in rows:
-        if opened >= limit:
+        if len(selected) >= limit:
             break
         if row.get("status") != "ready_to_review":
+            continue
+        if row.get("phone_status") != "valid":
+            continue
+        if row.get("url_validation_status") != "url_valid":
+            continue
+        if row.get("status") in {"do_not_contact", "baja", "suppressed"}:
             continue
         url = row.get("whatsapp_url", "").strip()
         if not url.startswith("https://wa.me/"):
             continue
+        selected.append(row)
+
+    if not selected:
+        print("No ready, valid WhatsApp rows found.")
+        return 0
+
+    print(f"About to open {len(selected)} WhatsApp chats.")
+    print("No messages will be sent automatically.")
+    print("You must review each chat and press Send manually.\n")
+    for row in selected:
+        message = (row.get("message") or "").replace("\n", " ")
+        preview = message[:120] + ("..." if len(message) > 120 else "")
+        print(f"- {row.get('business_name')} | {row.get('normalized_phone')} | chars={row.get('message_char_count')} | url_len={row.get('encoded_url_length')}")
+        print(f"  {preview}")
+
+    if not args.yes:
+        answer = input("\nContinue? [y/N] ").strip().lower()
+        if answer not in {"y", "yes", "s", "si", "sí"}:
+            print("Cancelled. No WhatsApp chats were opened.")
+            return 0
+
+    opened = 0
+    now = dt.datetime.now().isoformat(timespec="seconds")
+    selected_ids = {id(row) for row in selected}
+    for row in rows:
+        if id(row) not in selected_ids:
+            continue
+        url = row.get("whatsapp_url", "").strip()
         print(f"Opening for manual review: {row.get('business_name')} -> {url[:80]}...")
         webbrowser.open(url)
         row["status"] = "opened_for_manual_send"
