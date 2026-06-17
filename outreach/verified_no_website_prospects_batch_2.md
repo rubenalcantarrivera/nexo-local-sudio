@@ -1,5 +1,11 @@
 # Prospectos verificados - lote 2
 
+## Estado actualizado: NO USAR PARA WHATSAPP
+
+Este lote queda bloqueado para WhatsApp outreach. Los teléfonos venían de campos públicos de OpenStreetMap, pero el usuario confirmó que no existen en WhatsApp. No abrir ni contactar este lote sin una nueva verificación manual.
+
+Ver: `outreach/batch_2_whatsapp_failure_report.md`.
+
 Fecha de revisión: 2026-06-17
 
 ## Resumen

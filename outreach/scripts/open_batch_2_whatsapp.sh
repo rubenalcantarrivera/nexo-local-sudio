@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd "$(dirname "$0")/../.."
-python3 outreach/scripts/open_whatsapp_batch.py outreach/whatsapp_outreach_queue_batch_2.csv --limit "${1:-20}" --allow-unverified
+cat <<'EOF'
+Este lote quedó BLOQUEADO.
+
+Motivo: los teléfonos del batch 2 salieron de campos públicos de OpenStreetMap,
+pero el usuario confirmó que no existen en WhatsApp. No se deben abrir ni usar
+sin una nueva verificación manual.
+
+Usa un lote nuevo con números confirmados explícitamente como WhatsApp.
+EOF
+
+exit 1
