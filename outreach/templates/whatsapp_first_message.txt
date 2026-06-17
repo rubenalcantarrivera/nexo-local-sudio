@@ -1,10 +1,1 @@
-Hola, [business_name]. Vi que su negocio tiene presencia en Google Maps y señales de reputación local.
-
-Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
-
-Puedes ver nuestro trabajo aquí:
-[homepage_url]
-
-Tenemos precios de lanzamiento desde $2,500 MXN.
-
-Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime “baja”.
+Hola, [business_name]. Soy Ruben, de Nexo Local Studio. Hacemos paginas web profesionales para negocios locales, conectadas a WhatsApp, ubicacion y formularios. Puedes ver nuestro trabajo aqui: [homepage_url]. Precios desde $2,500 MXN. Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir mas mensajes, dime baja.

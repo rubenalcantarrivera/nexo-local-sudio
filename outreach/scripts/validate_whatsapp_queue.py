@@ -14,7 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
 AGENCY_WHATSAPP = "525545609027"
-MAX_MESSAGE_CHARS = 650
+MAX_MESSAGE_CHARS = 360
+MAX_URL_CHARS = 650
 VALID_STATUSES = {
     "ready_to_review", "opened_for_manual_send", "sent_manual", "replied", "interested",
     "proposal_sent", "closed", "no_response", "follow_up_due", "follow_up_1_sent",
@@ -73,7 +74,8 @@ def main() -> int:
         "url_encoding_errors": 0,
         "ready_url_encoding_errors": 0,
         "message_too_long": 0,
-        "messages_under_650": 0,
+        "url_too_long": 0,
+        "messages_under_limit": 0,
         "messages_with_demo_links": 0,
         "messages_with_placeholder_url": 0,
         "messages_with_localhost": 0,
@@ -123,7 +125,9 @@ def main() -> int:
         if len(message) > MAX_MESSAGE_CHARS:
             report["message_too_long"] += 1
         else:
-            report["messages_under_650"] += 1
+            report["messages_under_limit"] += 1
+        if len(whatsapp_url) > MAX_URL_CHARS:
+            report["url_too_long"] += 1
         if "/demos/" in message or "/demos/" in row.get("whatsapp_url", ""):
             report["messages_with_demo_links"] += 1
         if "YOUR-VERCEL-URL" in message or "YOUR-VERCEL-URL" in row.get("homepage_url", ""):
@@ -166,6 +170,7 @@ def main() -> int:
         "messages_with_placeholder_url",
         "messages_with_localhost",
         "message_too_long",
+        "url_too_long",
     }
     errors = sum(report[key] for key in blocking_keys)
     return 1 if errors else 0
