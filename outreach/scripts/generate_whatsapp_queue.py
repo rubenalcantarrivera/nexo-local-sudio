@@ -6,6 +6,7 @@ No messages are sent. The output is a review queue with prefilled WhatsApp URLs.
 
 from __future__ import annotations
 
+import argparse
 import csv
 import re
 import sys
@@ -128,11 +129,17 @@ def row_is_suppressed(phone: str, suppressed: set[str]) -> bool:
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
-        print("Usage: python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_verified_channels.csv outreach/whatsapp_outreach_queue.csv", file=sys.stderr)
-        return 2
-    input_path = Path(sys.argv[1])
-    output_path = Path(sys.argv[2])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_csv")
+    parser.add_argument("output_csv")
+    parser.add_argument(
+        "--allow-unverified",
+        action="store_true",
+        help="Generate ready_to_review rows for valid-format numbers without WhatsApp existence verification.",
+    )
+    args = parser.parse_args()
+    input_path = Path(args.input_csv)
+    output_path = Path(args.output_csv)
     if not input_path.exists():
         print(f"Input file not found: {input_path}", file=sys.stderr)
         return 1
@@ -140,7 +147,10 @@ def main() -> int:
     suppressed = suppressed_numbers()
     input_rows = read_csv(input_path)
     if input_rows and "whatsapp_verification_status" not in input_rows[0]:
-        print("Warning: This input has not been WhatsApp-verified. Run manual verification first.", file=sys.stderr)
+        if args.allow_unverified:
+            print("Warning: generating unverified queue because --allow-unverified was passed.", file=sys.stderr)
+        else:
+            print("Warning: This input has not been WhatsApp-verified. Run manual verification first.", file=sys.stderr)
 
     output_rows: list[dict[str, str]] = []
     skipped = 0
@@ -148,6 +158,8 @@ def main() -> int:
         phone = row.get("normalized_phone", "").strip()
         phone_status = row.get("phone_status", "").strip()
         verification_status = row.get("whatsapp_verification_status", "").strip() or "pending_manual_check"
+        if args.allow_unverified and verification_status == "pending_manual_check":
+            verification_status = "bypassed_by_user"
         row_status = row.get("status", "").strip()
         homepage = row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE
         homepage = homepage.rstrip("/")
@@ -162,7 +174,7 @@ def main() -> int:
         if not homepage:
             url_validation_status = "missing_homepage_url"
             status = "blocked"
-        elif verification_status != "exists_on_whatsapp":
+        elif verification_status != "exists_on_whatsapp" and not (args.allow_unverified and verification_status == "bypassed_by_user"):
             status = "blocked_not_verified"
             notes = (notes + " | " if notes else "") + "Bloqueado: número no verificado manualmente como existente en WhatsApp."
             skipped += 1

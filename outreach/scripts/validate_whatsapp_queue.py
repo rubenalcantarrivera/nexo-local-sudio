@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import re
@@ -50,10 +51,11 @@ def decoded_text_from_url(url: str) -> str:
 
 
 def main() -> int:
-    if len(sys.argv) != 2:
-        print("Usage: python3 outreach/scripts/validate_whatsapp_queue.py outreach/whatsapp_outreach_queue.csv", file=sys.stderr)
-        return 2
-    path = Path(sys.argv[1])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("queue_csv")
+    parser.add_argument("--allow-unverified", action="store_true", help="Allow ready rows marked bypassed_by_user.")
+    args = parser.parse_args()
+    path = Path(args.queue_csv)
     if not path.exists():
         print(f"Queue file not found: {path}", file=sys.stderr)
         return 1
@@ -118,7 +120,10 @@ def main() -> int:
                 report["ready_agency_number_errors"] += 1
         if not whatsapp_verification_status:
             report["missing_whatsapp_verification_status"] += 1
-        if is_ready and whatsapp_verification_status != "exists_on_whatsapp":
+        verification_allowed = whatsapp_verification_status == "exists_on_whatsapp" or (
+            args.allow_unverified and whatsapp_verification_status == "bypassed_by_user"
+        )
+        if is_ready and not verification_allowed:
             report["ready_not_whatsapp_verified"] += 1
         if is_ready and whatsapp_verification_status in {"not_on_whatsapp", "wrong_number", "pending_manual_check", "needs_review"}:
             report["ready_not_on_whatsapp"] += 1
@@ -163,7 +168,7 @@ def main() -> int:
             report["ready_to_review"] += 1
             if (
                 phone_status not in {"valid_format_only", "valid"}
-                or whatsapp_verification_status != "exists_on_whatsapp"
+                or not verification_allowed
                 or url_validation_status != "url_valid"
                 or phone in suppressed
             ):
