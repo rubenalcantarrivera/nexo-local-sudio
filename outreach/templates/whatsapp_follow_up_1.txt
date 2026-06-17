@@ -1,0 +1,10 @@
+Hola, [business_name]. Solo retomo el mensaje anterior.
+
+Te compartí un ejemplo de página web para negocios de tu sector:
+[demo_url]
+
+La idea es que tus clientes puedan ver servicios, ubicación, reseñas y escribirte fácilmente por WhatsApp desde el celular.
+
+Si tiene sentido, puedo enviarte una propuesta breve con alcance, tiempo y precio.
+
+Si prefieres no recibir más mensajes, dime “baja”.
