@@ -62,10 +62,6 @@ def homepage_url_for(row: dict[str, str]) -> str:
     return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
 
 
-def examples_url_for(row: dict[str, str]) -> str:
-    return homepage_url_for(row).rstrip("/") + "/demos"
-
-
 def decoded_text_from_url(url: str) -> str:
     parsed = urllib.parse.urlparse(url)
     values = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
@@ -80,8 +76,8 @@ def validated_follow_up_url(phone: str, message: str) -> tuple[str, str]:
 def follow_up_1(row: dict[str, str]) -> str:
     return normalize_message(f"""Hola, {row.get('business_name')}. Solo retomo el mensaje anterior.
 
-Te compartí los ejemplos de Nexo Local Studio:
-{examples_url_for(row)}
+Te compartí la página de Nexo Local Studio:
+{homepage_url_for(row)}
 
 Hacemos páginas web profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
@@ -93,8 +89,8 @@ Si prefieres no recibir más mensajes, dime baja.""")
 def follow_up_2(row: dict[str, str]) -> str:
     return normalize_message(f"""Hola, {row.get('business_name')}. Cierro por aquí para no insistir de más.
 
-Si más adelante quieren una página web clara, profesional y conectada a WhatsApp, aquí están los ejemplos de Nexo Local Studio:
-{examples_url_for(row)}
+Si más adelante quieren una página web clara, profesional y conectada a WhatsApp, aquí está Nexo Local Studio:
+{homepage_url_for(row)}
 
 Saludos,
 Ruben

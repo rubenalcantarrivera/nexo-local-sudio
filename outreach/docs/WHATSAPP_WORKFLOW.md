@@ -1,101 +1,107 @@
 # Workflow diario de WhatsApp
 
-## Preparación
+## Preparación obligatoria
 
-1. Revisar prospectos.
-2. Confirmar que tienen teléfono público de negocio.
-3. Normalizar teléfonos y generar reporte:
+1. Auditar teléfonos fuente:
+
+```bash
+python3 outreach/scripts/audit_phone_sources.py outreach/verified_no_website_prospects.csv outreach/phone_source_audit.csv
+```
+
+2. Normalizar teléfonos:
 
 ```bash
 python3 outreach/scripts/normalize_phone_numbers.py outreach/verified_no_website_prospects.csv outreach/whatsapp_manual_channels.csv
 ```
 
-Este paso también crea `outreach/phone_verification_report.csv`.
-
-4. Generar mensajes y links:
+3. Crear cola de verificación de WhatsApp:
 
 ```bash
-python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_manual_channels.csv outreach/whatsapp_outreach_queue.csv
+python3 outreach/scripts/create_whatsapp_verification_queue.py outreach/whatsapp_manual_channels.csv outreach/whatsapp_number_verification_queue.csv
 ```
 
-El primer mensaje usa la galería general de ejemplos de Nexo Local Studio: `https://nexo-local-studio-public.vercel.app/demos`. No incluye links de demos individuales por nicho en el primer contacto.
+4. Verificar manualmente los primeros 5 números:
 
-5. Validar cola:
+```bash
+python3 outreach/scripts/manual_verify_whatsapp_numbers.py outreach/whatsapp_number_verification_queue.csv --limit 5
+```
+
+El script abre `https://wa.me/[number]` sin mensaje. Tú confirmas:
+
+- `y`: existe en WhatsApp.
+- `n`: no existe en WhatsApp.
+- `w`: número equivocado.
+- `s`: necesita revisión.
+- `q`: salir.
+
+No se envía ningún mensaje.
+
+## Generar outreach después de verificar
+
+1. Aplicar verificación:
+
+```bash
+python3 outreach/scripts/apply_whatsapp_verification.py outreach/whatsapp_number_verification_queue.csv outreach/whatsapp_manual_channels.csv outreach/whatsapp_verified_channels.csv
+```
+
+2. Generar cola de mensajes solo con números verificados:
+
+```bash
+python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_verified_channels.csv outreach/whatsapp_outreach_queue.csv
+```
+
+3. Validar cola:
 
 ```bash
 python3 outreach/scripts/validate_whatsapp_queue.py outreach/whatsapp_outreach_queue.csv
 ```
 
-La validación revisa:
-
-- teléfono normalizado y numérico;
-- que el número del prospecto no sea `525545609027`, que es el WhatsApp de Nexo;
-- que el texto decodificado desde `wa.me` coincida exactamente con el mensaje original;
-- que no haya mensajes con demos individuales como `/demos/dental`, `/demos/estetica` o similares;
-- que no haya placeholders como `YOUR-VERCEL-URL`;
-- que el mensaje no exceda 650 caracteres;
-- que la URL no exceda 1200 caracteres;
-- que el mensaje conserve saltos de párrafo normales y que el texto decodificado desde el URL sea idéntico al mensaje guardado.
-
-## Día 1
-
-1. Abrir 5 chats:
+4. Abrir mensajes manualmente:
 
 ```bash
 python3 outreach/scripts/open_whatsapp_batch.py outreach/whatsapp_outreach_queue.csv --limit 5
 ```
 
-2. Revisar la vista previa en terminal.
-3. Confirmar solo si todo se ve correcto.
-4. Revisar cada chat en WhatsApp.
-5. Enviar manualmente si está correcto.
-6. Marcar `status = sent_manual`.
-7. Registrar `last_contacted = YYYY-MM-DD`.
+El abridor solo acepta filas con:
 
-El script solo abre links `wa.me`; no envía mensajes, no usa bots y no presiona Send.
+- `status = ready_to_review`
+- `whatsapp_verification_status = exists_on_whatsapp`
+- `url_validation_status = url_valid`
+- teléfono válido
+- número diferente a `525545609027`
 
-## Día 2
+## Verificación real de números de WhatsApp
 
-1. Revisar respuestas.
-2. Agregar bajas a `whatsapp_suppression_list.csv`.
-3. Enviar 10 mensajes nuevos si no hubo señales negativas.
+Un teléfono público puede ser fijo, conmutador o línea sin WhatsApp. Por eso `valid_format_only` no es suficiente para contactar.
+
+Solo deben pasar a outreach los números marcados como `exists_on_whatsapp`. No contactar:
+
+- `not_on_whatsapp`
+- `wrong_number`
+- `needs_review`
+- `pending_manual_check`
+- `agency_number_error`
+- `baja`
+- `do_not_contact`
 
 ## Seguimiento
 
-1. Si no respondieron después de 48 horas, marcar `status = no_response`.
-2. Ejecutar:
+Después de enviar manualmente:
+
+1. Cambia `status` a `sent_manual`.
+2. Agrega `last_contacted = YYYY-MM-DD`.
+3. Si no responde después de 48 horas, marca `status = no_response`.
+4. Ejecuta:
 
 ```bash
 python3 outreach/scripts/update_followups.py outreach/whatsapp_outreach_queue.csv
 ```
 
-3. Abrir manualmente los `follow_up_due`.
-4. No enviar más de dos seguimientos.
-
-Los seguimientos también usan la galería general `/demos`, no links de demos individuales.
-
-## Estados sugeridos
-
-- ready_to_review
-- opened_for_manual_send
-- sent_manual
-- replied
-- interested
-- proposal_sent
-- closed
-- no_response
-- follow_up_due
-- follow_up_1_sent
-- follow_up_2_sent
-- not_interested
-- do_not_contact
-- baja
-- blocked
-- suppressed
+No enviar más de dos seguimientos.
 
 ## Límites diarios
 
-- Día 1: 5 mensajes.
-- Día 2: 10 mensajes.
-- Después: 10-20 mensajes diarios si no hay reportes ni respuestas negativas.
+- Día 1: verificar 5 números y enviar máximo 5 mensajes.
+- Día 2: verificar 10 números y enviar 10 si no hubo señales negativas.
+- Después: 10-20 diarios.
 - No mandar 100 de golpe.

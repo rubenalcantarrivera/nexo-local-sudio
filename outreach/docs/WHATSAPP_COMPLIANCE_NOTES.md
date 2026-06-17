@@ -6,6 +6,10 @@ Estas notas no son asesoría legal. Son reglas prácticas para mantener outreach
 
 - Usar solo teléfonos públicos de negocio.
 - No usar números personales no publicados.
+- No asumir que un teléfono con formato válido existe en WhatsApp.
+- Verificar existencia en WhatsApp manualmente con `wa.me/[number]` sin mensaje antes de contactar.
+- Contactar solo números marcados como `exists_on_whatsapp`.
+- No contactar números `not_on_whatsapp`, `wrong_number`, `needs_review` o `pending_manual_check`.
 - No automatizar envío masivo.
 - No usar bots no oficiales.
 - No usar Selenium/Puppeteer para presionar Send.

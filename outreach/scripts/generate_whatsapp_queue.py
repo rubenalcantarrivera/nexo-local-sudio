@@ -21,7 +21,8 @@ MAX_MESSAGE_CHARS = 650
 MAX_URL_CHARS = 1200
 QUEUE_COLUMNS = [
     "priority", "score", "business_name", "niche", "city", "zone", "normalized_phone",
-    "phone_status", "whatsapp_url", "message", "demo_url", "homepage_url",
+    "phone_status", "whatsapp_verification_status", "whatsapp_verified_at",
+    "whatsapp_verification_notes", "whatsapp_url", "message", "demo_url", "homepage_url",
     "message_char_count", "encoded_url_length", "url_validation_status", "status",
     "last_contacted", "follow_up_date", "response_status", "opened_at",
     "follow_up_url", "follow_up_message", "notes",
@@ -75,18 +76,14 @@ def homepage_url_for(row: dict[str, str]) -> str:
     return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
 
 
-def examples_url_for(homepage_url: str) -> str:
-    return homepage_url.rstrip("/") + "/demos"
-
-
-def first_message(row: dict[str, str], examples_url: str) -> str:
+def first_message(row: dict[str, str], homepage_url: str) -> str:
     business = display_business_name(row.get("business_name", ""), max_chars=42)
     message = f"""Hola, {business}. Vi que su negocio tiene presencia en Google Maps y reputación local.
 
 Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Puedes ver ejemplos aquí:
-{examples_url}
+Puedes ver la página de Nexo Local Studio aquí:
+{homepage_url}
 
 Precios desde $2,500 MXN.
 
@@ -100,8 +97,8 @@ Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más
 
 Hacemos páginas web profesionales conectadas a WhatsApp.
 
-Puedes ver ejemplos aquí:
-{examples_url}
+Puedes ver la página de Nexo Local Studio aquí:
+{homepage_url}
 
 Precios desde $2,500 MXN.
 
@@ -132,7 +129,7 @@ def row_is_suppressed(phone: str, suppressed: set[str]) -> bool:
 
 def main() -> int:
     if len(sys.argv) != 3:
-        print("Usage: python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_manual_channels.csv outreach/whatsapp_outreach_queue.csv", file=sys.stderr)
+        print("Usage: python3 outreach/scripts/generate_whatsapp_queue.py outreach/whatsapp_verified_channels.csv outreach/whatsapp_outreach_queue.csv", file=sys.stderr)
         return 2
     input_path = Path(sys.argv[1])
     output_path = Path(sys.argv[2])
@@ -141,17 +138,21 @@ def main() -> int:
         return 1
 
     suppressed = suppressed_numbers()
+    input_rows = read_csv(input_path)
+    if input_rows and "whatsapp_verification_status" not in input_rows[0]:
+        print("Warning: This input has not been WhatsApp-verified. Run manual verification first.", file=sys.stderr)
+
     output_rows: list[dict[str, str]] = []
     skipped = 0
-    for row in read_csv(input_path):
+    for row in input_rows:
         phone = row.get("normalized_phone", "").strip()
         phone_status = row.get("phone_status", "").strip()
+        verification_status = row.get("whatsapp_verification_status", "").strip() or "pending_manual_check"
         row_status = row.get("status", "").strip()
         homepage = row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE
         homepage = homepage.rstrip("/")
-        examples_url = examples_url_for(homepage)
         demo_url = row.get("demo_url", "").strip()
-        message = first_message(row, examples_url)
+        message = first_message(row, homepage)
         message_char_count = len(message)
         url = wa_url(phone, message) if phone else ""
         url_validation_status = validate_whatsapp_url(url, message) if url else "invalid_phone"
@@ -161,7 +162,11 @@ def main() -> int:
         if not homepage:
             url_validation_status = "missing_homepage_url"
             status = "blocked"
-        elif phone_status != "valid" or not phone:
+        elif verification_status != "exists_on_whatsapp":
+            status = "blocked_not_verified"
+            notes = (notes + " | " if notes else "") + "Bloqueado: número no verificado manualmente como existente en WhatsApp."
+            skipped += 1
+        elif phone_status not in {"valid_format_only", "valid"} or not phone:
             url_validation_status = "invalid_phone"
             status = "blocked"
             skipped += 1
@@ -202,6 +207,9 @@ def main() -> int:
             "zone": row.get("zone", ""),
             "normalized_phone": phone,
             "phone_status": phone_status,
+            "whatsapp_verification_status": verification_status,
+            "whatsapp_verified_at": row.get("whatsapp_verified_at", ""),
+            "whatsapp_verification_notes": row.get("whatsapp_verification_notes", ""),
             "whatsapp_url": url,
             "message": message,
             "demo_url": demo_url,

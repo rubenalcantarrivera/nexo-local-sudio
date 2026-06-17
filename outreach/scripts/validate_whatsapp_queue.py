@@ -19,8 +19,10 @@ MAX_URL_CHARS = 1200
 VALID_STATUSES = {
     "ready_to_review", "opened_for_manual_send", "sent_manual", "replied", "interested",
     "proposal_sent", "closed", "no_response", "follow_up_due", "follow_up_1_sent",
-    "follow_up_2_sent", "not_interested", "do_not_contact", "baja", "blocked", "suppressed",
+    "follow_up_2_sent", "not_interested", "do_not_contact", "baja", "blocked",
+    "blocked_not_verified", "suppressed",
 }
+NOT_VERIFIED_STATUSES = {"", "pending_manual_check", "not_on_whatsapp", "wrong_number", "needs_review"}
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -67,6 +69,9 @@ def main() -> int:
         "invalid_ready_phone": 0,
         "agency_number_errors": 0,
         "ready_agency_number_errors": 0,
+        "missing_whatsapp_verification_status": 0,
+        "ready_not_whatsapp_verified": 0,
+        "ready_not_on_whatsapp": 0,
         "missing_message": 0,
         "missing_homepage_url": 0,
         "invalid_whatsapp_url": 0,
@@ -77,6 +82,7 @@ def main() -> int:
         "url_too_long": 0,
         "messages_under_limit": 0,
         "messages_with_demo_links": 0,
+        "messages_missing_homepage_url": 0,
         "messages_with_placeholder_url": 0,
         "messages_with_localhost": 0,
         "invalid_status": 0,
@@ -91,6 +97,7 @@ def main() -> int:
         business = row.get("business_name", "").strip()
         phone = row.get("normalized_phone", "").strip()
         phone_status = row.get("phone_status", "").strip()
+        whatsapp_verification_status = row.get("whatsapp_verification_status", "").strip()
         url_validation_status = row.get("url_validation_status", "").strip()
         message = row.get("message", "")
         status = row.get("status", "").strip()
@@ -103,12 +110,18 @@ def main() -> int:
             report["invalid_phone_rows"] += 1
             if is_ready:
                 report["invalid_ready_phone"] += 1
-        if phone_status != "valid" and is_ready:
+        if phone_status not in {"valid_format_only", "valid"} and is_ready:
             report["invalid_ready_phone"] += 1
         if phone == AGENCY_WHATSAPP or phone_status == "agency_number_error":
             report["agency_number_errors"] += 1
             if is_ready:
                 report["ready_agency_number_errors"] += 1
+        if not whatsapp_verification_status:
+            report["missing_whatsapp_verification_status"] += 1
+        if is_ready and whatsapp_verification_status != "exists_on_whatsapp":
+            report["ready_not_whatsapp_verified"] += 1
+        if is_ready and whatsapp_verification_status in {"not_on_whatsapp", "wrong_number", "pending_manual_check", "needs_review"}:
+            report["ready_not_on_whatsapp"] += 1
         if not message.strip():
             report["missing_message"] += 1
         if not row.get("homepage_url", "").strip():
@@ -130,6 +143,8 @@ def main() -> int:
             report["url_too_long"] += 1
         if "/demos/" in message or "/demos/" in row.get("whatsapp_url", ""):
             report["messages_with_demo_links"] += 1
+        if row.get("homepage_url", "").strip() and row.get("homepage_url", "").strip() not in message:
+            report["messages_missing_homepage_url"] += 1
         if "YOUR-VERCEL-URL" in message or "YOUR-VERCEL-URL" in row.get("homepage_url", ""):
             report["messages_with_placeholder_url"] += 1
         if "localhost" in message or "localhost" in row.get("homepage_url", ""):
@@ -146,7 +161,12 @@ def main() -> int:
             report["do_not_contact_rows"] += 1
         if is_ready:
             report["ready_to_review"] += 1
-            if phone_status != "valid" or url_validation_status != "url_valid" or phone in suppressed:
+            if (
+                phone_status not in {"valid_format_only", "valid"}
+                or whatsapp_verification_status != "exists_on_whatsapp"
+                or url_validation_status != "url_valid"
+                or phone in suppressed
+            ):
                 report["ready_rows_with_invalid_flags"] += 1
         if phone:
             previous = seen.get(phone)
@@ -162,11 +182,14 @@ def main() -> int:
         "ready_invalid_whatsapp_url",
         "ready_url_encoding_errors",
         "ready_agency_number_errors",
+        "ready_not_whatsapp_verified",
+        "ready_not_on_whatsapp",
         "ready_suppressed",
         "invalid_ready_phone",
         "invalid_status",
         "ready_rows_with_invalid_flags",
         "messages_with_demo_links",
+        "messages_missing_homepage_url",
         "messages_with_placeholder_url",
         "messages_with_localhost",
         "message_too_long",

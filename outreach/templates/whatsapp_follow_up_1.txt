@@ -1,7 +1,7 @@
 Hola, [business_name]. Solo retomo el mensaje anterior.
 
-Te compartí los ejemplos de Nexo Local Studio:
-[homepage_url]/demos
+Te compartí la página de Nexo Local Studio:
+[homepage_url]
 
 Hacemos páginas web profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 

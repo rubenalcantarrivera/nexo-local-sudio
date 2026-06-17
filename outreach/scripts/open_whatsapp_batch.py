@@ -18,6 +18,7 @@ from pathlib import Path
 
 MAX_LIMIT = 20
 DEFAULT_LIMIT = 5
+AGENCY_WHATSAPP = "525545609027"
 
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -56,15 +57,53 @@ def main() -> int:
         return 1
 
     headers, rows = read_csv(path)
+    summary = {
+        "ready_rows": 0,
+        "blocked_not_verified": 0,
+        "not_on_whatsapp": 0,
+        "needs_review": 0,
+        "agency_number_errors": 0,
+        "invalid_phones": 0,
+    }
+    for row in rows:
+        status = row.get("status", "")
+        verification = row.get("whatsapp_verification_status", "")
+        phone_status = row.get("phone_status", "")
+        phone = row.get("normalized_phone", "")
+        if status == "ready_to_review":
+            summary["ready_rows"] += 1
+        if status == "blocked_not_verified" or verification in {"pending_manual_check", ""}:
+            summary["blocked_not_verified"] += 1
+        if verification == "not_on_whatsapp":
+            summary["not_on_whatsapp"] += 1
+        if verification in {"needs_review", "wrong_number"}:
+            summary["needs_review"] += 1
+        if phone_status == "agency_number_error" or phone == AGENCY_WHATSAPP:
+            summary["agency_number_errors"] += 1
+        if phone_status in {"invalid_phone", "missing_phone", "needs_manual_review"}:
+            summary["invalid_phones"] += 1
+
+    print("Queue summary:")
+    print(f"Ready rows: {summary['ready_rows']}")
+    print(f"Blocked not verified: {summary['blocked_not_verified']}")
+    print(f"Not on WhatsApp: {summary['not_on_whatsapp']}")
+    print(f"Needs review: {summary['needs_review']}")
+    print(f"Agency number errors: {summary['agency_number_errors']}")
+    print(f"Invalid phones: {summary['invalid_phones']}\n")
+
     selected: list[dict[str, str]] = []
     for row in rows:
         if len(selected) >= limit:
             break
         if row.get("status") != "ready_to_review":
             continue
-        if row.get("phone_status") != "valid":
+        if row.get("phone_status") not in {"valid_format_only", "valid"}:
+            continue
+        if row.get("whatsapp_verification_status") != "exists_on_whatsapp":
             continue
         if row.get("url_validation_status") != "url_valid":
+            continue
+        if row.get("normalized_phone") == AGENCY_WHATSAPP:
             continue
         if row.get("status") in {"do_not_contact", "baja", "suppressed"}:
             continue
@@ -77,7 +116,7 @@ def main() -> int:
         print("No ready, valid WhatsApp rows found.")
         return 0
 
-    print(f"About to open {len(selected)} WhatsApp chats.")
+    print(f"About to open {len(selected)} verified WhatsApp chats.")
     print("No messages will be sent automatically.")
     print("You must review each chat and press Send manually.\n")
     for row in selected:

@@ -1,31 +1,31 @@
 business_name,original_phone,normalized_phone,phone_status,reason,duplicate_group,is_agency_number,recommended_action
-Medical Glamour Polanco,55 2763 4703,525527634703,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Dra. Shirley De Brito,55 1474 4809,525514744809,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-"Dentista Juriquilla, Querétaro",55 4943 8421,525549438421,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Dentar Odontología Integral y Ortodoncia,446 131 9916,524461319916,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Hospital Veterinario Narvarte,55 5538 2388,525555382388,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Dream Pets,55 6114 3300,525561143300,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Clínica Veterinaria Coyoacán,55 5688 3177,525556883177,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Hospital Veterinario Providencia,33 3640 1037,523336401037,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Vetleaf Veterinaria y Estética,33 4355 9053,523343559053,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Dr. Neguib Villavicencio Raful,55 6612 6068,525566126068,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-NUTRIÓLOGA Brenda Núñez,55 1498 6180,525514986180,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Fisioterapia/ rehabilitacion/terapia física y estimulación temprana Dra. Yaqui Ortega,452 169 4879,524521694879,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Clínica Veterinaria Dr. Cabrera,81 8040 8089,528180408089,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Dental Valle Juriquilla,729 524 5000,527295245000,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Clínica Like U,442 317 2951,524423172951,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Clínica Dermo Estética Dr. Rapha,446 142 0976,524461420976,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-BeautyFull Medicina Estetica,55 1629 1792,525516291792,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Acéntua Medicina Estética,81 2629 4242,528126294242,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Casa del Arquitecto,55 5211 6051,525552116051,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Fisioterapia y Rehabilitación Vertiz Narvarte,55 1859 3073,525518593073,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Psicame. Psicóloga,442 119 3848,524421193848,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-"Mover-T, Clínica de Fisioterapia Integral",55 7042 2895,525570422895,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Yuvā Medicina Estética,55 6543 8248,525565438248,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-18setenta CDMX,55 9079 0613,525590790613,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Clínica Dental Condesa,55 5286 5223,525552865223,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Ethos Consultorio Odontológico,,,missing_phone,No hay teléfono público en la fila.,,no,No incluir en cola; buscar teléfono público o contactar por otro canal.
-Estudio Fisio Coyoacán,55 2854 7347,525528547347,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Centro Refforza,55 5211 1078,525552111078,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Óptica Mr Soul Eyewear,55 7160 0243,525571600243,valid,Teléfono mexicano de 10 dígitos convertido a formato internacional.,,no,Usar en cola de revisión manual.
-Psicóloga Lola Hdz. Benito Juárez,,,missing_phone,No hay teléfono público en la fila.,,no,No incluir en cola; buscar teléfono público o contactar por otro canal.
+Medical Glamour Polanco,55 2763 4703,525527634703,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Dra. Shirley De Brito,55 1474 4809,525514744809,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+"Dentista Juriquilla, Querétaro",55 4943 8421,525549438421,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Dentar Odontología Integral y Ortodoncia,446 131 9916,524461319916,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Hospital Veterinario Narvarte,55 5538 2388,525555382388,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Dream Pets,55 6114 3300,525561143300,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Clínica Veterinaria Coyoacán,55 5688 3177,525556883177,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Hospital Veterinario Providencia,33 3640 1037,523336401037,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Vetleaf Veterinaria y Estética,33 4355 9053,523343559053,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Dr. Neguib Villavicencio Raful,55 6612 6068,525566126068,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+NUTRIÓLOGA Brenda Núñez,55 1498 6180,525514986180,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Fisioterapia/ rehabilitacion/terapia física y estimulación temprana Dra. Yaqui Ortega,452 169 4879,524521694879,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Clínica Veterinaria Dr. Cabrera,81 8040 8089,528180408089,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Dental Valle Juriquilla,729 524 5000,527295245000,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Clínica Like U,442 317 2951,524423172951,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Clínica Dermo Estética Dr. Rapha,446 142 0976,524461420976,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+BeautyFull Medicina Estetica,55 1629 1792,525516291792,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Acéntua Medicina Estética,81 2629 4242,528126294242,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Casa del Arquitecto,55 5211 6051,525552116051,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Fisioterapia y Rehabilitación Vertiz Narvarte,55 1859 3073,525518593073,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Psicame. Psicóloga,442 119 3848,524421193848,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+"Mover-T, Clínica de Fisioterapia Integral",55 7042 2895,525570422895,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Yuvā Medicina Estética,55 6543 8248,525565438248,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+18setenta CDMX,55 9079 0613,525590790613,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Clínica Dental Condesa,55 5286 5223,525552865223,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Ethos Consultorio Odontológico,,,missing_phone,No hay teléfono público en la fila.,,no,No incluir en cola; revisar o buscar teléfono público correcto.
+Estudio Fisio Coyoacán,55 2854 7347,525528547347,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Centro Refforza,55 5211 1078,525552111078,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Óptica Mr Soul Eyewear,55 7160 0243,525571600243,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Psicóloga Lola Hdz. Benito Juárez,,,missing_phone,No hay teléfono público en la fila.,,no,No incluir en cola; revisar o buscar teléfono público correcto.
