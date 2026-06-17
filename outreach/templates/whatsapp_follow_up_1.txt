@@ -1,10 +1,10 @@
-Hola, [business_name]. Solo retomo el mensaje anterior.
+Hola, solo retomamos el mensaje anterior.
 
-Te compartí la página de Nexo Local Studio:
+Les compartimos la página de Nexo Local Studio:
 [homepage_url]
 
 Hacemos páginas web profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Si tiene sentido, puedo enviarte una propuesta breve con alcance, tiempo y precio.
+Si tiene sentido, podemos enviarles una propuesta breve con alcance, tiempo y precio.
 
-Si prefieres no recibir más mensajes, dime baja.
+Si no les interesa recibir más mensajes, dígannos baja.

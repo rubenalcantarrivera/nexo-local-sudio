@@ -78,32 +78,30 @@ def homepage_url_for(row: dict[str, str]) -> str:
 
 
 def first_message(row: dict[str, str], homepage_url: str) -> str:
-    business = display_business_name(row.get("business_name", ""), max_chars=42)
-    message = f"""Hola, {business}. Vi que su negocio tiene presencia en Google Maps y reputación local.
+    message = f"""Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
 
-Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Puedes ver la página de Nexo Local Studio aquí:
+Pueden ver la página de Nexo Local Studio aquí:
 {homepage_url}
 
 Precios desde $2,500 MXN.
 
-Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja."""
     message = normalize_message(message)
     if len(message) <= MAX_MESSAGE_CHARS:
         return message
 
-    short_business = display_business_name(row.get("business_name", ""), max_chars=28)
-    shorter = f"""Hola, {short_business}. Soy Ruben, de Nexo Local Studio.
+    shorter = f"""Hola, somos Nexo Local Studio.
 
-Hacemos páginas web profesionales conectadas a WhatsApp.
+Hacemos páginas web profesionales conectadas a WhatsApp para negocios locales.
 
-Puedes ver la página de Nexo Local Studio aquí:
+Pueden ver la página de Nexo Local Studio aquí:
 {homepage_url}
 
 Precios desde $2,500 MXN.
 
-Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
+Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja."""
     return normalize_message(shorter)
 
 

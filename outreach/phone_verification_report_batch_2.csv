@@ -1,0 +1,31 @@
+business_name,original_phone,normalized_phone,phone_status,reason,duplicate_group,is_agency_number,recommended_action
+El Samurai,55 5523 1469,525555231469,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Konditori,+52 55 85000852,525585000852,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Nagaoka,+52 55 55439530,525555439530,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Frankfurt,55-5256-0767,525552560767,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Specia,55-5564-1367,525555641367,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+La Tavola,+52 55 55437360,525555437360,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Ruben's Hamburgers Insurgentes,+52 55 56825341,525556825341,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Deigo,+52 55 56056317,525556056317,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+El Rincón del Parque,+52 55 56056831,525556056831,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Garabatos Insurgentes,+52 55 55439448,525555439448,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+El Sheik,+52 55 56593311,525556593311,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+COBA FONDA YUCATECA,+52 55 6395 9961,525563959961,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Marina Bistro,+52 55 55754014,525555754014,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Bistro Cheny,55 5523 9908,525555239908,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Chester's,55 5688 2400,525556882400,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Ramen-ya,55 5559 1495,525555591495,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Un Rincon de Chile,55 5524 4039,525555244039,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Restaurante El Amaranto,55 5539 5074,525555395074,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Paradiso Gourmet,+52 55 5280 5902,525552805902,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Angelopolitano,5563912121,525563912121,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Guzina Oaxaca,5552821820,525552821820,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+La Buena Barra,5552806699,525552806699,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Publico,5540001288,525540001288,valid_format_only,Teléfono mexicano de 10 dígitos convertido a 52 + número.,,no,Pasar a verificación manual de WhatsApp.
+Testal,+525555101358,525555101358,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Mina la Antigua,+52 33 2315 2430,523323152430,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Alta Fibra,+52 33 3124 1510,523331241510,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Servicios Veterinarios Rodríguez,+5215555839768,525555839768,valid_format_only,Formato móvil antiguo 521 convertido a 52 + últimos 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Centro Veterinario Norte,+5215555173665,525555173665,valid_format_only,Formato móvil antiguo 521 convertido a 52 + últimos 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Caninos & Felinos,+52 33 31241227,523331241227,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
+Núcleo Médico Copérnico,+52 33 36281590,523336281590,valid_format_only,Teléfono ya estaba en formato 52 + 10 dígitos.,,no,Pasar a verificación manual de WhatsApp.
