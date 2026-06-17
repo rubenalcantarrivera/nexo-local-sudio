@@ -22,9 +22,9 @@ El mensaje ya no empieza con el nombre del negocio. Usa una entrada directa y to
 
 > Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
 
-También usa la página general de Nexo Local Studio, no demos individuales:
+También usa la galería general de demos de Nexo Local Studio, no demos individuales:
 
-https://nexo-local-studio-public.vercel.app
+https://nexo-local-studio-public.vercel.app/demos
 
 ## Prospectos del lote
 
@@ -84,4 +84,3 @@ python3 outreach/scripts/open_whatsapp_batch.py outreach/whatsapp_outreach_queue
 ```
 
 El script solo abre chats con el mensaje precargado. No presiona Enviar. Revisar cada mensaje y enviar manualmente solo si corresponde.
-

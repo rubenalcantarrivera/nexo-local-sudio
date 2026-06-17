@@ -49,10 +49,10 @@ El verificador manual abre un número a la vez y te pregunta si el chat existe. 
 
 ## Mensajes
 
-El primer mensaje usa la página principal de Nexo Local Studio, no demos por nicho:
+El primer mensaje usa la galería general de ejemplos de Nexo Local Studio. No usa demos individuales por nicho:
 
 ```text
-https://nexo-local-studio-public.vercel.app
+https://nexo-local-studio-public.vercel.app/demos
 ```
 
 El generador codifica el texto completo con `urllib.parse.quote(message, safe="")` y valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.

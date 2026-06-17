@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
-DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
+DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app/demos"
 AGENCY_WHATSAPP = "525545609027"
 MAX_MESSAGE_CHARS = 650
 MAX_URL_CHARS = 1200
@@ -74,7 +74,12 @@ def display_business_name(value: str, max_chars: int = 72) -> str:
 
 
 def homepage_url_for(row: dict[str, str]) -> str:
-    return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
+    url = (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
+    if url.endswith("/demos"):
+        return url
+    if "/demos/" in url:
+        return url.split("/demos/", 1)[0].rstrip("/") + "/demos"
+    return url + "/demos"
 
 
 def first_message(row: dict[str, str], homepage_url: str) -> str:
@@ -82,7 +87,7 @@ def first_message(row: dict[str, str], homepage_url: str) -> str:
 
 Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Pueden ver la página de Nexo Local Studio aquí:
+Pueden ver los ejemplos de Nexo Local Studio aquí:
 {homepage_url}
 
 Precios desde $2,500 MXN.
@@ -96,7 +101,7 @@ Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recib
 
 Hacemos páginas web profesionales conectadas a WhatsApp para negocios locales.
 
-Pueden ver la página de Nexo Local Studio aquí:
+Pueden ver los ejemplos de Nexo Local Studio aquí:
 {homepage_url}
 
 Precios desde $2,500 MXN.
@@ -159,8 +164,7 @@ def main() -> int:
         if args.allow_unverified and verification_status == "pending_manual_check":
             verification_status = "bypassed_by_user"
         row_status = row.get("status", "").strip()
-        homepage = row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE
-        homepage = homepage.rstrip("/")
+        homepage = homepage_url_for(row)
         demo_url = row.get("demo_url", "").strip()
         message = first_message(row, homepage)
         message_char_count = len(message)

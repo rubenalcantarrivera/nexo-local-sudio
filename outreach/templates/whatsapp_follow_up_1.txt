@@ -1,6 +1,6 @@
 Hola, solo retomamos el mensaje anterior.
 
-Les compartimos la página de Nexo Local Studio:
+Les compartimos los ejemplos de Nexo Local Studio:
 [homepage_url]
 
 Hacemos páginas web profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.

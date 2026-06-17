@@ -70,6 +70,16 @@ El abridor solo acepta filas con:
 - teléfono válido
 - número diferente a `525545609027`
 
+## Link del primer mensaje
+
+El primer mensaje debe mandar a la galería general de ejemplos:
+
+```text
+https://nexo-local-studio-public.vercel.app/demos
+```
+
+No usar demos individuales como `/demos/dental`, `/demos/restaurante` o similares en el primer contacto. Esos links pueden enviarse después si el prospecto pide un ejemplo específico.
+
 ## Verificación real de números de WhatsApp
 
 Un teléfono público puede ser fijo, conmutador o línea sin WhatsApp. Por eso `valid_format_only` no es suficiente para contactar.

@@ -16,7 +16,7 @@ from pathlib import Path
 
 SKIP_STATUSES = {"replied", "interested", "proposal_sent", "closed", "not_interested", "do_not_contact", "baja"}
 DATE_FMT = "%Y-%m-%d"
-DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
+DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app/demos"
 
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -59,7 +59,12 @@ def normalize_message(message: str) -> str:
 
 
 def homepage_url_for(row: dict[str, str]) -> str:
-    return (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
+    url = (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
+    if url.endswith("/demos"):
+        return url
+    if "/demos/" in url:
+        return url.split("/demos/", 1)[0].rstrip("/") + "/demos"
+    return url + "/demos"
 
 
 def decoded_text_from_url(url: str) -> str:
@@ -76,7 +81,7 @@ def validated_follow_up_url(phone: str, message: str) -> tuple[str, str]:
 def follow_up_1(row: dict[str, str]) -> str:
     return normalize_message(f"""Hola, solo retomamos el mensaje anterior.
 
-Les compartimos la página de Nexo Local Studio:
+Les compartimos los ejemplos de Nexo Local Studio:
 {homepage_url_for(row)}
 
 Hacemos páginas web profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
@@ -89,7 +94,7 @@ Si no les interesa recibir más mensajes, dígannos baja.""")
 def follow_up_2(row: dict[str, str]) -> str:
     return normalize_message(f"""Hola, cerramos por aquí para no insistir de más.
 
-Si más adelante quieren una página web clara, profesional y conectada a WhatsApp, aquí está Nexo Local Studio:
+Si más adelante quieren una página web clara, profesional y conectada a WhatsApp, aquí están los ejemplos de Nexo Local Studio:
 {homepage_url_for(row)}
 
 Saludos,
