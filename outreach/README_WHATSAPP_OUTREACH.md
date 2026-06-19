@@ -36,7 +36,7 @@ No contactes números con estado `not_on_whatsapp`, `wrong_number`, `needs_revie
 
 ### Modo directo sin verificación
 
-Para abrir todos los chats de una campaña rápidamente, sin verificar antes y sin preguntas por cada fila:
+Para abrir los chats de una campaña uno por uno, sin verificar antes y escribiendo `y` antes de abrir el siguiente:
 
 ```bash
 python3 outreach/scripts/open_all_whatsapp_now.py --campaign outreach/campaigns/campaign_02_50_prospects --limit 50
@@ -47,11 +47,14 @@ Este modo:
 - Abre links de WhatsApp con mensaje prellenado.
 - No envía automáticamente.
 - No verifica números antes.
+- Pide `y` antes de abrir cada chat.
 - Algunos números pueden no existir en WhatsApp; si pasa, cierra esa pestaña y sigue.
 - Tú presionas Send manualmente dentro de WhatsApp.
 - El mensaje no incluye el nombre del negocio.
 - El mensaje habla en plural como Nexo Local Studio.
 - El primer mensaje incluye solo la homepage principal.
+
+Si de verdad quieres abrir todos seguidos con delay, usa `--auto-open`, pero el modo recomendado es uno por uno.
 
 ### Flujo estricto con verificación
 

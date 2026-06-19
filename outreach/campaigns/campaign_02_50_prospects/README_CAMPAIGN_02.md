@@ -18,9 +18,9 @@ cd /Users/rubenalcantar/Downloads/nexo-local-studio
 ./outreach/campaigns/campaign_02_50_prospects/run_campaign_next.sh
 ```
 
-## Modo directo sin verificación
+## Modo directo uno por uno sin verificación
 
-Comando principal para abrir los 50 chats sin menú, sin verificación previa y sin preguntas por cada prospecto:
+Comando principal para abrir los 50 chats sin menú y sin verificación previa. El script pide `y` antes de abrir cada chat:
 
 ```bash
 cd /Users/rubenalcantar/Downloads/nexo-local-studio
@@ -33,7 +33,7 @@ Opcional con pausa de 1 segundo:
 python3 outreach/scripts/open_all_whatsapp_now.py --campaign outreach/campaigns/campaign_02_50_prospects --limit 50 --delay 1
 ```
 
-Este modo abre links de WhatsApp con mensaje prellenado. No manda nada automáticamente. Si WhatsApp dice que el número no existe, cierra esa pestaña y sigue.
+Este modo abre links de WhatsApp con mensaje prellenado. No manda nada automáticamente. Si WhatsApp dice que el número no existe, cierra esa pestaña, vuelve a Terminal y escribe `y` para abrir el siguiente.
 
 El mensaje no incluye el nombre del negocio, habla en plural como Nexo Local Studio y usa solo la homepage principal.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Open WhatsApp chats directly with prefilled messages.
+"""Open WhatsApp chats one by one with prefilled messages.
 
 This script does not send messages, click buttons, use WhatsApp Web automation,
 or call unofficial APIs. It only opens wa.me links in the default browser.
@@ -259,6 +259,11 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
     parser.add_argument("--delay", type=float, default=DEFAULT_DELAY)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--auto-open",
+        action="store_true",
+        help="Open all eligible links with delay only. Default is safer: press y before each link.",
+    )
     args = parser.parse_args()
 
     campaign = Path(args.campaign)
@@ -275,9 +280,11 @@ def main() -> int:
     opened, skipped, homepage_url = build_links(campaign, rows, limit)
     write_summary(campaign, source_path, len(rows), opened, skipped, homepage_url, args.dry_run)
 
-    print(f"Opening {len(opened)} WhatsApp chats.")
+    print(f"Ready to open {len(opened)} WhatsApp chats.")
     print("No messages will be sent automatically.")
     print("You must press Send manually in WhatsApp.")
+    if not args.auto_open:
+        print("Press y in Terminal to open the next chat, or q to quit.")
     print(f"Skipped {len(skipped)} rows.")
 
     if args.dry_run:
@@ -286,7 +293,18 @@ def main() -> int:
 
     now = dt.datetime.now().isoformat(timespec="seconds")
     log_rows: list[dict[str, str]] = []
-    for row in opened:
+    for index, row in enumerate(opened, start=1):
+        if not args.auto_open:
+            print("")
+            print(f"Next {index}/{len(opened)}: {row.get('business_name') or 'Sin nombre'}")
+            print(f"Phone: {row.get('normalized_phone')}")
+            answer = input("Open this WhatsApp chat? [y/q] ").strip().lower()
+            if answer == "q":
+                print("Stopped. No more WhatsApp chats were opened.")
+                break
+            if answer not in {"y", "yes", "s", "si", "sí"}:
+                print("Skipped. Type y for the next one when ready.")
+                continue
         webbrowser.open(row["whatsapp_url"])
         log_rows.append({**row, "opened_at": now})
         time.sleep(delay)

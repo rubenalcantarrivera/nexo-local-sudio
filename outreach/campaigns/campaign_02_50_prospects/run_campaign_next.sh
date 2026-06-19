@@ -9,7 +9,7 @@ SCRIPT="outreach/scripts/run_next_whatsapp_campaign.py"
 while true; do
   echo ""
   echo "Nexo Local Studio - Campaign 02"
-  echo "1. Open all WhatsApp messages now, no verification, no menu prompts"
+  echo "1. Open WhatsApp messages one by one, press y for next"
   echo "2. Show campaign status"
   echo "3. Verify next 5 WhatsApp numbers"
   echo "4. Regenerate strict queue from verified numbers"

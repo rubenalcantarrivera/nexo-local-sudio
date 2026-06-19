@@ -2,13 +2,13 @@
 
 ## Modo directo sin verificación
 
-Si quieres abrir la campaña completa rápido, sin verificación previa y sin prompts por cada prospecto:
+Si quieres abrir la campaña sin verificación previa, pero controlando cada chat desde Terminal:
 
 ```bash
 python3 outreach/scripts/open_all_whatsapp_now.py --campaign outreach/campaigns/campaign_02_50_prospects --limit 50
 ```
 
-Este modo abre links de WhatsApp con mensaje prellenado. No envía automáticamente. Tú presionas Send manualmente dentro de WhatsApp si decides enviar.
+Este modo abre links de WhatsApp con mensaje prellenado. No envía automáticamente. Antes de cada chat, Terminal pide `y`; después tú presionas Send manualmente dentro de WhatsApp si decides enviar.
 
 El mensaje:
 
