@@ -34,6 +34,27 @@ No contactes números con estado `not_on_whatsapp`, `wrong_number`, `needs_revie
 
 ## Flujo recomendado
 
+### Modo directo sin verificación
+
+Para abrir todos los chats de una campaña rápidamente, sin verificar antes y sin preguntas por cada fila:
+
+```bash
+python3 outreach/scripts/open_all_whatsapp_now.py --campaign outreach/campaigns/campaign_02_50_prospects --limit 50
+```
+
+Este modo:
+
+- Abre links de WhatsApp con mensaje prellenado.
+- No envía automáticamente.
+- No verifica números antes.
+- Algunos números pueden no existir en WhatsApp; si pasa, cierra esa pestaña y sigue.
+- Tú presionas Send manualmente dentro de WhatsApp.
+- El mensaje no incluye el nombre del negocio.
+- El mensaje habla en plural como Nexo Local Studio.
+- El primer mensaje incluye solo la homepage principal.
+
+### Flujo estricto con verificación
+
 ```bash
 python3 outreach/scripts/audit_phone_sources.py outreach/verified_no_website_prospects.csv outreach/phone_source_audit.csv
 python3 outreach/scripts/normalize_phone_numbers.py outreach/verified_no_website_prospects.csv outreach/whatsapp_manual_channels.csv
@@ -49,13 +70,13 @@ El verificador manual abre un número a la vez y te pregunta si el chat existe. 
 
 ## Mensajes
 
-El primer mensaje usa la galería general de ejemplos de Nexo Local Studio. No usa demos individuales por nicho:
+El modo directo usa solo la homepage principal:
 
 ```text
-https://nexo-local-studio-public.vercel.app/demos
+https://nexo-local-studio-public.vercel.app
 ```
 
-El generador codifica el texto completo con `urllib.parse.quote(message, safe="")` y valida que el texto decodificado desde el `wa.me` sea exactamente igual al mensaje original.
+El mensaje no incluye nombre de negocio, no usa `/demos/`, habla en plural como Nexo Local Studio y se codifica con `urllib.parse.quote(message, safe="")`.
 
 ## Estados de la cola
 

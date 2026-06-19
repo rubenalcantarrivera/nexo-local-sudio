@@ -1,0 +1,24 @@
+timestamp: 2026-06-19T17:09:13
+campaign path: outreach/campaigns/campaign_02_50_prospects
+source file: outreach/campaigns/campaign_02_50_prospects/whatsapp_outreach_queue.csv
+dry run: True
+rows scanned: 50
+rows opened: 50
+rows skipped: 0
+skipped invalid phones: 0
+skipped agency number: 0
+skipped suppressed: 0
+skipped encoding errors: 0
+skipped duplicate: 0
+homepage URL used: https://nexo-local-studio-public.vercel.app
+message template used:
+Hola, buen día.
+
+Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Pueden ver nuestra página aquí:
+https://nexo-local-studio-public.vercel.app
+
+Tenemos precios de lanzamiento desde $2,500 MXN.
+
+Si les interesa, podemos enviarles una propuesta breve. Si prefieren no recibir más mensajes, pueden responder “baja”.

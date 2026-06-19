@@ -1,5 +1,24 @@
 # Workflow diario de WhatsApp
 
+## Modo directo sin verificación
+
+Si quieres abrir la campaña completa rápido, sin verificación previa y sin prompts por cada prospecto:
+
+```bash
+python3 outreach/scripts/open_all_whatsapp_now.py --campaign outreach/campaigns/campaign_02_50_prospects --limit 50
+```
+
+Este modo abre links de WhatsApp con mensaje prellenado. No envía automáticamente. Tú presionas Send manualmente dentro de WhatsApp si decides enviar.
+
+El mensaje:
+
+- No incluye nombre del negocio.
+- Habla en plural como Nexo Local Studio.
+- Usa solo la homepage principal.
+- No usa `/demos/`.
+
+Si WhatsApp dice que el número no existe, cierra esa pestaña y sigue.
+
 ## Preparación obligatoria
 
 1. Auditar teléfonos fuente:
@@ -72,10 +91,10 @@ El abridor solo acepta filas con:
 
 ## Link del primer mensaje
 
-El primer mensaje debe mandar a la galería general de ejemplos:
+El modo directo debe mandar solo a la homepage principal:
 
 ```text
-https://nexo-local-studio-public.vercel.app/demos
+https://nexo-local-studio-public.vercel.app
 ```
 
 No usar demos individuales como `/demos/dental`, `/demos/restaurante` o similares en el primer contacto. Esos links pueden enviarse después si el prospecto pide un ejemplo específico.
