@@ -42,7 +42,7 @@ def main() -> int:
     parser.add_argument("queue_csv")
     parser.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
     parser.add_argument("--yes", action="store_true", help="Open the reviewed batch without interactive confirmation.")
-    parser.add_argument("--allow-unverified", action="store_true", help="Allow rows explicitly marked as bypassed_by_user.")
+    parser.add_argument("--allow-unverified", action="store_true", help="Allow rows explicitly marked as not_verified/bypassed_by_user.")
     args = parser.parse_args()
 
     path = Path(args.queue_csv)
@@ -101,9 +101,9 @@ def main() -> int:
         if row.get("phone_status") not in {"valid_format_only", "valid"}:
             continue
         if row.get("whatsapp_verification_status") != "exists_on_whatsapp":
-            if not (args.allow_unverified and row.get("whatsapp_verification_status") == "bypassed_by_user"):
+            if not (args.allow_unverified and row.get("whatsapp_verification_status") in {"not_verified", "bypassed_by_user"}):
                 continue
-        if row.get("whatsapp_verification_status") == "bypassed_by_user" and not args.allow_unverified:
+        if row.get("whatsapp_verification_status") in {"not_verified", "bypassed_by_user"} and not args.allow_unverified:
             continue
         if row.get("url_validation_status") != "url_valid":
             continue

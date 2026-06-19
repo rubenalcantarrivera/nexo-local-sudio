@@ -18,7 +18,7 @@ from pathlib import Path
 
 
 AGENCY_WHATSAPP = "525545609027"
-MAX_LIMIT = 20
+MAX_LIMIT = 50
 DEFAULT_LIMIT = 5
 MAX_MESSAGE_CHARS = 650
 
@@ -88,6 +88,15 @@ def cap_limit(value: int) -> int:
     return value
 
 
+def clean_homepage_url(value: str) -> str:
+    url = (value or "https://nexo-local-studio-public.vercel.app").strip().rstrip("/")
+    if "/demos/" in url:
+        return url.split("/demos/", 1)[0].rstrip("/")
+    if url.endswith("/demos"):
+        return url[:-6].rstrip("/")
+    return url
+
+
 def campaign_paths(campaign: Path) -> dict[str, Path]:
     return {
         "qualified": campaign / "qualified_prospects.csv",
@@ -101,7 +110,7 @@ def campaign_paths(campaign: Path) -> dict[str, Path]:
 
 def message_for(row: dict[str, str]) -> str:
     business_name = (row.get("business_name") or "su negocio").strip()
-    homepage_url = (row.get("homepage_url") or "").strip()
+    homepage_url = clean_homepage_url(row.get("homepage_url") or "")
     return f"""Hola, {business_name}. Vi que su negocio tiene presencia local y señales de reputación.
 
 Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
@@ -136,6 +145,29 @@ def decoded_text(url: str) -> str:
     return urllib.parse.parse_qs(parsed.query, keep_blank_values=True).get("text", [""])[0]
 
 
+def append_note(row: dict[str, str], note: str) -> None:
+    existing = row.get("notes", "").strip()
+    row["notes"] = f"{existing} | {note}" if existing else note
+
+
+def valid_fast_phone(row: dict[str, str]) -> bool:
+    phone = row.get("normalized_phone", "").strip()
+    return phone.isdigit() and phone.startswith("52") and 11 <= len(phone) <= 15 and phone != AGENCY_WHATSAPP
+
+
+def valid_fast_url(row: dict[str, str]) -> bool:
+    message = row.get("message", "")
+    homepage = row.get("homepage_url", "").strip()
+    url = row.get("whatsapp_url", "")
+    if not message or not homepage or not url.startswith("https://wa.me/"):
+        return False
+    if "/demos/" in message or "YOUR-VERCEL-URL" in message or "localhost" in message:
+        return False
+    if len(message) > MAX_MESSAGE_CHARS:
+        return False
+    return decoded_text(url) == message
+
+
 def suppressed_numbers(path: Path) -> set[str]:
     ensure_csv(path, SUPPRESSION_COLUMNS)
     _, rows = read_csv(path)
@@ -167,6 +199,106 @@ def append_log(path: Path, business_name: str, phone: str, event: str, notes: st
         "notes": notes,
     })
     write_csv(path, headers or SENT_LOG_COLUMNS, rows)
+
+
+def sync_verification_status(campaign: Path, business_name: str, phone: str, status: str) -> None:
+    paths = campaign_paths(campaign)
+    headers, rows = read_csv(paths["verification"])
+    if not rows:
+        return
+    changed = False
+    for row in rows:
+        if row.get("business_name") == business_name and row.get("normalized_phone") == phone:
+            row["verification_status"] = status
+            row["verified_at"] = now_iso()
+            changed = True
+            break
+    if changed:
+        write_csv(paths["verification"], headers or VERIFICATION_COLUMNS, rows)
+
+
+def generate_fast_queue(campaign: Path) -> int:
+    paths = campaign_paths(campaign)
+    ensure_csv(paths["suppression"], SUPPRESSION_COLUMNS)
+    ensure_csv(paths["sent_log"], SENT_LOG_COLUMNS)
+
+    source_headers, source_rows = read_csv(paths["verified"])
+    if not source_rows:
+        source_headers, source_rows = read_csv(campaign / "whatsapp_manual_channels.csv")
+    if not source_rows:
+        source_headers, source_rows = read_csv(paths["qualified"])
+    if not source_rows:
+        print("No source rows found for fast-send queue.", file=sys.stderr)
+        return 1
+
+    suppression = suppressed_numbers(paths["suppression"])
+    seen_phones: set[str] = set()
+    queue_rows: list[dict[str, str]] = []
+    for row in source_rows:
+        phone = row.get("normalized_phone", "").strip()
+        phone_status = row.get("phone_status", "").strip() or "valid"
+        verification_status = row.get("whatsapp_verification_status", "").strip() or "not_verified"
+        homepage = clean_homepage_url(row.get("homepage_url", ""))
+        row_for_message = {**row, "homepage_url": homepage}
+        message = message_for(row_for_message)
+        url = wa_url(phone, message) if phone else ""
+        url_validation = "url_valid" if url and decoded_text(url) == message else "url_encoding_error"
+        status = "ready_to_review"
+        notes = row.get("notes") or row.get("verification_notes", "")
+
+        if not valid_fast_phone({"normalized_phone": phone}):
+            status = "blocked"
+            phone_status = "agency_number_error" if phone == AGENCY_WHATSAPP else "invalid_phone"
+            append_note(row_for_message, "Bloqueado en fast-send: teléfono inválido o número de Nexo.")
+            notes = row_for_message.get("notes", notes)
+        elif phone in seen_phones:
+            status = "blocked"
+            phone_status = "duplicate_phone"
+            notes = (notes + " | " if notes else "") + "Bloqueado en fast-send: teléfono duplicado."
+        elif phone in suppression:
+            status = "suppressed"
+            notes = (notes + " | " if notes else "") + "Bloqueado por lista de supresión."
+        elif row.get("status") in {"do_not_contact", "baja", "suppressed"}:
+            status = row.get("status", "do_not_contact")
+        elif len(message) > MAX_MESSAGE_CHARS:
+            status = "blocked"
+            url_validation = "message_too_long"
+            notes = (notes + " | " if notes else "") + "Bloqueado: mensaje demasiado largo."
+        elif url_validation != "url_valid":
+            status = "blocked"
+
+        seen_phones.add(phone)
+        queue_rows.append({
+            "priority": row.get("priority", ""),
+            "score": row.get("score", ""),
+            "business_name": row.get("business_name", ""),
+            "niche": row.get("niche", ""),
+            "city": row.get("city", ""),
+            "zone": row.get("zone", ""),
+            "normalized_phone": phone,
+            "phone_status": phone_status,
+            "whatsapp_verification_status": verification_status,
+            "message": message,
+            "homepage_url": homepage,
+            "whatsapp_url": url,
+            "message_char_count": str(len(message)),
+            "encoded_url_length": str(len(url)),
+            "url_validation_status": url_validation,
+            "status": status,
+            "last_contacted": "",
+            "follow_up_date": "",
+            "response_status": "",
+            "opened_at": "",
+            "follow_up_url": "",
+            "follow_up_message": "",
+            "notes": notes,
+        })
+
+    write_csv(paths["queue"], QUEUE_COLUMNS, queue_rows)
+    print(f"Generated fast-send queue: {paths['queue']}")
+    print(f"Ready for fast-send: {sum(row['status'] == 'ready_to_review' for row in queue_rows)}")
+    print(f"Excluded/blocked: {sum(row['status'] != 'ready_to_review' for row in queue_rows)}")
+    return 0
 
 
 def regenerate(campaign: Path) -> int:
@@ -370,6 +502,116 @@ def mode_send(campaign: Path, limit: int) -> int:
     return 0
 
 
+def fast_ready(row: dict[str, str]) -> bool:
+    if row.get("status") != "ready_to_review":
+        return False
+    if row.get("phone_status") not in {"valid", "valid_format_only"}:
+        return False
+    if row.get("whatsapp_verification_status") in {"not_on_whatsapp", "wrong_number", "needs_review"}:
+        return False
+    if row.get("status") in {"do_not_contact", "baja", "suppressed"}:
+        return False
+    return valid_fast_phone(row) and valid_fast_url(row)
+
+
+def mode_fast_send(campaign: Path, limit: int, yes: bool) -> int:
+    paths = campaign_paths(campaign)
+    headers, rows = read_csv(paths["queue"])
+    if not rows or not any(fast_ready(row) for row in rows):
+        if generate_fast_queue(campaign) != 0:
+            return 1
+        headers, rows = read_csv(paths["queue"])
+
+    selected = [row for row in rows if fast_ready(row)][:cap_limit(limit)]
+    if not selected:
+        print("No fast-send rows available. Check phones, suppression list, and queue validation.")
+        return 0
+
+    print("Fast-send mode")
+    print(f"This will open up to {len(selected)} WhatsApp chats one by one.")
+    print("No messages will be sent automatically.")
+    print("You must manually press Send in WhatsApp.")
+    print("Some numbers may not exist. Mark them with n.")
+    if not yes:
+        answer = input("Continue? [y/N] ").strip().lower()
+        if answer not in {"y", "yes", "s", "si", "sí"}:
+            print("Cancelled. No WhatsApp chats were opened.")
+            return 0
+
+    selected_ids = {id(row) for row in selected}
+    processed = 0
+    for row in rows:
+        if id(row) not in selected_ids:
+            continue
+        business_name = row.get("business_name", "")
+        phone = row.get("normalized_phone", "")
+        print("\nOpened WhatsApp for:")
+        print(business_name)
+        print("Phone:")
+        print(phone)
+        print("\nAfter reviewing WhatsApp, choose:")
+        print("[Enter] sent manually")
+        print("[n] number does not exist on WhatsApp")
+        print("[w] wrong number / wrong business")
+        print("[s] skip")
+        print("[b] baja / do not contact")
+        print("[r] replied immediately / interested")
+        print("[q] quit")
+        webbrowser.open(row.get("whatsapp_url", ""))
+        answer = input("> ").strip().lower()
+        if answer == "q":
+            write_csv(paths["queue"], headers or QUEUE_COLUMNS, rows)
+            print("Saved. Exiting fast-send.")
+            return 0
+        if answer == "":
+            row["status"] = "sent_manual"
+            row["last_contacted"] = today().isoformat()
+            row["follow_up_date"] = (today() + dt.timedelta(days=2)).isoformat()
+            if row.get("whatsapp_verification_status") in {"", "pending_manual_check", "not_verified", "bypassed_by_user"}:
+                row["whatsapp_verification_status"] = "exists_on_whatsapp"
+                sync_verification_status(campaign, business_name, phone, "exists_on_whatsapp")
+            row["response_status"] = ""
+            row["opened_at"] = now_iso()
+            append_log(paths["sent_log"], business_name, phone, "sent_manual", "Marked from fast-send.")
+        elif answer == "n":
+            row["status"] = "not_on_whatsapp"
+            row["whatsapp_verification_status"] = "not_on_whatsapp"
+            append_note(row, "User marked number not on WhatsApp during fast-send")
+            sync_verification_status(campaign, business_name, phone, "not_on_whatsapp")
+        elif answer == "w":
+            row["status"] = "wrong_number"
+            row["whatsapp_verification_status"] = "wrong_number"
+            append_note(row, "User marked wrong number/business during fast-send")
+            sync_verification_status(campaign, business_name, phone, "wrong_number")
+        elif answer == "s":
+            row["status"] = "skipped"
+            append_note(row, "Skipped during fast-send")
+        elif answer == "b":
+            row["status"] = "do_not_contact"
+            row["response_status"] = "baja"
+            add_suppression(paths["suppression"], phone, business_name, "baja/do_not_contact during fast-send")
+            append_log(paths["sent_log"], business_name, phone, "do_not_contact", "Marked from fast-send.")
+        elif answer == "r":
+            row["status"] = "replied"
+            row["response_status"] = "interested"
+            row["last_contacted"] = today().isoformat()
+            if row.get("whatsapp_verification_status") in {"", "pending_manual_check", "not_verified", "bypassed_by_user"}:
+                row["whatsapp_verification_status"] = "exists_on_whatsapp"
+                sync_verification_status(campaign, business_name, phone, "exists_on_whatsapp")
+            row["opened_at"] = now_iso()
+            append_log(paths["sent_log"], business_name, phone, "replied_interested", "Marked from fast-send.")
+        else:
+            print("Unknown input. Leaving row unchanged.")
+
+        processed += 1
+        write_csv(paths["queue"], headers or QUEUE_COLUMNS, rows)
+        print("Saved.")
+        time.sleep(1)
+
+    print(f"Fast-send processed {processed} rows.")
+    return 0
+
+
 def mode_followup(campaign: Path, limit: int) -> int:
     paths = campaign_paths(campaign)
     headers, rows = read_csv(paths["queue"])
@@ -408,8 +650,9 @@ def mode_followup(campaign: Path, limit: int) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--campaign", required=True)
-    parser.add_argument("--mode", required=True, choices=["verify", "send", "followup", "status", "regenerate"])
+    parser.add_argument("--mode", required=True, choices=["verify", "send", "fast-send", "followup", "status", "regenerate"])
     parser.add_argument("--limit", type=int, default=DEFAULT_LIMIT)
+    parser.add_argument("--yes", action="store_true", help="Skip the initial fast-send confirmation. Messages are still never sent automatically.")
     args = parser.parse_args()
     campaign = Path(args.campaign)
     if not campaign.exists():
@@ -423,6 +666,8 @@ def main() -> int:
         return mode_verify(campaign, args.limit)
     if args.mode == "send":
         return mode_send(campaign, args.limit)
+    if args.mode == "fast-send":
+        return mode_fast_send(campaign, args.limit, args.yes)
     if args.mode == "followup":
         return mode_followup(campaign, args.limit)
     return 2

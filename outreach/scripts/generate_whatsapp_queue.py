@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SUPPRESSION_PATH = ROOT / "outreach" / "whatsapp_suppression_list.csv"
-DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app/demos"
+DEFAULT_HOMEPAGE = "https://nexo-local-studio-public.vercel.app"
 AGENCY_WHATSAPP = "525545609027"
 MAX_MESSAGE_CHARS = 650
 MAX_URL_CHARS = 1200
@@ -75,24 +75,36 @@ def display_business_name(value: str, max_chars: int = 72) -> str:
 
 def homepage_url_for(row: dict[str, str]) -> str:
     url = (row.get("homepage_url", "").strip() or DEFAULT_HOMEPAGE).rstrip("/")
-    if url.endswith("/demos"):
-        return url
     if "/demos/" in url:
-        return url.split("/demos/", 1)[0].rstrip("/") + "/demos"
-    return url + "/demos"
+        return url.split("/demos/", 1)[0].rstrip("/")
+    if url.endswith("/demos"):
+        return url[:-6].rstrip("/")
+    return url
 
 
 def first_message(row: dict[str, str], homepage_url: str) -> str:
+    business_name = display_business_name(row.get("business_name", ""))
     message = f"""Hola, vi que su negocio tiene presencia en Google Maps y reputación local.
 
-Somos Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
 
-Pueden ver los ejemplos de Nexo Local Studio aquí:
+Puedes ver nuestro trabajo aquí:
 {homepage_url}
 
-Precios desde $2,500 MXN.
+Tenemos precios de lanzamiento desde $2,500 MXN.
 
-Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja."""
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
+    if business_name != "su negocio":
+        message = f"""Hola, {business_name}. Vi que su negocio tiene presencia en Google Maps y señales de reputación local.
+
+Soy Ruben, de Nexo Local Studio. Hacemos páginas web rápidas y profesionales para negocios locales, conectadas a WhatsApp, ubicación y formularios.
+
+Puedes ver nuestro trabajo aquí:
+{homepage_url}
+
+Tenemos precios de lanzamiento desde $2,500 MXN.
+
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
     message = normalize_message(message)
     if len(message) <= MAX_MESSAGE_CHARS:
         return message
@@ -101,12 +113,12 @@ Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recib
 
 Hacemos páginas web profesionales conectadas a WhatsApp para negocios locales.
 
-Pueden ver los ejemplos de Nexo Local Studio aquí:
+Puedes ver nuestro trabajo aquí:
 {homepage_url}
 
-Precios desde $2,500 MXN.
+Precios de lanzamiento desde $2,500 MXN.
 
-Si les interesa, podemos enviarles una propuesta breve. Si no les interesa recibir más mensajes, dígannos baja."""
+Si te interesa, puedo enviarte una propuesta breve. Si prefieres no recibir más mensajes, dime baja."""
     return normalize_message(shorter)
 
 
@@ -162,7 +174,7 @@ def main() -> int:
         phone_status = row.get("phone_status", "").strip()
         verification_status = row.get("whatsapp_verification_status", "").strip() or "pending_manual_check"
         if args.allow_unverified and verification_status == "pending_manual_check":
-            verification_status = "bypassed_by_user"
+            verification_status = "not_verified"
         row_status = row.get("status", "").strip()
         homepage = homepage_url_for(row)
         demo_url = row.get("demo_url", "").strip()
@@ -176,7 +188,7 @@ def main() -> int:
         if not homepage:
             url_validation_status = "missing_homepage_url"
             status = "blocked"
-        elif verification_status != "exists_on_whatsapp" and not (args.allow_unverified and verification_status == "bypassed_by_user"):
+        elif verification_status != "exists_on_whatsapp" and not (args.allow_unverified and verification_status == "not_verified"):
             status = "blocked_not_verified"
             notes = (notes + " | " if notes else "") + "Bloqueado: número no verificado manualmente como existente en WhatsApp."
             skipped += 1

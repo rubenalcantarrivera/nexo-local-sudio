@@ -11,10 +11,11 @@ while true; do
   echo "Nexo Local Studio - Campaign 02"
   echo "1. Show campaign status"
   echo "2. Verify next 5 WhatsApp numbers"
-  echo "3. Regenerate queue from verified numbers"
-  echo "4. Open next 5 outreach messages"
-  echo "5. Open next 5 follow-ups"
-  echo "6. Exit"
+  echo "3. Regenerate strict queue from verified numbers"
+  echo "4. Fast send next 50 without pre-verification"
+  echo "5. Open next 5 verified outreach messages"
+  echo "6. Open next 5 follow-ups"
+  echo "7. Exit"
   printf "Choose an option: "
   read -r choice
 
@@ -29,12 +30,16 @@ while true; do
       python3 "$SCRIPT" --campaign "$CAMPAIGN" --mode regenerate
       ;;
     4)
-      python3 "$SCRIPT" --campaign "$CAMPAIGN" --mode send --limit 5
+      echo "This opens chats one by one with prefilled messages. You still press Send manually."
+      python3 "$SCRIPT" --campaign "$CAMPAIGN" --mode fast-send --limit 50
       ;;
     5)
-      python3 "$SCRIPT" --campaign "$CAMPAIGN" --mode followup --limit 5
+      python3 "$SCRIPT" --campaign "$CAMPAIGN" --mode send --limit 5
       ;;
     6)
+      python3 "$SCRIPT" --campaign "$CAMPAIGN" --mode followup --limit 5
+      ;;
+    7)
       exit 0
       ;;
     *)

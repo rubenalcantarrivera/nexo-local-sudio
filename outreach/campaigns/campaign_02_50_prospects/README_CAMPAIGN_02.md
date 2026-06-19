@@ -43,6 +43,24 @@ python3 outreach/scripts/run_next_whatsapp_campaign.py --campaign outreach/campa
 
 El script abre un chat a la vez con mensaje prellenado. No manda nada. Después de revisar y enviar manualmente, presiona Enter en terminal para registrar `sent_manual`.
 
+## Fast send sin verificación previa
+
+Si quieres avanzar más rápido y marcar durante el flujo si el número existe o no, usa:
+
+```bash
+python3 outreach/scripts/run_next_whatsapp_campaign.py --campaign outreach/campaigns/campaign_02_50_prospects --mode fast-send --limit 50
+```
+
+Este modo abre un chat a la vez con mensaje prellenado. No manda nada automáticamente. Después de revisar WhatsApp:
+
+- Enter: lo marcaste como enviado manualmente.
+- `n`: el número no existe en WhatsApp.
+- `w`: número equivocado o negocio equivocado.
+- `s`: saltar.
+- `b`: baja / no contactar.
+- `r`: respondió o mostró interés inmediatamente.
+- `q`: salir.
+
 ## Marcar baja
 
 Si responden baja, no contactar, stop o similar, usa la opción `[b]` en el flujo de envío o agrega el número a `whatsapp_suppression_list.csv`.

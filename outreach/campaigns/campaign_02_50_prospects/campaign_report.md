@@ -137,6 +137,13 @@ cd /Users/rubenalcantar/Downloads/nexo-local-studio
 python3 outreach/scripts/run_next_whatsapp_campaign.py --campaign outreach/campaigns/campaign_02_50_prospects --mode send --limit 5
 ```
 
+Fast-send without pre-verification:
+
+```bash
+cd /Users/rubenalcantar/Downloads/nexo-local-studio
+python3 outreach/scripts/run_next_whatsapp_campaign.py --campaign outreach/campaigns/campaign_02_50_prospects --mode fast-send --limit 50
+```
+
 Interactive menu:
 
 ```bash

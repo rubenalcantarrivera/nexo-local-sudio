@@ -21,7 +21,7 @@ VALID_STATUSES = {
     "ready_to_review", "opened_for_manual_send", "sent_manual", "replied", "interested",
     "proposal_sent", "closed", "no_response", "follow_up_due", "follow_up_1_sent",
     "follow_up_2_sent", "not_interested", "do_not_contact", "baja", "blocked",
-    "blocked_not_verified", "suppressed",
+    "blocked_not_verified", "suppressed", "skipped", "not_on_whatsapp", "wrong_number",
 }
 NOT_VERIFIED_STATUSES = {"", "pending_manual_check", "not_on_whatsapp", "wrong_number", "needs_review"}
 
@@ -53,7 +53,7 @@ def decoded_text_from_url(url: str) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("queue_csv")
-    parser.add_argument("--allow-unverified", action="store_true", help="Allow ready rows marked bypassed_by_user.")
+    parser.add_argument("--allow-unverified", action="store_true", help="Allow ready rows marked not_verified/bypassed_by_user.")
     args = parser.parse_args()
     path = Path(args.queue_csv)
     if not path.exists():
@@ -121,7 +121,7 @@ def main() -> int:
         if not whatsapp_verification_status:
             report["missing_whatsapp_verification_status"] += 1
         verification_allowed = whatsapp_verification_status == "exists_on_whatsapp" or (
-            args.allow_unverified and whatsapp_verification_status == "bypassed_by_user"
+            args.allow_unverified and whatsapp_verification_status in {"not_verified", "bypassed_by_user"}
         )
         if is_ready and not verification_allowed:
             report["ready_not_whatsapp_verified"] += 1
