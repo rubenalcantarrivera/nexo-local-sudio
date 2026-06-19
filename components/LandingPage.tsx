@@ -19,7 +19,7 @@ export function LandingPage({ config }: { config: LandingConfig }) {
 
   return (
     <main id="top" className="min-h-screen bg-brand-background">
-      <Header brand={config.businessName} descriptor={`${config.niche} · ${config.location}`} homeHref="#top" navItems={[{ label: "Servicios", href: "#servicios" }, { label: "Proceso", href: "#proceso" }, { label: "Ubicación", href: "#ubicacion" }, { label: "FAQ", href: "#faq" }]} ctaHref={clientWhatsapp} ctaLabel="WhatsApp" />
+      <Header brand={config.businessName} descriptor={`${config.niche} · ${config.location}`} homeHref="#top" navItems={[{ label: "Servicios", href: "#servicios" }, { label: "Proceso", href: "#proceso" }, { label: "Ubicación", href: "#ubicacion" }, { label: "Preguntas Frecuentes", href: "#faq" }]} ctaHref={clientWhatsapp} ctaLabel="WhatsApp" />
       <Hero config={config} whatsappHref={clientWhatsapp} />
       <TrustBar items={config.trust} />
       <ServicesGrid items={config.services} />
