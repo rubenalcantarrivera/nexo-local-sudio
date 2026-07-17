@@ -6,15 +6,19 @@ CAMPAIGN="outreach/campaigns/campaign_03_mexico_latam_250"
 while true; do
   echo ""
   echo "Campaign 03 - Nexo Local Studio"
-  echo "1. Status"
-  echo "2. Verify WhatsApp numbers"
-  echo "3. Generate queue from verified numbers"
-  echo "4. Send verified WhatsApp messages"
-  echo "5. Exit"
+  echo "1. Open messages now WITHOUT verification"
+  echo "2. Status"
+  echo "3. Verify WhatsApp numbers"
+  echo "4. Generate queue from verified numbers"
+  echo "5. Send verified WhatsApp messages"
+  echo "6. Exit"
   read -r -p "> " choice
 
   case "$choice" in
     1)
+      python3 outreach/scripts/campaign03_open_unverified_now.py --campaign "$CAMPAIGN" --limit 250 --delay 1.2
+      ;;
+    2)
       python3 - <<'PY'
 import csv, collections
 base='outreach/campaigns/campaign_03_mexico_latam_250'
@@ -31,16 +35,16 @@ print('Verification:', dict(collections.Counter(r.get('verification_status','') 
 print('Queue:', dict(collections.Counter(r.get('status','') for r in o)))
 PY
       ;;
-    2)
+    3)
       python3 outreach/scripts/campaign03_verify_whatsapp.py --campaign "$CAMPAIGN" --limit 250
       ;;
-    3)
+    4)
       python3 outreach/scripts/campaign03_generate_queue.py --campaign "$CAMPAIGN"
       ;;
-    4)
+    5)
       python3 outreach/scripts/campaign03_send_whatsapp.py --campaign "$CAMPAIGN" --limit 250
       ;;
-    5)
+    6)
       exit 0
       ;;
     *)

@@ -34,6 +34,22 @@ python3 outreach/scripts/campaign03_generate_queue.py --campaign outreach/campai
 
 Sólo los números marcados `exists_on_whatsapp` quedan en `ready_to_send`.
 
+## Abrir mensajes directo, sin verificar
+
+Si quieres saltarte la verificación y abrir los chats con mensaje prellenado:
+
+```bash
+python3 outreach/scripts/campaign03_open_unverified_now.py --campaign outreach/campaigns/campaign_03_mexico_latam_250 --limit 250 --delay 1.2
+```
+
+También puedes correr:
+
+```bash
+./outreach/campaigns/campaign_03_mexico_latam_250/abrir_mensajes_ahora.sh
+```
+
+En Mac también puedes abrir `ABRIR_MENSAJES_AHORA.command` con doble click. Esto no envía mensajes: sólo abre enlaces `wa.me` con texto prellenado.
+
 ## Enviar mensajes verificados
 
 ```bash
