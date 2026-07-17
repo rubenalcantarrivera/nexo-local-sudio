@@ -1,7 +1,7 @@
-timestamp: 2026-06-19T17:12:24
+timestamp: 2026-06-19T17:15:24
 campaign path: outreach/campaigns/campaign_02_50_prospects
 source file: outreach/campaigns/campaign_02_50_prospects/whatsapp_outreach_queue.csv
-dry run: True
+dry run: False
 rows scanned: 50
 rows opened: 50
 rows skipped: 0
