@@ -16,7 +16,7 @@ while true; do
 
   case "$choice" in
     1)
-      python3 outreach/scripts/campaign03_open_unverified_now.py --campaign "$CAMPAIGN" --limit 250 --delay 1.2
+      python3 outreach/scripts/campaign03_open_unverified_now.py --campaign "$CAMPAIGN" --limit 250 --delay 5
       ;;
     2)
       python3 - <<'PY'

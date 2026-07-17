@@ -59,7 +59,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--campaign", required=True)
     parser.add_argument("--limit", type=int, default=250)
-    parser.add_argument("--delay", type=float, default=1.2)
+    parser.add_argument("--delay", type=float, default=5.0)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
