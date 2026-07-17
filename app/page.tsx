@@ -128,6 +128,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="container-page py-14">
+        <div className="grid gap-6 rounded-[2rem] border border-brand-border bg-white p-6 shadow-card lg:grid-cols-[1fr_auto] lg:items-center lg:p-8">
+          <div>
+            <p className="eyebrow">Nexo Chat Agent</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-brand-primary">Ahora también podemos integrar un asistente inteligente.</h2>
+            <p className="mt-3 max-w-3xl text-brand-muted">Un chat en tu página que responde preguntas frecuentes, explica servicios y guía al cliente hacia WhatsApp.</p>
+          </div>
+          <ButtonLink href="/chat-agent" variant="secondary" className="lg:justify-self-end">Ver asistente IA</ButtonLink>
+        </div>
+      </section>
+
       <section id="servicios" className="container-page section-pad">
         <SectionHeader eyebrow="Servicios" title="Una página clara para que tu negocio se entienda rápido." description="No se trata de hacer una web complicada. Se trata de ordenar servicios, ubicación, reseñas y contacto en una experiencia móvil clara." />
         <div className="mt-10 grid gap-5 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">

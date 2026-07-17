@@ -26,6 +26,20 @@ Aplicación Next.js para crear páginas web profesionales, adaptables a celular 
 - `/demos/restaurante`
 - `/demos/academia-idiomas`
 - `/demos/veterinaria`
+- `/chat-agent`
+- `/chat-agent/demos`
+- `/chat-agent/demos/dental`
+- `/chat-agent/demos/estetica`
+- `/chat-agent/demos/fisioterapia`
+- `/chat-agent/demos/restaurante`
+- `/chat-agent/demos/veterinaria`
+- `/chat-agent/demos/abogado-migratorio`
+- `/chat-agent/demos/optica`
+- `/chat-agent/demos/nutricion`
+- `/chat-agent/demos/psicologia`
+- `/chat-agent/demos/arquitectura`
+- `/chat-agent/embed-demo`
+- `/chat-agent/admin-preview`
 
 ## Tech stack
 
@@ -33,8 +47,9 @@ Aplicación Next.js para crear páginas web profesionales, adaptables a celular 
 - TypeScript
 - Tailwind CSS
 - React
-- No paid dependencies
-- No backend required
+- OpenAI official JavaScript SDK for Nexo Chat Agent
+- No database required
+- No CMS required
 
 ## Precios de lanzamiento
 
@@ -68,6 +83,67 @@ http://localhost:3000
 npm run build
 npm run start
 ```
+
+## Nexo Chat Agent
+
+Nexo Chat Agent is the AI assistant add-on for local-business pages.
+
+Public positioning:
+
+> Un asistente inteligente para tu página web que responde preguntas, explica tus servicios y prepara al cliente para escribirte por WhatsApp.
+
+Routes:
+
+- `/chat-agent`: product landing page.
+- `/chat-agent/demos`: niche demo gallery.
+- `/chat-agent/demos/[slug]`: working assistant demo per niche.
+- `/chat-agent/embed-demo`: embedded widget preview.
+- `/chat-agent/admin-preview`: internal demo preview of configs.
+
+Core files:
+
+- `data/chatAgentConfigs.ts`: business configs, FAQs, services, disclaimers and escalation rules.
+- `data/chatAgentTypes.ts`: shared TypeScript model.
+- `components/chat-agent/`: widget and product UI.
+- `app/api/chat-agent/route.ts`: server-side chat endpoint.
+- `app/api/chat-agent/lead/route.ts`: optional lead webhook endpoint.
+- `lib/ai/openaiClient.ts`: OpenAI Responses API integration and mock mode.
+- `lib/ai/promptBuilder.ts`: system prompt builder.
+- `lib/ai/intent.ts`: deterministic fallback intent detection.
+- `lib/ai/chatAgentWhatsApp.ts`: WhatsApp handoff URL builder.
+
+### Environment variables
+
+Create `.env.local` from `.env.example`:
+
+```bash
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-5-mini
+LEADS_WEBHOOK_URL=
+NEXT_PUBLIC_SITE_URL=https://nexolocalstudio.com
+```
+
+`OPENAI_API_KEY` is used only in server routes. It is never exposed to the browser.
+
+If `OPENAI_API_KEY` is missing, the chat still works in deterministic mock mode so demos remain usable.
+
+### Test chat behavior
+
+```bash
+npm run test:chat-agent
+```
+
+The test checks mock conversations for dental, estética, legal, psychology, restaurant and veterinary use cases. It verifies short Spanish replies, no invented prices and handoff for sensitive cases.
+
+### Configure a new chat client
+
+1. Add a config in `data/chatAgentConfigs.ts`.
+2. Include real services, FAQs, hours, address, phone, disclaimers and forbidden claims.
+3. Add the slug to the demos automatically by keeping it in `chatAgentConfigs`.
+4. Use `<ChatWidget businessSlug="your-slug" />` on the page.
+5. Run `npm run typecheck`, `npm run build` and `npm run test:chat-agent`.
+
+Do not promise that the assistant replaces a human. It is first attention plus WhatsApp handoff.
 
 ## File structure
 
