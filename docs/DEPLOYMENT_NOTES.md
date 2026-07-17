@@ -59,11 +59,44 @@ vercel
 vercel --prod
 ```
 
+## Nexo Chat Agent deployment
+
+- App commit verificado: `fb951dd` (`Polish Nexo Chat Agent UX and safety`).
+- GitHub repo: `https://github.com/rubenalcantarrivera/nexo-local-sudio`.
+- Proyecto Vercel localmente vinculado: `nexo-local-studio-public`.
+- URL de producción esperada: `https://nexo-local-studio-public.vercel.app`.
+
+Rutas a probar después de cada deploy:
+
+- `/chat-agent`
+- `/chat-agent/demos`
+- `/chat-agent/demos/dental`
+- `/chat-agent/demos/estetica`
+- `/chat-agent/demos/restaurante`
+
+Variables de entorno:
+
+- `OPENAI_API_KEY` es opcional para modo AI real.
+- `OPENAI_MODEL` es opcional y por defecto usa `gpt-5-mini`.
+- `LEADS_WEBHOOK_URL` es opcional para enviar leads a un webhook.
+- El modo demo/mock funciona sin API key y no debe romper build ni deploy.
+
+Si los cambios no aparecen en producción:
+
+1. Revisar Vercel → Deployments y confirmar que el último commit de `main` está construyendo.
+2. Confirmar que la rama de producción es `main`.
+3. Confirmar que el root directory del proyecto Vercel apunta a la raíz del repo.
+4. Hacer redeploy del último commit.
+5. Si el proyecto no está conectado al repo, conectar `https://github.com/rubenalcantarrivera/nexo-local-sudio` en Settings → Git.
+
 ## Checklist después del deploy
 
 - Abrir homepage.
 - Abrir `/demos`.
 - Abrir ejemplo dental.
+- Abrir `/chat-agent`.
+- Abrir `/chat-agent/demos`.
+- Abrir `/chat-agent/demos/dental`.
 - Probar WhatsApp.
 - Probar email.
 - Revisar móvil.
