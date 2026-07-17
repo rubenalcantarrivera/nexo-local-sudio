@@ -22,7 +22,7 @@ export function ChatWidget({ businessSlug, mode = "demo", initialOpen = false }:
     {
       id: makeId(),
       role: "assistant",
-      content: config ? `Hola, soy el asistente de ${config.businessName}. Puedo ayudarte con servicios, ubicación y WhatsApp.` : "Hola, puedo ayudarte con información del negocio."
+      content: config ? `Hola, soy el asistente de ${config.businessName}. Puedo ayudarte con servicios, horarios, ubicación y el siguiente paso por WhatsApp.` : "Hola, puedo ayudarte con información del negocio."
     }
   ]);
   const [suggestedReplies, setSuggestedReplies] = useState(config?.suggestedReplies.slice(0, 4) ?? []);
@@ -100,7 +100,7 @@ export function ChatWidget({ businessSlug, mode = "demo", initialOpen = false }:
 
   return (
     <>
-      {isOpen ? <div className="fixed bottom-5 right-5 z-50 w-[calc(100vw-2.5rem)] max-w-[420px]">{panel}</div> : null}
+      {isOpen ? <div className="fixed inset-x-2 bottom-2 z-50 mx-auto w-[calc(100vw-1rem)] max-w-[430px] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:mx-0 sm:w-[calc(100vw-2.5rem)]">{panel}</div> : null}
       {!isOpen ? (
         <button
           type="button"
@@ -108,7 +108,7 @@ export function ChatWidget({ businessSlug, mode = "demo", initialOpen = false }:
             setIsOpen(true);
             trackChatEvent("chat_opened", { businessSlug });
           }}
-          className="focus-ring fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-[#0B1220] px-5 py-4 text-sm font-bold text-white shadow-soft transition hover:-translate-y-1"
+          className="focus-ring fixed bottom-4 right-4 z-50 flex items-center gap-3 rounded-full bg-[#0B1220] px-4 py-3 text-sm font-bold text-white shadow-soft transition hover:-translate-y-1 sm:bottom-5 sm:right-5 sm:px-5 sm:py-4"
         >
           <span className="grid h-8 w-8 place-items-center rounded-full bg-brand-accent text-xs text-[#0B1220]">{activeConfig.visual.avatarLabel}</span>
           Preguntar al asistente

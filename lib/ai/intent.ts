@@ -21,7 +21,7 @@ export function detectIntent(input: string, config?: ChatAgentConfig): ChatInten
   const text = input.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
   if (includesAny(text, ["hola", "buen dia", "buenas", "hey"])) return "greeting";
-  if (includesAny(text, ["urgencia", "emergencia", "crisis", "suicidio", "no puede respirar", "convuls", "sangra", "dolor fuerte", "dolor intenso", "duele mucho", "mucho dolor", "intoxic"])) return "emergency";
+  if (includesAny(text, ["urgencia", "emergencia", "crisis", "suicidio", "me quiero morir", "no puede respirar", "no respira", "respira mal", "convuls", "sangra", "sangrado", "dolor fuerte", "dolor intenso", "duele mucho", "mucho dolor", "intoxic", "no despierta", "fractura", "ataque"])) return "emergency";
   if (includesAny(text, ["humano", "persona", "asesor", "doctor", "abogado", "recepcion", "alguien"])) return "human_request";
   if (includesAny(text, ["whatsapp", "wats", "mande mensaje", "contactar", "telefono"])) return "ask_whatsapp";
   if (includesAny(text, ["agendar", "agenda", "cita", "reservar", "reserva", "valoracion", "consulta"])) return "book_appointment";
@@ -31,8 +31,8 @@ export function detectIntent(input: string, config?: ChatAgentConfig): ChatInten
   if (includesAny(text, ["servicio", "tratamiento", "ofrecen", "hacen", "especialidad", "menu"])) return "ask_services";
   if (includesAny(text, ["queja", "molesto", "mal servicio", "reclamo"])) return "complaint";
 
-  if (config?.slug === "abogado-migratorio" && includesAny(text, ["garantizan", "residencia", "visa", "deportacion", "permiso"])) return "legal_advice";
-  if (["dental", "estetica", "fisioterapia", "veterinaria", "nutricion", "psicologia", "optica"].includes(config?.slug ?? "") && includesAny(text, ["diagnostico", "medicina", "sintoma", "dolor", "tratamiento"])) return "medical_advice";
+  if (config?.slug === "abogado-migratorio" && includesAny(text, ["garantizan", "garantia", "residencia", "visa", "deportacion", "asilo", "permiso", "me aprueban", "arreglar papeles"])) return "legal_advice";
+  if (["dental", "estetica", "fisioterapia", "veterinaria", "nutricion", "psicologia", "optica"].includes(config?.slug ?? "") && includesAny(text, ["diagnostico", "medicina", "sintoma", "dolor", "tratamiento", "receta", "curar", "quitar para siempre"])) return "medical_advice";
 
   return "unknown";
 }

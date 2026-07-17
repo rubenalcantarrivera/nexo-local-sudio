@@ -44,6 +44,11 @@ export default function ChatAgentPage() {
           <div className="rounded-[2rem] border border-brand-border bg-white p-7 shadow-card">
             <h2 className="font-display text-3xl font-semibold text-brand-primary">Clínica Dental Nara</h2>
             <p className="mt-3 text-brand-muted">Asistente configurado para explicar tratamientos, cuidar claims médicos y llevar a WhatsApp cuando alguien quiere agendar.</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {["Responde FAQs", "No inventa precios", "Pasa a WhatsApp"].map((item) => (
+                <div key={item} className="rounded-2xl border border-brand-border bg-brand-softAccent/35 px-4 py-3 text-sm font-bold text-brand-primary">{item}</div>
+              ))}
+            </div>
             <div className="mt-6 grid gap-3 text-sm text-brand-primary">
               {["¿Tienen blanqueamiento?", "¿Cuánto cuesta un implante?", "Me duele mucho una muela", "Quiero agendar"].map((item) => <span key={item} className="border-b border-brand-border pb-2">{item}</span>)}
             </div>
@@ -72,6 +77,29 @@ export default function ChatAgentPage() {
               <h3 className="mt-4 font-display text-2xl font-semibold text-brand-primary">{item}</h3>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white section-pad">
+        <div className="container-page grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <p className="eyebrow">Cómo se vende</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-brand-primary">No es “un bot”. Es una recepción digital para convertir dudas en conversaciones.</h2>
+            <p className="mt-5 text-brand-muted">La promesa es simple: menos preguntas repetidas, mejor contexto para el negocio y un camino más claro hacia WhatsApp.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              ["01", "Pregunta", "El cliente pregunta desde celular sin buscar formularios."],
+              ["02", "Respuesta", "El asistente explica con límites y sin inventar."],
+              ["03", "Handoff", "WhatsApp se abre con contexto para que el equipo confirme."]
+            ].map(([step, title, text]) => (
+              <article key={step} className="rounded-[1.5rem] border border-brand-border bg-white p-5 shadow-card">
+                <p className="font-display text-3xl font-semibold text-brand-accent">{step}</p>
+                <h3 className="mt-4 font-display text-2xl font-semibold text-brand-primary">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-brand-muted">{text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -31,6 +31,7 @@ export function LeadCaptureCard({ businessSlug, lead, onChange, onCaptured }: Pr
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl border border-brand-border bg-white p-4 shadow-sm">
       <p className="font-display text-lg font-semibold text-brand-primary">Datos para seguimiento</p>
+      <p className="mt-1 text-xs leading-5 text-brand-muted">Opcional. Sirve para preparar mejor el mensaje de WhatsApp.</p>
       <div className="mt-3 grid gap-3">
         <label className="grid gap-1 text-xs font-bold uppercase tracking-[0.14em] text-brand-muted">
           Nombre
