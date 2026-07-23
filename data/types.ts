@@ -31,6 +31,7 @@ export type LandingConfig = {
 export type Package = {
   name: string;
   price: string;
+  priceUsd: number;
   description: string;
   includes: string[];
   notIncluded?: string[];

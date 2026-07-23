@@ -64,7 +64,7 @@ export default function HomePage() {
               Creamos páginas rápidas, claras y profesionales para que tus clientes vean tus servicios, ubicación, reseñas y te contacten desde el celular.
             </p>
             <p className="mt-5 max-w-xl border-l-2 border-brand-accent pl-4 text-sm font-semibold text-brand-primary">
-              Entrega en 72 horas desde materiales completos. Precios de lanzamiento desde $2,500 MXN.
+              Entrega en 72 horas desde materiales completos. Precios de lanzamiento desde USD 150.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={whatsappHref}>Cotizar mi página</ButtonLink>

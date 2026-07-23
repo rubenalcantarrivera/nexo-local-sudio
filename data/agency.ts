@@ -15,7 +15,8 @@ export const agency = {
 export const packages: Package[] = [
   {
     name: "Página Local Inicial",
-    price: "$2,500 MXN",
+    price: "USD 150",
+    priceUsd: 150,
     description: "Para negocios que necesitan una página sencilla, clara y profesional para mostrar servicios, ubicación y recibir mensajes por WhatsApp.",
     includes: ["Página web de una sola página", "Diseño adaptable a celular", "Sección de servicios", "Botón directo a WhatsApp", "Ubicación / Google Maps", "Datos de contacto", "Texto básico a partir de la información del cliente", "1 ronda de ajustes", "Entrega en 72 horas desde materiales completos"],
     notIncluded: ["Logo", "Fotografía profesional", "SEO avanzado", "Publicidad", "Dominio/hosting", "Automatizaciones", "Sistema de reservas", "Varias páginas internas"],
@@ -23,7 +24,8 @@ export const packages: Package[] = [
   },
   {
     name: "Página Local Plus",
-    price: "$4,500 MXN",
+    price: "USD 260",
+    priceUsd: 260,
     description: "Para negocios que quieren una página más completa, con mejor presentación, confianza y contacto directo por WhatsApp.",
     includes: ["Todo lo de Inicial", "Diseño visual más cuidado", "Mejor estructura comercial", "Sección de beneficios", "Sección de reseñas/testimonios", "Preguntas frecuentes", "Formulario de contacto", "Google Maps", "SEO local básico", "Mensaje de WhatsApp prellenado", "2 rondas de ajustes", "Entrega en 72 horas desde materiales completos"],
     notIncluded: ["Campañas publicitarias", "SEO mensual", "Branding completo", "Fotografía profesional", "Integraciones complejas", "CRM", "E-commerce"],
@@ -32,7 +34,8 @@ export const packages: Package[] = [
   },
   {
     name: "Página Local Premium",
-    price: "$6,500 MXN",
+    price: "USD 375",
+    priceUsd: 375,
     description: "Para negocios que quieren una página más cuidada visualmente y una presentación más profesional desde celular.",
     includes: ["Todo lo de Plus", "Dirección visual más personalizada", "Copy más trabajado", "Secciones más completas", "Galería o bloque visual", "Sección de proceso o metodología", "Mayor cuidado en diseño móvil", "Optimización básica de velocidad", "SEO local básico más completo", "3 rondas de ajustes", "Soporte ligero por 7 días después de entrega"],
     notIncluded: ["Publicidad pagada", "SEO mensual", "Branding completo", "Fotografía profesional", "Video", "Sistema personalizado", "E-commerce", "Mantenimiento mensual"],
